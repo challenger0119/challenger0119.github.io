@@ -2,13 +2,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>CSS举例</title>
+    <title>CSS笔记</title>
 	<meta charset="utf-8" />
 <style type="text/css">
     p {background-color:gainsboro;
        padding:5px;
+       text-indent:2em;
     }
-
+    p.spread{word-spacing:30px;}
+    p.tight{word-spacing:-0.5em;}
+    h5.uppercase{text-transform:uppercase;}
+    h5.lowcase{text-transform:lowercase;}
+    a:link {color:blue;}
+    a:visited{color:gray;}
+    a:hover{color:rebeccapurple;}
+    table{border-collapse:collapse;}
+    table,th,td{border:1px solid black;}
+    img.float{float:right;}
 </style>
 </head>
 <body>
@@ -23,12 +33,56 @@
     <ul><li>单个字符的属性值一般不需要引号，如果是多个字需要</li>
     <li>百分比形式的RGB颜色 %符号不能省略</li>
     <li>某些浏览器的style不能继承，需要特殊说明：例如，定了body的样式后，还要说明 p td ul 等样式</li>
-    <li>背景图像可以设置位置（按照百分比，按照像素，按照名词） 和重复等属性，而background-attachment属性可以保证背景图像自动根据文字内容扩展（不会出现背景被滚没得情况）</li></ul>
+    <li>背景图像可以设置位置（按照百分比，按照像素，按照名词） 和重复等属性，而background-attachment属性可以保证背景图像自动根据文字内容扩展（不会出现背景被滚没得情况）</li>
+    <li>首行缩进可以设置负值从而实现悬挂缩进，但是这样建议也设置文本的padding-left避免文本越出浏览器</li>
+    <li>css有值负值，用在边距的宽度定义</li>
+    <li>垂直方向上会有外边距的合并</li>
+    </ul>
 
     <h4>知识点</h4>
     <ul><li>派生选择器：li strong{} 只对列表里的strong样式生效</li>
     <li>id选择器:# 标识</li>
     <li>类选择器:.class 标识</li>
-    <li>属性选择器：[] 标识 可以字符匹配 ~= 匹配空格 |=匹配连接符</li></ul>
+    <li>属性选择器：[] 标识 可以字符匹配 ~= 匹配空格 |=匹配连接符</li>
+    <li>em是w3c推荐的尺寸单位，1em就是字体的尺寸，默认是16个像素。</li>
+    <li>链接&lta&gt 有四种状态:link,visited,hover,active。分别是未访问，访问过，鼠标在其上，正在点击</li>
+    <li>内边距是padding 边框是border 外边距是margin，背景控制除margin的部分</li>
+    <li>position的三个属性 relative fixed absolute.absolute不占用文档的空间，即其他元素会无视它的存在。而relative会占用文档空间</li>
+    <li>子元素选择器：看起来像派生选择器，但是其没有继承关系。例如，h1 > strong 只对 &lt;h1&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/h1&gt;生效，而不对&lt;h1&gt;&lt;em&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;生效，因为这个时候em是h1的子元素 strong是em的子元素，关系没有继承</li>
+    <li>相邻兄弟选择器 h1+p 设置紧挨着h1的p的属性</li>
+    <li>伪类，伪元素 a:xx p:xx 这种已经定义好的</li>
+    </ul>
+
+    <h4>CSS3（不同的浏览器语法不同）</h4>
+    <ul>
+        <li>边框可以使用图片</li>
+        <li>增加阴影效果等</li>
+        <li>使用自己的字体</li>
+        <li>2D 3D转换 过渡 动画</li>
+    </ul>
+
+    <h4>演示区</h4>
+    <h5 class="uppercase">uppercase head</h5>
+    <h5 class="lowcase">lowCASE HEAD</h5>
+    <p> 这里是定义的段落样式</p>
+    <p class="spread">松散段落样式</p>
+    <p class="tight">紧致段落样式</p>
+    边框collapse的table
+    <table title="tablea">
+        <tr>
+            <th>Firstname</th>
+            <th>LastName</th>
+        </tr>
+        <tr>
+            <td>Xiaoming</td>
+            <td>Wang</td>
+        </tr>
+    </table>
+
+    <div style="width:550px">
+        <img src="resource/zhuyin.gif" class="float"/>
+        <p>话说孙悟空护送唐三藏去西天取经，半路却和牛魔王合谋要杀害唐三藏，并偷走了月光宝盒。观音大士闻讯赶到，欲除掉孙悟空以免危害苍生。唐三藏慈悲为怀，愿意一命赔一命，观音遂令悟空五百年后投胎做人，赎其罪孽。五百年后的一天，五岳山下的大漠之上风沙漫漫，突然来了一个奇怪的女客春三十娘（蓝洁瑛饰）。众人在斧头帮二当家（吴孟达饰）带领下欲行抢劫，反被她制住。匪头至尊宝（周星驰饰）率众复仇失败，春三十娘勒令群匪找一个脚底有三颗痣的人。晚上至尊宝等欲用迷香加害春三十娘，却令其现出蜘蛛精的真身。至尊宝孤身潜入春三十娘的房中，发现多了一个白晶晶（莫文蔚饰），至尊宝对她一见钟情。二当家夜探二女，查出原来春三十娘是蜘蛛精，白晶晶是白骨精，她们从菩提老祖那里得知唐三藏将会出现在五岳山，为了吃</p>
+    </div>
+    <h6>内容参考 <a href="http://www.w3school.com.cn" target="_blank">w3school</a></h6>
 </body>
 </html>
