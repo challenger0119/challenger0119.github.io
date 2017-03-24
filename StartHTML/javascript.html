@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Imagination Web</title>
+	<meta charset="utf-8" />
+    <style>
+        .paddingleft{
+            margin-top:20px;
+            padding-left:20px;
+        }
+        .margintop{
+            margin-top:5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>JavaScript 实现 Imagination 工程 </h3>
+    <p>这是 <a href="http://github.com/challenger0119/Imagination" target="_blank">Imagination</a> 的Web版本</p>
+    <hr />
+    <h4>功能列表</h4>
+    <ol>
+        <li>记录</li>
+        <li>导出</li>
+        <li>生成APP兼容的过渡文件，用于在APP中呈现（APP中还没有导入功能）</li>
+    </ol>
+    <hr />
+    <div class="paddingleft">
+        <!--文本输入-->
+        <input id="mood" class="margintop"  type="text" placeholder="今天心情怎样？"/><br />
+        <input id="content" class="margintop"  type="text" placeholder="有什么想说的吗？"/><br/>
+        <input id="location" class="margintop"  type="text" placeholder="你在哪里呢？" /><br />
+        <button id="confirm" class="margintop"  style="width:150px" onclick="doneEditing()">写完了</button>
+    </div>
+    <div id="output" class="paddingleft">
+
+    </div>
+    <script>
+        function doneEditing() {
+            var mood = getInputValueOfID("mood");
+            var content = getInputValueOfID("content");
+            var location = getInputValueOfID("location");
+            var result = "<p> 所以你的心情是：" + mood + "<br />" + "你想说的是：" + content + "<br />" + "你在：" + location + "</p>";
+            document.getElementById("output").innerHTML = result;
+        }
+        function getHTMLContentOfID(ids) {
+            return document.getElementById(ids).innerHTML;
+        }
+        function getInputValueOfID(ids) {
+            return document.getElementById(ids).value;
+        }
+    </script>
+</body>
+</html>
