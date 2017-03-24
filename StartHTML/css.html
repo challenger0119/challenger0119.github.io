@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CSS举例</title>
+	<meta charset="utf-8" />
+<style type="text/css">
+    p {background-color:gainsboro;
+       padding:5px;
+    }
+
+</style>
+</head>
+<body>
+    <h3>CSS 举例</h3>
+    <h4>优先级</h4>
+    <ol><li>内联样式（在HTML内部）</li>
+    <li>内部样式（在标签内部）</li>
+    <li>外部样式</li>
+    <li>浏览器缺省设置</li></ol>
+
+    <h4>注意点</h4>
+    <ul><li>单个字符的属性值一般不需要引号，如果是多个字需要</li>
+    <li>百分比形式的RGB颜色 %符号不能省略</li>
+    <li>某些浏览器的style不能继承，需要特殊说明：例如，定了body的样式后，还要说明 p td ul 等样式</li>
+    <li>背景图像可以设置位置（按照百分比，按照像素，按照名词） 和重复等属性，而background-attachment属性可以保证背景图像自动根据文字内容扩展（不会出现背景被滚没得情况）</li></ul>
+
+    <h4>知识点</h4>
+    <ul><li>派生选择器：li strong{} 只对列表里的strong样式生效</li>
+    <li>id选择器:# 标识</li>
+    <li>类选择器:.class 标识</li>
+    <li>属性选择器：[] 标识 可以字符匹配 ~= 匹配空格 |=匹配连接符</li></ul>
+</body>
+</html>
