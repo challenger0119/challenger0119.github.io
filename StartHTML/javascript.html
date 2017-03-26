@@ -13,6 +13,7 @@
             margin-top:5px;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="../lib/prism.css">
 </head>
 <body>
     <h3>JavaScript 实现 Imagination 工程 </h3>
@@ -35,6 +36,15 @@
     <div id="output" class="paddingleft">
 
     </div>
+
+    <div>
+    <pre>
+        <code class='language-swift'>
+            print("Hello world!");
+        </code>
+    </pre>
+        
+    </div>
     <script>
         function doneEditing() {
             var mood = getInputValueOfID("mood");
@@ -50,5 +60,6 @@
             return document.getElementById(ids).value;
         }
     </script>
+    <script src="../lib/prism.js"></script>
 </body>
 </html>
