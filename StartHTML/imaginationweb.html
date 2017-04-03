@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
 </head>
 <body class="toedge">
-    <h3>Imagination Web</h3>
+    <h3>Imagination Web </h3>
+    <p>没有本地存储似乎搞不了,难道只能使用服务器？</p>
     <p>iOS --> <a href="http://github.com/challenger0119/Imagination" target="_blank">Imagination</a></p>
     <hr />
     <div class="box">
@@ -81,8 +82,9 @@
             <button class="btn btn-primary" type="button" onclick="doneEditing()">Done</button>
         </div>
     </form>
+    <hr />
 
-    <div id="output" class="toedge">
+    <div id="output">
 
     </div>
 
@@ -90,7 +92,7 @@
         function doneEditing() {
             var moods = getObjsByName("moodOption");
             var moodArray = ["Good", "Suck"];
-            var mood;
+            var mood = "无";
             for (var i = 0; i < moods.length; i++) {
                 if (moods[i].checked) {
                     mood = moodArray[i];
@@ -121,5 +123,5 @@
 
 </html>
 <footer>
-    <h6>内容参考 <a href="http://www.w3school.com.cn" target="_blank">W3school</a>、<a href="https://github.com/almasaeed2010/AdminLTE" target="_blank">AdminLTE</a></h6>
+    <h6>内容参考： <a href="http://www.w3school.com.cn" target="_blank">W3school</a>、<a href="https://github.com/almasaeed2010/AdminLTE" target="_blank">AdminLTE</a></h6>
 </footer>
