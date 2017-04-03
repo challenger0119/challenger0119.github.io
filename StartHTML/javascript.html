@@ -12,54 +12,114 @@
         .margintop{
             margin-top:5px;
         }
+        .toedge{
+            margin-top:20px;
+            padding-left:20px;
+            padding-right:20px;
+        }
     </style>
-    <link rel="stylesheet" type="text/css" href="../lib/prism.css">
+    <link rel="stylesheet" type="text/css" href="../lib/prism/prism.css">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
 </head>
-<body>
-    <h3>JavaScript 实现 Imagination 工程 </h3>
-    <p>这是 <a href="http://github.com/challenger0119/Imagination" target="_blank">Imagination</a> 的Web版本</p>
+<body class="toedge">
+    <h3>Imagination Web</h3>
+    <p>iOS --> <a href="http://github.com/challenger0119/Imagination" target="_blank">Imagination</a></p>
     <hr />
-    <h4>功能列表</h4>
-    <ol>
-        <li>记录</li>
-        <li>导出</li>
-        <li>生成APP兼容的过渡文件，用于在APP中呈现（APP中还没有导入功能）</li>
-    </ol>
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">功能列表</h3>
+        </div>
+        <div class="box-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>记录</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>导出</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>生成APP兼容的过渡文件，用于在APP中呈现（APP中还没有导入功能）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <hr />
-    <div class="paddingleft">
-        <!--文本输入-->
-        <input id="mood" class="margintop"  type="text" placeholder="今天心情怎样？"/><br />
-        <input id="content" class="margintop"  type="text" placeholder="有什么想说的吗？"/><br/>
-        <input id="location" class="margintop"  type="text" placeholder="你在哪里呢？" /><br />
-        <button id="confirm" class="margintop"  style="width:150px" onclick="doneEditing()">写完了</button>
-    </div>
-    <div id="output" class="paddingleft">
+    <form>
+        <div class="box-body">
+            <label>今天心情如何？</label>
+            <div id="mood" class="radio">  
+                <label>
+                    <input name="moodOption" type="radio" value="option1" />Good
+                </label>
 
-    </div>
-
-    <div>
-    <pre>
-        <code class='language-swift'>
-            print("Hello world!");
-        </code>
-    </pre>
+                <label>
+                    <input name="moodOption" type="radio" value="option2" />Suck
+                </label>
+            </div>
+            <div class="form-group">
+                <label>有什么想说的吗？</label>
+                <input id="content" class="form-control" type="text" placeholder="记下来吧" />
+            </div>
+            <div class="form-group">
+                <label>你在哪里呢？</label>
+                <select id="location" class="form-control">
+                    <option>武汉</option>
+                    <option>郑州</option>
+                    <option>焦作</option>
+                    <option>杭州</option>
+                    <option>广州</option>
+                </select>
+            </div>
+        </div>
         
+        <div class="box-footer">
+            <button class="btn btn-primary" type="button" onclick="doneEditing()">Done</button>
+        </div>
+    </form>
+
+    <div id="output" class="toedge">
+
     </div>
+
     <script>
         function doneEditing() {
-            var mood = getInputValueOfID("mood");
+            var moods = getObjsByName("moodOption");
+            var moodArray = ["Good", "Suck"];
+            var mood;
+            for (var i = 0; i < moods.length; i++) {
+                if (moods[i].checked) {
+                    mood = moodArray[i];
+                    break;
+                }
+            }
             var content = getInputValueOfID("content");
-            var location = getInputValueOfID("location");
-            var result = "<p> 所以你的心情是：" + mood + "<br />" + "你想说的是：" + content + "<br />" + "你在：" + location + "</p>";
+            var locationobj = getObjByID("location");
+            var location = locationobj.options[locationobj.selectedIndex].value;
+            var result = "<p> 所以,<br />你的心情是：" + mood + "<br />" + "你想说的是：" + content + "<br />" + "你在：" + location + "</p>";
             document.getElementById("output").innerHTML = result;
         }
-        function getHTMLContentOfID(ids) {
-            return document.getElementById(ids).innerHTML;
-        }
         function getInputValueOfID(ids) {
-            return document.getElementById(ids).value;
+            return getObjByID(ids).value;
+        }
+        function getObjByID(ids) {
+            return document.getElementById(ids);
+        }
+        function getObjsByName(ids) {
+            return document.getElementsByName(ids);
         }
     </script>
     <script src="../lib/prism.js"></script>
+    <script src="../lib/jQuery/jquery-3.2.0.min.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    
 </body>
+
 </html>
+<footer>
+    <h6>内容参考 <a href="http://www.w3school.com.cn" target="_blank">W3school</a>、<a href="https://github.com/almasaeed2010/AdminLTE" target="_blank">AdminLTE</a></h6>
+</footer>
