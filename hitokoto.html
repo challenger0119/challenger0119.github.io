@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hitokoto Demo</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var xmlHTTP = new XMLHttpRequest();
+	var url = "https://sslapi.hitokoto.cn/?encode=text";
+	xmlHTTP.open("GET",url,true);
+	xmlHTTP.onreadystatechange = doResult;
+	xmlHTTP.send();
+	function doResult(){
+		if (xmlHTTP.readyState == 4) {
+			if (xmlHTTP.status == 200) {
+				document.getElementById("hitokoto").innerHTML = xmlHTTP.response;
+			}
+		}
+	}
+</script>
+	<div id="hitokoto"></div>
+	<br/>
+	<br/>
+	<div>刷新看下一条</div>
+</body>
+<footer>
+	<hr/>
+	<a href="hitokoto.cn">Hitokoto 一言</a>
+</footer>
+</html>
