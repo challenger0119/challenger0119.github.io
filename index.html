@@ -16,7 +16,20 @@
 </body>
 <footer>
     <hr/>
-    <script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><div id="lwlhitokoto"><script>lwlhitokoto()</script></div>
+    <script type="text/javascript">
+        var xmlHTTP = new XMLHttpRequest();
+        var url = "https://sslapi.hitokoto.cn/?encode=text";
+        xmlHTTP.open("GET",url,true);
+        xmlHTTP.onreadystatechange = doResult;
+        xmlHTTP.send();
+        function doResult(){
+            if (xmlHTTP.readyState == 4) {
+                if (xmlHTTP.status == 200) {
+                    document.getElementById("hitokoto").innerHTML = xmlHTTP.response;
+                }
+            }
+        }
+    </script><div id="hitokoto"></div>
 </footer>
 </html>
 
