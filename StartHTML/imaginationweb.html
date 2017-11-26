@@ -52,7 +52,7 @@
         </div>
     </div>
     <hr />
-    <form>
+    <form action="imagination.php" method="post">
         <div class="box-body">
             <label>今天心情如何？</label>
             <div id="mood" class="radio">  
@@ -66,11 +66,11 @@
             </div>
             <div class="form-group">
                 <label>有什么想说的吗？</label>
-                <input id="content" class="form-control" type="text" placeholder="记下来吧" />
+                <input id="content" name = "content" class="form-control" type="text" placeholder="记下来吧" />
             </div>
             <div class="form-group">
                 <label>你在哪里呢？</label>
-                <select id="location" class="form-control">
+                <select id="location" name="location" class="form-control">
                     <option>武汉</option>
                     <option>郑州</option>
                     <option>焦作</option>
@@ -81,7 +81,10 @@
         </div>
         
         <div class="box-footer">
+            <!--
             <button class="btn btn-primary" type="button" onclick="doneEditing()">Done</button>
+        -->
+        <input type="Submit" value="Done">
         </div>
     </form>
     <hr />

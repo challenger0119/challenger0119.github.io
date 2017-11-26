@@ -5,14 +5,14 @@ function showLocation() {
 		var selectobj = document.getElementById("macinfoselect");
 		textValue = selectobj.options[selectobj.selectedIndex].value;
 	}
-
-	xmlHTTP = createXMLHttpRequest();
-	var url = "http://localhost:8080/TomcatTest/HelloWorld?mac="+textValue;
-	xmlHTTP.open("GET",url,true);
-	xmlHTTP.onreadystatechange = doResult;
-	xmlHTTP.setRequestHeader("Content-type","application/x-www-form-urlencoded;");
-	xmlHTTP.send();
-	
+	if (textValue != "") {
+		xmlHTTP = createXMLHttpRequest();
+		var url = "http://localhost:8080/TomcatTest/HelloWorld?mac="+textValue;
+		xmlHTTP.open("GET",url,true);
+		xmlHTTP.onreadystatechange = doResult;
+		xmlHTTP.setRequestHeader("Content-type","application/x-www-form-urlencoded;");
+		xmlHTTP.send();
+	}		
 }
 
 function doResult(){
