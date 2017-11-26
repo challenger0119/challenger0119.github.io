@@ -11,18 +11,30 @@ class Item
 	var $location;
 	function Item($md,$ctt,$lct)
 	{
-		$id = 0;	//initialized during reading item from db
-		$mood = $md;
-		$content = $ctt;
-		$date = "";	//initialized during reading item from db
-		$location = $lct;
+		$this->id = 0;	//initialized during reading item from db
+		$this->mood = $md;
+		$this->content = $ctt;
+		$this->date = "";	//initialized during reading item from db
+		$this->location = $lct;
+		//echo $md.$ctt.$lct."\n";
 
 	}
 	function convertToInsertDBString(){
-		return "($mood,$content,now(),$location)";
+		return "(".$this->mood.",\"".$this->content."\",now(),\"".$this->location."\")";
 	}
 	function convertToItemVarDBString(){
 		return "(mode,content,date,location)";
+	}
+	function showResult(){
+		echo  date("Y.m.d h:i:s a")."<br/>";
+		if ($this->mood == 1) {
+			echo "Cool congratulation"."<br/>";
+		}
+		if ($this->mood == 2) {
+			echo "OK is just OK"."<br/>";
+		}
+		echo "Your word: ".$this->content."<br/>";
+		echo "Your location: ".$this->location."<br/>";
 	}
 }
 
@@ -31,35 +43,42 @@ class Item
 */
 class ItemMysql
 {
-	define("dbName", "mysql");
-	define("tableName", "imagination");
-
 	var $dbConnect;
+	var $dbName;
+	var $tableName;
 	function ItemMysql()
 	{
-		$servername = "localhost";
-		$username = "webuser";
-		$password = "";
-		$dbConnect = mysql_connect($servername,$username,$password);
-		if (!$dbConnect) {
-			die('Could not connect to db'.mysql_error());
+		$this->servername = "localhost";
+		$this->username = "webuser";
+		$this->password = "";
+		$this->dbName = "mysql";
+		$this->tableName = "imagination";
+		$this->dbConnect = mysqli_connect($this->servername,$this->username,$this->password,$this->dbName);
+		if (!$this->dbConnect) {
+			die('Could not connect to db'.mysqli_connect_error());
 		}
 	}
 	function insertItem($item){
-		mysql_select_db(dbName,$dbConnect);
-		$sql = "insert into ".tableName.$item->convertToItemVarDBString()."values".$item->convertToInsertDBString();
-		if (!mysql_query($sql,$dbConnect)) {
-			die('Error insert:'.mysql_error());
+		$sql = "insert into ".$this->tableName.$item->convertToItemVarDBString()."values".$item->convertToInsertDBString();
+		
+		if (!mysqli_query($this->dbConnect,$sql)) {
+			echo $sql."\n";
+			die('Error insert:'.mysqli_error($this->dbConnect));
 		};
-		echo "add one item";
-		mysql_close($dbConnect);
+		$item->showResult();
+		mysqli_close($this->dbConnect);
 	}
 }
 
-
-
-$item = Item($_POST[moodOption],$_POST[content],$_POST[location]);
-$mysql = ItemMysql();
+$mood = 0;
+if ($_POST["moodOption"] == "option1") {
+	$mood = 1;
+}
+if ($_POST["moodOption"] == "option2") {
+	$mood = 2;
+}
+$item = new Item($mood,$_POST["content"],$_POST["location"]);
+$mysql = new ItemMysql();
 $mysql->insertItem($item);
 
 
