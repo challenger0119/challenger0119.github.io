@@ -23,7 +23,7 @@ class Item
 		return "(".$this->mood.",\"".$this->content."\",now(),\"".$this->location."\")";
 	}
 	function convertToItemVarDBString(){
-		return "(mode,content,date,location)";
+		return "(mood,content,date,location)";
 	}
 	function showResult(){
 		echo  date("Y.m.d h:i:s a")."<br/>";
