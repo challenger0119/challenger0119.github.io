@@ -1,16 +1,13 @@
 <?php
-include "imaginationclass.php"
-/*
-$mood = 0;
+include "imaginationclass.php";
+$tmp = 0;
 if ($_POST["moodOption"] == "option1") {
-	$mood = 1;
+	$tmp = 1;
 }
 if ($_POST["moodOption"] == "option2") {
-	$mood = 2;
+	$tmp = 3;
 }
-*/
-#$item = new Item(0,$mood,$_POST["content"],"",$_POST["location"]);
-$item = new Item("1","2","test","3 ","Hangzhou");
+$item = new WriteItem($tmp,$_POST["content"],$_POST["location"]);
 $mysql = new ItemMysql();
 $mysql->insertItem($item);
 
