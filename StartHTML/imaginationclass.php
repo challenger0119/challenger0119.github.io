@@ -39,6 +39,22 @@ class Item
 }
 
 /**
+* 
+*/
+class WriteItem extends Item
+{
+	
+	function __construct($md,$ctt,$lct)
+	{
+		$this->id = 0	//initialized during reading item from db
+		$this->mood = $md;
+		$this->content = $ctt;
+		$this->date = "";	//initialized during reading item from db
+		$this->location = $lct;
+	}
+}
+
+/**
 * insert item into mysql
 */
 class ItemMysql
