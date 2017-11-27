@@ -9,17 +9,7 @@ class Item
 	var $content;
 	var $date;
 	var $location;
-	function Item($md,$ctt,$lct)
-	{
-		$this->id = 0;	//initialized during reading item from db
-		$this->mood = $md;
-		$this->content = $ctt;
-		$this->date = "";	//initialized during reading item from db
-		$this->location = $lct;
-		//echo $md.$ctt.$lct."\n";
-
-	}
-	function Item($id,$md,$ctt,%dt,$lct)
+	function __construct($id,$md,$ctt,$dt,$lct)
 	{
 		$this->id = $id;	//initialized during reading item from db
 		$this->mood = $md;
@@ -56,7 +46,7 @@ class ItemMysql
 	var $dbConnect;
 	var $dbName;
 	var $tableName;
-	function ItemMysql()
+	function __construct()
 	{
 		$this->servername = "localhost";
 		$this->username = "webuser";
@@ -85,7 +75,7 @@ class ItemMysql
 		if ($rs->num_rows > 0) {
 			while ($row = $rs->fetch_assoc()) {
 				$newItem = new Item($row["id"],$row["mood"],$row["content"],$row["date"],$row["location"]);
-				array_push($itemArray, $newItem);
+		array_push($itemArray, $newItem);
 			}
 		}
 		return $itemArray;
