@@ -76,12 +76,12 @@ class ItemMysql
 			echo $sql."\n";
 			die('Error insert:'.mysqli_error($this->dbConnect));
 		};
-		$item->showResult();
+		//$item->showResult();
 		mysqli_close($this->dbConnect);
 	}
 	function getAllItems(){
 		$itemArray = array();
-		$sql = "select * from imagination";
+		$sql = "select * from imagination order by date desc";
 		$rs = mysqli_query($this->dbConnect,$sql);
 		if ($rs->num_rows > 0) {
 			while ($row = $rs->fetch_assoc()) {
