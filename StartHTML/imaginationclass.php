@@ -9,7 +9,7 @@ class Item
 	var $content;
 	var $date;
 	var $location;
-	function __construct($id,$md,$ctt,$dt,$lct)
+	function Item($id,$md,$ctt,$dt,$lct)
 	{
 		$this->id = $id;	//initialized during reading item from db
 		$this->mood = $md;
@@ -43,14 +43,9 @@ class Item
 */
 class WriteItem extends Item
 {
-	
-	function __construct($md,$ctt,$lct)
+	function WriteItem($md,$ctt,$lct)
 	{
-		$this->id = 0	//initialized during reading item from db
-		$this->mood = $md;
-		$this->content = $ctt;
-		$this->date = "";	//initialized during reading item from db
-		$this->location = $lct;
+		parent::Item(0,$md,$ctt,"",$lct);
 	}
 }
 
