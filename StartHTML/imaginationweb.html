@@ -23,32 +23,9 @@
 </head>
 <body class="toedge">
     <h3>Imagination Web </h3>
-    <p>没有本地存储似乎搞不了,难道只能使用服务器？</p>
     <p>iOS --> <a href="http://github.com/challenger0119/Imagination" target="_blank">Imagination</a></p>
+    <p id="onlinecountdown"></p>
     <hr />
-    <div class="box">
-        <div class="box-header with-border">
-            <h3 class="box-title">功能列表</h3>
-        </div>
-        <div class="box-body">
-            <table class="table table-bordered">
-                <tbody>
-                    <tr>
-                        <td>1.</td>
-                        <td>记录</td>
-                    </tr>
-                    <tr>
-                        <td>2.</td>
-                        <td>导出</td>
-                    </tr>
-                    <tr>
-                        <td>3.</td>
-                        <td>生成APP兼容的过渡文件，用于在APP中呈现（APP中还没有导入功能）</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
     <hr />
     <form action="imagination.php" method="post">
         <div class="box-body">
@@ -87,6 +64,17 @@
 
     <script>
         getLocation();
+        function getRTime(){ 
+            var EndTime= new Date('2018/11/01 00:00:00'); //截止时间 
+            var NowTime = new Date(); 
+            var t = EndTime.getTime() - NowTime.getTime(); 
+            var d=Math.floor(t/1000/60/60/24); 
+            var h=Math.floor(t/1000/60/60%24); 
+            var m=Math.floor(t/1000/60%60); 
+
+            document.getElementById("onlinecountdown").innerHTML = "距离关闭还有：" + d + " 天 " +h + " 时 "+m + " 分"; 
+        }
+        getRTime();
     </script>
     <script src="../lib/jQuery/jquery-3.2.0.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
