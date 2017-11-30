@@ -18,10 +18,8 @@
             padding-right:20px;
         }
     </style>
-    <!--
-    <link rel="stylesheet" type="text/css" href="../lib/prism/prism.css">
-    -->
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <script src="getlocation.js"></script>
 </head>
 <body class="toedge">
     <h3>Imagination Web </h3>
@@ -70,13 +68,7 @@
             </div>
             <div class="form-group">
                 <label>你在哪里呢？</label>
-                <select id="location" name="location" class="form-control">
-                    <option>武汉</option>
-                    <option>郑州</option>
-                    <option>焦作</option>
-                    <option>杭州</option>
-                    <option>广州</option>
-                </select>
+                <input id="location" name="location" class="form-control" type="text" />
             </div>
         </div>
         
@@ -94,35 +86,8 @@
     </div>
 
     <script>
-        function doneEditing() {
-            var moods = getObjsByName("moodOption");
-            var moodArray = ["Good", "Suck"];
-            var mood = "无";
-            for (var i = 0; i < moods.length; i++) {
-                if (moods[i].checked) {
-                    mood = moodArray[i];
-                    break;
-                }
-            }
-            var content = getInputValueOfID("content");
-            var locationobj = getObjByID("location");
-            var location = locationobj.options[locationobj.selectedIndex].value;
-            var result = "<p> 所以,<br />你的心情是：" + mood + "<br />" + "你想说的是：" + content + "<br />" + "你在：" + location + "</p>";
-            document.getElementById("output").innerHTML = result;
-        }
-        function getInputValueOfID(ids) {
-            return getObjByID(ids).value;
-        }
-        function getObjByID(ids) {
-            return document.getElementById(ids);
-        }
-        function getObjsByName(ids) {
-            return document.getElementsByName(ids);
-        }
+        getLocation();
     </script>
-    <!--
-    <script src="../lib/prism.js"></script>
-    -->
     <script src="../lib/jQuery/jquery-3.2.0.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     
