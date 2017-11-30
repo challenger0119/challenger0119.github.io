@@ -14,12 +14,41 @@ function showImaginations(){
 	$mysql = new ItemMysql();
 	$itemArray = $mysql->getAllItems();
 	for ($i=0; $i < count($itemArray); $i++) {
-		$item = $itemArray[$i]; 
-		echo "<p>";
+		$item = $itemArray[$i];
+		$startString = ""; 
+		if ($item->mood == 0) {
+			$startString = "<p style=\"font-family:yahei;color:gray;font-size:15px\">";
+		}
+		if ($item->mood == 1) {
+			$startString = "<p style=\"font-family:yahei;color:green;font-size:15px\">";
+		}
+		if ($item->mood == 2) {
+			$startString = "<p style=\"font-family:yahei;color:blue;font-size:15px\">";
+		}
+		if ($item->mood == 3) {
+			$startString = "<p style=\"font-family:yahei;color:red;font-size:15px\">";
+		}
+		
+		echo $startString;
 		echo $item->date."<br/>";
 		echo $item->content."<br/>";
+		echo "</p>";
+		echo $startString;
 		echo $item->location."<br/>";
 		echo "</p>";
+
+		if ($item->mood == 0) {
+			echo "<hr style=\"height:1px;border:none;border-top:1px dashed gray;\" />";
+		}
+		if ($item->mood == 1) {
+			echo "<hr style=\"height:1px;border:none;border-top:1px dashed green;\" />";
+		}
+		if ($item->mood == 2) {
+			echo "<hr style=\"height:1px;border:none;border-top:1px dashed blue;\" />";
+		}
+		if ($item->mood == 3) {
+			echo "<hr style=\"height:1px;border:none;border-top:1px dashed red;\" />";
+		}
 	}
 }
 
@@ -30,6 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		$tmp = 1;
 	}	
 	if ($_POST["moodOption"] == "option2") {
+		$tmp = 2;
+	}
+	if ($_POST["moodOption"] == "option3") {
 		$tmp = 3;
 	}	
 	$item = new WriteItem($tmp,$_POST["content"],$_POST["location"]);
