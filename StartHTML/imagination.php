@@ -31,7 +31,7 @@ function showImaginations(){
 		
 		echo $startString;
 		echo $item->date."<br/>";
-		echo $item->content."<br/>";
+		echo nl2br($item->content)."<br/>";		//new line translate
 		echo "</p>";
 		echo $startString;
 		echo $item->location."<br/>";
@@ -64,7 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	if ($_POST["moodOption"] == "option3") {
 		$tmp = 3;
 	}	
-	$item = new WriteItem($tmp,$_POST["content"],$_POST["location"]);
+
+	//content input add slash
+	$item = new WriteItem($tmp,addslashes($_POST["content"]),$_POST["location"]);
 	$mysql = new ItemMysql();
 	$mysql->insertItem($item);
 

@@ -44,19 +44,19 @@
             </div>
             <div class="form-group">
                 <label>有什么想说的吗？</label>
+                <!--
                 <input id="content" name = "content" class="form-control" type="text" placeholder="记下来吧" />
+            -->
+                <textarea name="content" class="form-control" rows="3" placeholder="记下来吧"></textarea>
             </div>
             <div class="form-group">
                 <label>你在哪里呢？</label>
-                <input id="location" name="location" class="form-control" type="text" />
+                <input name="location" class="form-control" type="text" />
             </div>
         </div>
         
         <div class="box-footer">
-            <!--
-            <button class="btn btn-primary" type="button" onclick="doneEditing()">Done</button>
-        -->
-        <input type="Submit" value="Done">
+            <button type="submit" class="btn btn-primary">Done</button>
         </div>
     </form>
     <hr />
