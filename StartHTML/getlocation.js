@@ -39,7 +39,7 @@ var xmlHTTP;
 
 function showLocation() {
 	xmlHTTP = createXMLHttpRequest();
-	var url = "http://restapi.amap.com/v3/geocode/regeo?key=b62433a0d53d3b34eb8118264934f700&location="+longtitude+","+latitude+"&output=JSON";
+	var url = "https://restapi.amap.com/v3/geocode/regeo?key=b62433a0d53d3b34eb8118264934f700&location="+longtitude+","+latitude+"&output=JSON";
 	xmlHTTP.open("GET",url,true);
 	xmlHTTP.onreadystatechange = doResult;
 	xmlHTTP.setRequestHeader("Content-type","application/x-www-form-urlencoded;");
