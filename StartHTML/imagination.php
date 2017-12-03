@@ -1,3 +1,9 @@
+<?php
+    if (!isset($_COOKIE["username"])){
+    	setrawcookie("URL",$_SERVER['REQUEST_URI']);
+        header("Location: imaginationlogin.php"); 
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +12,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+
 <?php
 include "imaginationclass.php";
 
-function showImaginations(){
-
-	$mysql = new ItemMysql();
-	$itemArray = $mysql->getAllItems();
+function showImaginations($mysql,$user){
+	$itemArray = $mysql->getAllItems($user->id);
 	for ($i=0; $i < count($itemArray); $i++) {
 		$item = $itemArray[$i];
 		$startString = ""; 
@@ -52,6 +57,10 @@ function showImaginations(){
 	}
 }
 
+$mysql = new Mysql();
+$user = $mysql->getUserWithName($_COOKIE["username"]);
+#$user = $mysql->getUserWithName("miaoqi01");
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	$tmp = 0;
@@ -63,15 +72,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	}
 	if ($_POST["moodOption"] == "option3") {
 		$tmp = 3;
-	}	
+	}
 
 	//content input add slash
-	$item = new WriteItem($tmp,addslashes($_POST["content"]),$_POST["location"]);
-	$mysql = new ItemMysql();
+	$item = new WriteItem($tmp,addslashes($_POST["content"]),$_POST["location"],$user->id);
+	#$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
 	$mysql->insertItem($item);
-
 }
-showImaginations();
+
+showImaginations($mysql,$user);
 ?>
 </body>
 </html>

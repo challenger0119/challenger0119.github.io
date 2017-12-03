@@ -1,4 +1,10 @@
 <?php
+function alert($string){
+	echo "<script language=\"JavaScript\">";
+	echo "alert(\"".$string."\");";
+ 	echo "</script>";
+}
+
 /**
 * Item
 */
@@ -9,50 +15,72 @@ class Item
 	var $content;
 	var $date;
 	var $location;
-	function Item($id,$md,$ctt,$dt,$lct)
+	var $userid;
+	function __construct($id,$md,$ctt,$dt,$lct,$uid)
 	{
 		$this->id = $id;	//initialized during reading item from db
 		$this->mood = $md;
 		$this->content = $ctt;
 		$this->date = $dt;	//initialized during reading item from db
 		$this->location = $lct;
-		//echo $md.$ctt.$lct."\n";
-
+		$this->userid = $uid;
 	}
 	function convertToInsertDBString(){
-		return "(".$this->mood.",\"".$this->content."\",now(),\"".$this->location."\")";
+		return "(".$this->mood.",\"".$this->content."\",now(),\"".$this->location."\",".$this->userid.")";
 	}
 	function convertToItemVarDBString(){
-		return "(mood,content,date,location)";
-	}
-	function showResult(){
-		echo  date("Y.m.d h:i:s a")."<br/>";
-		if ($this->mood == 1) {
-			echo "Cool congratulation"."<br/>";
-		}
-		if ($this->mood == 2) {
-			echo "OK is just OK"."<br/>";
-		}
-		echo "Your word: ".$this->content."<br/>";
-		echo "Your location: ".$this->location."<br/>";
+		return "(mood,content,date,location,userid)";
 	}
 }
 
 /**
-* 
+* Item to be inserted to DB
 */
 class WriteItem extends Item
 {
-	function WriteItem($md,$ctt,$lct)
+	function WriteItem($md,$ctt,$lct,$uid)
 	{
-		parent::Item(0,$md,$ctt,"",$lct);
+		parent::__construct(0,$md,$ctt,"",$lct,$uid);
+	}
+}
+/**
+* User 
+*/
+class User
+{
+	var $id;
+	var $name;
+	var $passwd;
+	
+	function __construct($uid,$nm,$pwd)
+	{
+		$this->id = $uid;
+		$this->name = $nm;
+		$this->passwd = $pwd;
+	}
+	function convertToInsertDBString(){
+		return "(\"".$this->name."\",\"".$this->passwd."\")";
+	}
+	function convertToUserVarDBString(){
+		return "(name,passwd)";
+	}
+}
+/**
+* User to be inserted to DB;
+*/
+class WriteUser extends User
+{
+	
+	function WriteUser($nm,$pwd)
+	{
+			parent::__construct(0,$nm,$pwd);
 	}
 }
 
 /**
-* insert item into mysql
+* Mysql operation
 */
-class ItemMysql
+class Mysql
 {
 	var $dbConnect;
 	var $dbName;
@@ -69,27 +97,86 @@ class ItemMysql
 			die('Could not connect to db'.mysqli_connect_error());
 		}
 	}
+
+	//login checkuser;
+	function checkUserAccount($name,$passwd){
+		$sql = "select * from iuser where name='".$name."' and passwd='".$passwd."'";
+		$result = mysqli_query($this->dbConnect,$sql);
+		if (!$result) {
+			error_log($sql,3,'errorlog.txt');
+			die('Error checkUserAccount:'.mysqli_error($this->dbConnect));
+			return false;
+		};
+		if ($result->num_rows > 0) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	//insert imagination
 	function insertItem($item){
 		$sql = "insert into ".$this->tableName.$item->convertToItemVarDBString()."values".$item->convertToInsertDBString();
-		
-		if (!mysqli_query($this->dbConnect,$sql)) {
-			echo $sql."\n";
+		$result = mysqli_query($this->dbConnect,$sql);
+		if (!$result) {
+			error_log($sql,3,'errorlog.txt');
 			die('Error insert:'.mysqli_error($this->dbConnect));
 		};
-		//$item->showResult();
-		mysqli_close($this->dbConnect);
+		return $result;
 	}
-	function getAllItems(){
+
+	//show imagination
+	function getAllItems($uid){
 		$itemArray = array();
-		$sql = "select * from imagination order by date desc";
+		$sql = "select * from imagination where userid=".$uid." order by date desc";
 		$rs = mysqli_query($this->dbConnect,$sql);
 		if ($rs->num_rows > 0) {
 			while ($row = $rs->fetch_assoc()) {
-				$newItem = new Item($row["id"],$row["mood"],$row["content"],$row["date"],$row["location"]);
+				$newItem = new Item($row["id"],$row["mood"],$row["content"],$row["date"],$row["location"],$row["userid"]);
 		array_push($itemArray, $newItem);
 			}
 		}
 		return $itemArray;
 	}
+
+	//init user
+	function getUserWithName($name){
+		$sqluser = "select * from iuser where name='".$name."'";
+		$uidresult = mysqli_query($this->dbConnect,$sqluser);
+		$user = $uidresult->fetch_assoc();
+		return new User($user["id"],$user["name"],$user["passwd"]);
+	}
+
+	//register create user
+	function insertUser($user){
+		$sql = "insert into iuser".$user->convertToUserVarDBString()."values".$user->convertToInsertDBString();
+		$result = mysqli_query($this->dbConnect,$sql);
+		if (!$result) {
+			error_log($sql,3,'errorlog.txt');
+			die('Error insert:'.mysqli_error($this->dbConnect));
+		};
+		return $result;
+	}
+
+	//register check unique
+	function checkUserName($username){
+		$sql = "select * from iuser where name='".$username."'";
+		$result = mysqli_query($this->dbConnect,$sql);
+		if (!$result) {
+			error_log($sql,3,'errorlog.txt');
+			die('Error select user:'.mysqli_error($this->dbConnect));
+			return false;
+		}
+		if($result->num_rows > 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	function __destruct(){
+		mysqli_close($this->dbConnect);
+	}
+
 }
+
 ?>

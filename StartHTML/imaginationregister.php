@@ -1,79 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Your Imaginations</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Imagination | Log in</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../lib/imaginationlogin/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../lib/imaginationlogin/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../lib/imaginationlogin/AdminLTE.min.css">
 </head>
-<body>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-box-body">
+    <p class="login-box-msg">Create your imagination</p>
+
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+      <div class="form-group has-feedback">
+        <input name="username" class="form-control" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input name="password" type="password" class="form-control" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Done</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- jQuery 3 -->
+<script src="../lib/jQuery/jquery-3.2.0.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+
 <?php
 include "imaginationclass.php";
 
-function showImaginations(){
-
-	$mysql = new ItemMysql();
-	$itemArray = $mysql->getAllItems();
-	for ($i=0; $i < count($itemArray); $i++) {
-		$item = $itemArray[$i];
-		$startString = ""; 
-		if ($item->mood == 0) {
-			$startString = "<p style=\"font-family:yahei;color:gray;font-size:15px\">";
-		}
-		if ($item->mood == 1) {
-			$startString = "<p style=\"font-family:yahei;color:green;font-size:15px\">";
-		}
-		if ($item->mood == 2) {
-			$startString = "<p style=\"font-family:yahei;color:blue;font-size:15px\">";
-		}
-		if ($item->mood == 3) {
-			$startString = "<p style=\"font-family:yahei;color:red;font-size:15px\">";
-		}
-		
-		echo $startString;
-		echo $item->date."<br/>";
-		echo nl2br($item->content)."<br/>";		//new line translate
-		echo "</p>";
-		echo $startString;
-		echo $item->location."<br/>";
-		echo "</p>";
-
-		if ($item->mood == 0) {
-			echo "<hr style=\"height:1px;border:none;border-top:1px dashed gray;\" />";
-		}
-		if ($item->mood == 1) {
-			echo "<hr style=\"height:1px;border:none;border-top:1px dashed green;\" />";
-		}
-		if ($item->mood == 2) {
-			echo "<hr style=\"height:1px;border:none;border-top:1px dashed blue;\" />";
-		}
-		if ($item->mood == 3) {
-			echo "<hr style=\"height:1px;border:none;border-top:1px dashed red;\" />";
-		}
-	}
+if ($_SERVER["REQUEST_METHOD"] == "POST"){  
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+  if ($username != null && $password != null){
+    $mysql = new Mysql();
+    if ($mysql ->checkUserName($username)){
+      alert("Username is exit");
+    }else{
+      $md5Pwd = md5($password);
+      $user = new WriteUser($username,$md5Pwd);
+      if($mysql->insertUser($user)){
+        setcookie("username",$username,time()+3600*24*7);
+        header("Location:imaginationweb.php");
+      }
+    }
+  }else{
+    alert("Please Change Username or Password");
+  }
 }
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-
-	$tmp = 0;
-	if ($_POST["moodOption"] == "option1") {
-		$tmp = 1;
-	}	
-	if ($_POST["moodOption"] == "option2") {
-		$tmp = 2;
-	}
-	if ($_POST["moodOption"] == "option3") {
-		$tmp = 3;
-	}	
-
-	//content input add slash
-	$item = new WriteItem($tmp,addslashes($_POST["content"]),$_POST["location"]);
-	$mysql = new ItemMysql();
-	$mysql->insertItem($item);
-
-}
-showImaginations();
 ?>
+
 </body>
 </html>
-
-

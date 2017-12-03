@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    if (!isset($_COOKIE["username"])){
+        setrawcookie("URL",$_SERVER['REQUEST_URI']);
+        header("Location: imaginationlogin.php"); 
+    }
+    ?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -23,13 +29,15 @@
 </head>
 <body class="toedge">
     <h3>Imagination Web </h3>
+    
+
     <p>iOS --> <a href="http://github.com/challenger0119/Imagination" target="_blank">Imagination</a></p>
     <p id="onlinecountdown"></p>
     <hr />
     <hr />
     <form action="imagination.php" method="post">
         <div class="box-body">
-            <label>今天心情如何？</label>
+            <label>心情如何？</label>
             <div id="mood" class="radio">  
                 <label>
                     <input name="moodOption" type="radio" value="option1" />Good &nbsp;   
@@ -39,7 +47,7 @@
                     <input name="moodOption" type="radio" value="option2" />OK &nbsp;  
                 </label>
                 <label>
-                    <input name="moodOption" type="radio" value="option3" />Suck &nbsp;  
+                    <input name="moodOption" type="radio" value="option3" />Not Good &nbsp;  
                 </label>
             </div>
             <div class="form-group">
@@ -60,9 +68,6 @@
         </div>
     </form>
     <hr />
-
-    <div id="output">
-
     </div>
 
     <script>
@@ -86,5 +91,21 @@
 
 </html>
 <footer>
+    
+    <script type="text/javascript">
+        var xmlHTTP = new XMLHttpRequest();
+        var url = "https://sslapi.hitokoto.cn/?encode=text";
+        xmlHTTP.open("GET",url,true);
+        xmlHTTP.onreadystatechange = doResult;
+        xmlHTTP.send();
+        function doResult(){
+            if (xmlHTTP.readyState == 4) {
+                if (xmlHTTP.status == 200) {
+                    document.getElementById("hitokoto").innerHTML = xmlHTTP.response;
+                }
+            }
+        }
+    </script><div id="hitokoto"></div>
+    <hr/>
     <h6>内容参考： <a href="http://www.w3school.com.cn" target="_blank">W3school</a>、<a href="https://github.com/almasaeed2010/AdminLTE" target="_blank">AdminLTE</a></h6>
 </footer>
