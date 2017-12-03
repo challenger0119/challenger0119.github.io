@@ -37,7 +37,7 @@
     <hr />
     <form action="imagination.php" method="post">
         <div class="box-body">
-            <label>心情如何？</label>
+            <label>状态如何？</label>
             <div id="mood" class="radio">  
                 <label>
                     <input name="moodOption" type="radio" value="option1" />Good &nbsp;   
