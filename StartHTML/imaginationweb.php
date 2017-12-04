@@ -26,7 +26,7 @@
     </style>
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
     <script src="getlocation.js"></script>
-    <script src="jsutls.js"></script>
+    <script src="jsutils.js"></script>
 </head>
 <body class="toedge">
     <h3>Imagination Web </h3>

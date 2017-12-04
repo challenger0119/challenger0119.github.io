@@ -5,4 +5,4 @@ cp -f StartHTML/imaginationweb.php /var/www/StartHTML
 cp -f StartHTML/getlocation.js /var/www/StartHTML
 cp -f StartHTML/imaginationlogin.php /var/www/StartHTML
 cp -f StartHTML/imaginationregister.php /var/www/StartHTML
-cp -r -f lib/* /var/www/lib
+cp StartHTML/jsutils.js /var/www/StartHTML
