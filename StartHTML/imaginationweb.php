@@ -3,7 +3,7 @@
         setrawcookie("URL",$_SERVER['REQUEST_URI']);
         header("Location: imaginationlogin.php"); 
     }
-    ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +26,7 @@
     </style>
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
     <script src="getlocation.js"></script>
+    <script src="jsutls.js"></script>
 </head>
 <body class="toedge">
     <h3>Imagination Web </h3>
@@ -72,17 +73,8 @@
 
     <script>
         getLocation();
-        function getRTime(){ 
-            var EndTime= new Date('2018/11/01 00:00:00'); //截止时间 
-            var NowTime = new Date(); 
-            var t = EndTime.getTime() - NowTime.getTime(); 
-            var d=Math.floor(t/1000/60/60/24); 
-            var h=Math.floor(t/1000/60/60%24); 
-            var m=Math.floor(t/1000/60%60); 
-
-            document.getElementById("onlinecountdown").innerHTML = "距离关闭还有：" + d + " 天 " +h + " 时 "+m + " 分"; 
-        }
-        getRTime();
+        setRTimeToID("onlinecountdown");
+        setHitokotoToID("hitokoto");
     </script>
     <script src="../lib/jQuery/jquery-3.2.0.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
@@ -91,21 +83,7 @@
 
 </html>
 <footer>
-    
-    <script type="text/javascript">
-        var xmlHTTP = new XMLHttpRequest();
-        var url = "https://sslapi.hitokoto.cn/?encode=text";
-        xmlHTTP.open("GET",url,true);
-        xmlHTTP.onreadystatechange = doResult;
-        xmlHTTP.send();
-        function doResult(){
-            if (xmlHTTP.readyState == 4) {
-                if (xmlHTTP.status == 200) {
-                    document.getElementById("hitokoto").innerHTML = xmlHTTP.response;
-                }
-            }
-        }
-    </script><div id="hitokoto"></div>
+    <div id="hitokoto"></div>
     <hr/>
     <h6>内容参考： <a href="http://www.w3school.com.cn" target="_blank">W3school</a>、<a href="https://github.com/almasaeed2010/AdminLTE" target="_blank">AdminLTE</a></h6>
 </footer>
