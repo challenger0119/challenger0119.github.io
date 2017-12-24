@@ -40,6 +40,11 @@
             <div class="box-header">
               <h3 class="box-title">Finance Table</h3>
             </div>
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                <div style="text-align: center;">
+                  <input name="newData" type="submit" value="Pre" style="float: left"><label>Date</label><input type="button" name="newData" style="float: right" value="Next">
+                </div>
+            </form>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example2" class="table table-bordered table-hover">
@@ -84,27 +89,31 @@
                   #$user = $mysql->getUserWithName("miaoqi");
 
                   if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                  	$newData = $_POST["newData"];
+                  	if (isset($newData)) {
+                  		
+                  	}else{
+                  		$tmp = 0;
+	                    if ($_POST["moodOption"] == "option1") {
+	                      $tmp = 1;
+	                    } 
+	                    if ($_POST["moodOption"] == "option2") {
+	                      $tmp = 2;
+	                    }
+	                    if ($_POST["moodOption"] == "option3") {
+	                      $tmp = 3;
+	                    }
 
-                    $tmp = 0;
-                    if ($_POST["moodOption"] == "option1") {
-                      $tmp = 1;
-                    } 
-                    if ($_POST["moodOption"] == "option2") {
-                      $tmp = 2;
-                    }
-                    if ($_POST["moodOption"] == "option3") {
-                      $tmp = 3;
-                    }
-
-                    $yuan = $_POST["content"];
-                    if (is_float($yuan) || is_numeric($yuan)) {
-                      //content input add slash
-                      $item = new WriteFinance($tmp,$yuan,$_POST["location"],$user->id);
-                      #$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
-                      $mysql->insertFinance($item);
-                    }else{
-                      alert("Record must be number, store failed");
-                    } 
+	                    $yuan = $_POST["content"];
+	                    if (is_float($yuan) || is_numeric($yuan)) {
+	                      //content input add slash
+	                      $item = new WriteFinance($tmp,$yuan,$_POST["location"],$user->id);
+	                      #$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
+	                      $mysql->insertFinance($item);
+	                    }else{
+	                      alert("Record must be number, store failed");
+	                    }
+                  	}  
                   }
                   showDataTable($mysql,$user);
 
