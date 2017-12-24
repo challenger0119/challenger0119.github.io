@@ -36,7 +36,7 @@
     <p id="onlinecountdown"></p>
     <hr />
     <hr />
-    <form action="imagination.php" method="post">
+    <form action="financeresult.php" method="post">
         <div class="box-body">
             <label>状态如何？</label>
             <div id="mood" class="radio">  

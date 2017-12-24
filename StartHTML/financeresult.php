@@ -26,13 +26,6 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -60,15 +53,61 @@
                 </tr>
                 </thead>
                 <?php
-                	#include "imaginationclass.php";
-                	function getDataTable(){
-                		$mysql = new Mysql();
-						$user = $mysql->getUserWithName($_COOKIE["username"]);
-						#$user = $mysql->getUserWithName("miaoqi01");
-                		$mysql = new Mysql();
-                		$results = $mysql->getFinanceData($user->id);
+                	include "imaginationclass.php";
+                	function showDataTable($mysql,$user){
+                    $total = array(0,0,0,0);
+                		$itemArray = $mysql->getFinanceData($user->id);
+                    for ($i=0; $i < count($itemArray); $i++) {
+                      $item = $itemArray[$i];
+                      echo "<tr>";
+                      echo "<td>".$item->date."</td>";
+                      $contents = array("-","-","-","-");
+                      $contents[intval($item->category)] = $item->yuan;
+                      $total[intval($item->category)] += $item->yuan;
+                      echo "<td>".$contents[0]."</td>";
+                      echo "<td>".$contents[1]."</td>";
+                      echo "<td>".$contents[2]."</td>";
+                      echo "<td>".$contents[3]."</td>";
+                      echo "</tr>";
+                    }
+                    echo "<tr>";
+                    echo "<th>Total</th>";
+                    echo "<th>".$total[0]."</th>";
+                    echo "<th>".$total[1]."</th>";
+                    echo "<th>".$total[2]."</th>";
+                    echo "<th>".$total[3]."</th>";
                 	}
-                	getDataTable();
+
+                  $mysql = new Mysql();
+                  
+                  $user = $mysql->getUserWithName($_COOKIE["username"]);
+                  #$user = $mysql->getUserWithName("miaoqi");
+
+                  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                    $tmp = 0;
+                    if ($_POST["moodOption"] == "option1") {
+                      $tmp = 1;
+                    } 
+                    if ($_POST["moodOption"] == "option2") {
+                      $tmp = 2;
+                    }
+                    if ($_POST["moodOption"] == "option3") {
+                      $tmp = 3;
+                    }
+
+                    $yuan = $_POST["content"];
+                    if (is_float($yuan) || is_numeric($yuan)) {
+                      //content input add slash
+                      $item = new WriteFinance($tmp,$yuan,$_POST["location"],$user->id);
+                      #$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
+                      $mysql->insertFinance($item);
+                    }else{
+                      alert("Record must be number, store failed");
+                    } 
+                  }
+                  showDataTable($mysql,$user);
+
                 ?>
               </table>
             </div>

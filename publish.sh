@@ -1,8 +1,5 @@
 #!/bin/sh
-cp -f StartHTML/imagination.php /var/www/StartHTML
-cp -f StartHTML/imaginationclass.php /var/www/StartHTML
-cp -f StartHTML/imaginationweb.php /var/www/StartHTML
-cp -f StartHTML/getlocation.js /var/www/StartHTML
-cp -f StartHTML/imaginationlogin.php /var/www/StartHTML
-cp -f StartHTML/imaginationregister.php /var/www/StartHTML
-cp StartHTML/jsutils.js /var/www/StartHTML
+cp -rf StartHTML /var/www/
+cp -rf lib /var/www/
+chown miaoqi.miaoqi /var/www/StartHTML/*
+chown miaoqi.miaoqi /var/www/lib/*

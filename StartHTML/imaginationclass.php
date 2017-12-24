@@ -124,14 +124,12 @@ class Mysql
 {
 	var $dbConnect;
 	var $dbName;
-	var $tableName;
 	function __construct()
 	{
 		$this->servername = "localhost";
 		$this->username = "webuser";
 		$this->password = "";
 		$this->dbName = "mysql";
-		$this->tableName = "imagination";
 		$this->dbConnect = mysqli_connect($this->servername,$this->username,$this->password,$this->dbName);
 		if (!$this->dbConnect) {
 			die('Could not connect to db'.mysqli_connect_error());
@@ -156,7 +154,7 @@ class Mysql
 
 	//insert imagination
 	function insertItem($item){
-		$sql = "insert into ".$this->tableName.$item->convertToItemVarDBString()."values".$item->convertToInsertDBString();
+		$sql = "insert into imagination ".$item->convertToItemVarDBString()."values".$item->convertToInsertDBString();
 		$result = mysqli_query($this->dbConnect,$sql);
 		if (!$result) {
 			error_log($sql,3,'errorlog.txt');
@@ -179,6 +177,16 @@ class Mysql
 		return $itemArray;
 	}
 
+
+	function insertFinance($finance){
+		$sql = "insert into finance ".$finance->convertToItemVarDBString()."values".$finance->convertToInsertDBString();
+		$result = mysqli_query($this->dbConnect,$sql);
+		if (!$result) {
+			error_log($sql,3,'errorlog.txt');
+			die('Error insert:'.mysqli_error($this->dbConnect));
+		};
+		return $result;
+	}
 	//show finance
 	function getFinanceData($uid){
 		$financeItem = array();
@@ -186,7 +194,7 @@ class Mysql
 		$rs = mysqli_query($this->dbConnect,$sql);
 		if ($rs->num_rows > 0) {
 			while ($row = $rs->fetch_assoc()) {
-				$newItem = new Item($row["id"],$row["category"],$row["yuan"],$row["date"],$row["location"],$row["userid"]);
+				$newItem = new Finance($row["id"],$row["category"],$row["yuan"],$row["date"],$row["location"],$row["userid"]);
 		array_push($financeItem, $newItem);
 			}
 		}
