@@ -41,8 +41,12 @@
               <h3 class="box-title">Finance Table</h3>
             </div>
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                <!--handle searching specific time triggered by enter key during changing the date input text-->
+                <input name="newData" type="submit" value="Specific" style="display: none;" /> 
                 <div style="text-align: center;">
-                  <input name="newData" type="submit" value="Pre" style="float: left"><label>Date</label><input type="button" name="newData" style="float: right" value="Next">
+                  <input name="newData" type="submit" value="Pre" style="float: left;margin-left: 20px;" />
+                  <input name="datetime" type="text" id="dateLabel" style="text-align: center;border-style: none; "  />
+                  <input name="newData" type="submit" value="Next" style="float: right;margin-right: 20px;" />
                 </div>
             </form>
             <!-- /.box-header -->
@@ -57,11 +61,13 @@
                   <th>转账</th>
                 </tr>
                 </thead>
-                <?php
-                	include "imaginationclass.php";
-                	function showDataTable($mysql,$user){
+                <div id = "datacontent">
+                  <?php
+                  include "imaginationclass.php";
+
+                  function showDataTable($mysql,$user,$year,$month){
                     $total = array(0,0,0,0);
-                		$itemArray = $mysql->getFinanceData($user->id);
+                    $itemArray = $mysql->getFinanceDataWithDate($user->id,$year,$month);
                     for ($i=0; $i < count($itemArray); $i++) {
                       $item = $itemArray[$i];
                       echo "<tr>";
@@ -81,43 +87,74 @@
                     echo "<th>".$total[1]."</th>";
                     echo "<th>".$total[2]."</th>";
                     echo "<th>".$total[3]."</th>";
-                	}
+                    if ($month < 10) {
+                      $month = "0".$month;
+                    }
+                    echo "<script>document.getElementById('dateLabel').value = '".$year."-".$month."';</script>";
+                  }
+
+
 
                   $mysql = new Mysql();
-                  
                   $user = $mysql->getUserWithName($_COOKIE["username"]);
                   #$user = $mysql->getUserWithName("miaoqi");
 
+                  $date = date("Y-m");
+                  $year = (int)substr($date,0,4);
+                  $month = (int)substr($date,5);
+                
                   if ($_SERVER["REQUEST_METHOD"] == "POST"){
-                  	$newData = $_POST["newData"];
-                  	if (isset($newData)) {
-                  		
-                  	}else{
-                  		$tmp = 0;
-	                    if ($_POST["moodOption"] == "option1") {
-	                      $tmp = 1;
-	                    } 
-	                    if ($_POST["moodOption"] == "option2") {
-	                      $tmp = 2;
-	                    }
-	                    if ($_POST["moodOption"] == "option3") {
-	                      $tmp = 3;
-	                    }
+                    $newData = $_POST["newData"];
+                    $curDate = $_POST["datetime"];
+                    if (isset($newData)) {
+                      $year = (int)substr($curDate,0,4);
+                      $month = (int)substr($curDate,5);
+                      if ($newData != "Specific") {
+                        if ($newData == "Next") {
+                          if ($month == 12) {
+                            $year += 1;
+                            $month = 1;
+                          }else{
+                            $month += 1;
+                          }
+                        }
+                        
+                        if ($newData == "Pre") {
+                          if ($month == 1) {
+                            $year -= 1;
+                            $month = 12;
+                          }else{
+                            $month -= 1;
+                          }
+                        }
+                      }
+                    }else{
+                      $tmp = 0;
+                      if ($_POST["moodOption"] == "option1") {
+                        $tmp = 1;
+                      } 
+                      if ($_POST["moodOption"] == "option2") {
+                        $tmp = 2;
+                      }
+                      if ($_POST["moodOption"] == "option3") {
+                        $tmp = 3;
+                      }
 
-	                    $yuan = $_POST["content"];
-	                    if (is_float($yuan) || is_numeric($yuan)) {
-	                      //content input add slash
-	                      $item = new WriteFinance($tmp,$yuan,$_POST["location"],$user->id);
-	                      #$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
-	                      $mysql->insertFinance($item);
-	                    }else{
-	                      alert("Record must be number, store failed");
-	                    }
-                  	}  
+                      $yuan = $_POST["content"];
+                      if (is_float($yuan) || is_numeric($yuan)) {
+                        //content input add slash
+                        $item = new WriteFinance($tmp,$yuan,$_POST["location"],$user->id);
+                        #$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
+                        $mysql->insertFinance($item);
+                      }else{
+                        alert("Record must be number, store failed");
+                      }
+                    }  
                   }
-                  showDataTable($mysql,$user);
+                  showDataTable($mysql,$user,$year,$month);
 
                 ?>
+                </div>
               </table>
             </div>
             <!-- /.box-body -->

@@ -188,7 +188,32 @@ class Mysql
 		return $result;
 	}
 	//show finance
-	function getFinanceData($uid){
+	function getFinanceDataWithDate($uid,$year,$month){
+		$financeItem = array();
+		$eyear = $year;
+		$emonth = $month;
+		if ($month == 12) {
+			$eyear += 1;
+			$emonth = 1;
+		}
+		if ($month < 10) {
+			$month = "0".$month;
+		}
+		if ($emonth < 10) {
+			$emonth = "0".$emonth;
+		}
+		$sql = "select * from finance where userid=".$uid." and date >='".$year."-".$month."-01' and date < '".$eyear."-".$emonth."-01' order by date desc";
+		$rs = mysqli_query($this->dbConnect,$sql);
+		if ($rs->num_rows > 0) {
+			while ($row = $rs->fetch_assoc()) {
+				$newItem = new Finance($row["id"],$row["category"],$row["yuan"],$row["date"],$row["location"],$row["userid"]);
+		array_push($financeItem, $newItem);
+			}
+		}
+		return $financeItem;
+	}
+
+	function getFinanceData($uid,$date){
 		$financeItem = array();
 		$sql = "select * from finance where userid=".$uid." order by date desc";
 		$rs = mysqli_query($this->dbConnect,$sql);
