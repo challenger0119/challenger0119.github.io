@@ -78,6 +78,46 @@ class WriteUser extends User
 }
 
 /**
+* Finance
+*/
+class Finance
+{
+	var $id;
+	var $category;
+	var $yuan;
+	var $date;
+	var $location;
+	var $userid;
+	function __construct($id,$cg,$yan,$dt,$lct,$uid)
+	{
+		$this->id = $id;
+		$this->category = $cg;
+		$this->yuan = $yan;
+		$this->date = $dt;
+		$this->location = $lct;
+		$this->userid = $uid;
+	}
+	function convertToInsertDBString(){
+		return "(".$this->category.",\"".$this->yuan."\",now(),\"".$this->location."\",".$this->userid.")";
+	}
+	function convertToItemVarDBString(){
+		return "(category,yuan,date,location,userid)";
+	}
+}
+
+/**
+* Finance writer
+*/
+class WriteFinance extends Finance
+{
+	
+	function __construct($cg,$yan,$lct,$uid)
+	{
+		parent::__construct(0,$cg,$yan,"",$lct,$uid);
+	}
+}
+
+/**
 * Mysql operation
 */
 class Mysql
@@ -137,6 +177,20 @@ class Mysql
 			}
 		}
 		return $itemArray;
+	}
+
+	//show finance
+	function getFinanceData($uid){
+		$financeItem = array();
+		$sql = "select * from finance where userid=".$uid." order by date desc";
+		$rs = mysqli_query($this->dbConnect,$sql);
+		if ($rs->num_rows > 0) {
+			while ($row = $rs->fetch_assoc()) {
+				$newItem = new Item($row["id"],$row["category"],$row["yuan"],$row["date"],$row["location"],$row["userid"]);
+		array_push($financeItem, $newItem);
+			}
+		}
+		return $financeItem;
 	}
 
 	//init user
