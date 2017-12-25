@@ -83,7 +83,7 @@
                     }
                     $totalNum = 0;
                     for ($i=0; $i < count($total); $i++) { 
-                      $totalNum += $total[i];
+                      $totalNum += $total[$i];
                     }
                     echo "<tr>";
                     echo "<th>总计：".$totalNum."</th>";
