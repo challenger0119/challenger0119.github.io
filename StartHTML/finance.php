@@ -61,7 +61,7 @@
             -->
             </div>
             <div class="form-group">
-                <label>在哪里</label>
+                <label>备注</label>
                 <input id="location" name="location" class="form-control" type="text" />
             </div>
         </div>

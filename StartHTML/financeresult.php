@@ -81,8 +81,12 @@
                       echo "<td>".$contents[3]."</td>";
                       echo "</tr>";
                     }
+                    $totalNum = 0;
+                    for ($i=0; $i < count($total); $i++) { 
+                      $totalNum += $total[i];
+                    }
                     echo "<tr>";
-                    echo "<th>Total</th>";
+                    echo "<th>总计：".$totalNum."</th>";
                     echo "<th>".$total[0]."</th>";
                     echo "<th>".$total[1]."</th>";
                     echo "<th>".$total[2]."</th>";
