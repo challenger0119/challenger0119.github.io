@@ -59,6 +59,7 @@
                   <th>消费</th>
                   <th>生活</th>
                   <th>转账</th>
+                  <th>备注</th>
                 </tr>
                 </thead>
                 <div id = "datacontent">
@@ -71,7 +72,8 @@
                     for ($i=0; $i < count($itemArray); $i++) {
                       $item = $itemArray[$i];
                       echo "<tr>";
-                      echo "<td>".$item->date."</td>";
+                      $date = explode("-", $item->date);
+                      echo "<td>".$date[2]."</td>";
                       $contents = array("-","-","-","-");
                       $contents[intval($item->category)] = $item->yuan;
                       $total[intval($item->category)] += $item->yuan;
@@ -79,6 +81,7 @@
                       echo "<td>".$contents[1]."</td>";
                       echo "<td>".$contents[2]."</td>";
                       echo "<td>".$contents[3]."</td>";
+                      echo "<td>".$item->location."</td>";
                       echo "</tr>";
                     }
                     $totalNum = 0;
