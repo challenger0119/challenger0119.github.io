@@ -183,6 +183,8 @@ class Mysql
 		if ($month == 12) {
 			$eyear += 1;
 			$emonth = 1;
+		}else{
+			$emonth += 1;
 		}
 		if ($month < 10) {
 			$month = "0".$month;
@@ -218,6 +220,8 @@ class Mysql
 		if ($month == 12) {
 			$eyear += 1;
 			$emonth = 1;
+		}else{
+			$emonth += 1;
 		}
 		if ($month < 10) {
 			$month = "0".$month;

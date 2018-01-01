@@ -13,10 +13,14 @@
 </head>
 <body>
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-    <div style="text-align: center;">
-      <input name="newData" type="submit" value="Pre" style="float: left"><label>Date</label><input type="button" name="newData" style="float: right" value="Next">
-    </div>
-</form>
+                <!--handle searching specific time triggered by enter key during changing the date input text-->
+                <input name="newData" type="submit" value="Specific" style="display: none;" /> 
+                <div style="text-align: center;">
+                  <input name="newData" type="submit" value="Pre" style="float: left;margin-left: 20px;" />
+                  <input name="datetime" type="text" id="dateLabel" style="text-align: center;border-style: none; "  />
+                  <input name="newData" type="submit" value="Next" style="float: right;margin-right: 20px;" />
+                </div>
+            </form>
 <?php
 include "imaginationclass.php";
 
@@ -58,13 +62,11 @@ function showImaginations($mysql,$user,$year,$month){
 		if ($item->mood == 3) {
 			echo "<hr style=\"height:1px;border:none;border-top:1px dashed red;\" />";
 		}
-
-
-		if ($month < 10) {
-          $month = "0".$month;
-        }
-        echo "<script>document.getElementById('dateLabel').value = '".$year."-".$month."';</script>";
 	}
+	if ($month < 10) {
+      $month = "0".$month;
+    }
+    echo "<script>document.getElementById('dateLabel').value = '".$year."-".$month."';</script>";
 }
 
 $mysql = new Mysql();
@@ -74,7 +76,6 @@ $user = $mysql->getUserWithName($_COOKIE["username"]);
 $date = date("Y-m");
 $year = (int)substr($date,0,4);
 $month = (int)substr($date,5);
-
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	$newData = $_POST["newData"];
     $curDate = $_POST["datetime"];
