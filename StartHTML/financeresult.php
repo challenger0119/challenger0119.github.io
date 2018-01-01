@@ -94,6 +94,7 @@
                     echo "<th>".$total[1]."</th>";
                     echo "<th>".$total[2]."</th>";
                     echo "<th>".$total[3]."</th>";
+                    echo "<th></th>";
                     if ($month < 10) {
                       $month = "0".$month;
                     }
