@@ -44,9 +44,9 @@
                 <!--handle searching specific time triggered by enter key during changing the date input text-->
                 <input name="newData" type="submit" value="Specific" style="display: none;" /> 
                 <div style="text-align: center;">
-                  <input name="newData" type="submit" value="Pre" style="float: left;margin-left: 20px;" />
+                  <input name="newData" type="submit" value="Pre" style="float: left;margin-left: 10px;" />
                   <input name="datetime" type="text" id="dateLabel" style="text-align: center;border-style: none; "  />
-                  <input name="newData" type="submit" value="Next" style="float: right;margin-right: 20px;" />
+                  <input name="newData" type="submit" value="Next" style="float: right;margin-right: 10px;" />
                 </div>
             </form>
             <!-- /.box-header -->

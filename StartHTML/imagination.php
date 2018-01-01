@@ -13,14 +13,14 @@
 </head>
 <body>
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-                <!--handle searching specific time triggered by enter key during changing the date input text-->
-                <input name="newData" type="submit" value="Specific" style="display: none;" /> 
-                <div style="text-align: center;">
-                  <input name="newData" type="submit" value="Pre" style="float: left;margin-left: 20px;" />
-                  <input name="datetime" type="text" id="dateLabel" style="text-align: center;border-style: none; "  />
-                  <input name="newData" type="submit" value="Next" style="float: right;margin-right: 20px;" />
-                </div>
-            </form>
+    <!--handle searching specific time triggered by enter key during changing the date input text-->
+    <input name="newData" type="submit" value="Specific" style="display: none;" /> 
+    <div style="text-align: center;">
+      <input name="newData" type="submit" value="Pre" style="float: left;" />
+      <input name="datetime" type="text" id="dateLabel" style="text-align: center;border-style: none; "  />
+      <input name="newData" type="submit" value="Next" style="float: right;" />
+    </div>
+</form>
 <?php
 include "imaginationclass.php";
 
