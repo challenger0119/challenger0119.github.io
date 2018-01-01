@@ -74,7 +74,6 @@
     </div>
 
     <script>
-        getLocation();
         setRTimeToID("onlinecountdown");
         setHitokotoToID("hitokoto");
     </script>
