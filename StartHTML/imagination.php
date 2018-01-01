@@ -12,12 +12,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <div style="text-align: center;">
+      <input name="newData" type="submit" value="Pre" style="float: left"><label>Date</label><input type="button" name="newData" style="float: right" value="Next">
+    </div>
+</form>
 <?php
 include "imaginationclass.php";
 
-function showImaginations($mysql,$user){
-	$itemArray = $mysql->getAllItems($user->id);
+function showImaginations($mysql,$user,$year,$month){
+	$itemArray = $mysql->getAllItemsWithDate($user->id,$year,$month);
 	for ($i=0; $i < count($itemArray); $i++) {
 		$item = $itemArray[$i];
 		$startString = ""; 
@@ -54,6 +58,12 @@ function showImaginations($mysql,$user){
 		if ($item->mood == 3) {
 			echo "<hr style=\"height:1px;border:none;border-top:1px dashed red;\" />";
 		}
+
+
+		if ($month < 10) {
+          $month = "0".$month;
+        }
+        echo "<script>document.getElementById('dateLabel').value = '".$year."-".$month."';</script>";
 	}
 }
 
@@ -61,26 +71,55 @@ $mysql = new Mysql();
 $user = $mysql->getUserWithName($_COOKIE["username"]);
 #$user = $mysql->getUserWithName("miaoqi01");
 
+$date = date("Y-m");
+$year = (int)substr($date,0,4);
+$month = (int)substr($date,5);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
+	$newData = $_POST["newData"];
+    $curDate = $_POST["datetime"];
+    if (isset($newData)) {
+      $year = (int)substr($curDate,0,4);
+      $month = (int)substr($curDate,5);
+      if ($newData != "Specific") {
+        if ($newData == "Next") {
+          if ($month == 12) {
+            $year += 1;
+            $month = 1;
+          }else{
+            $month += 1;
+          }
+        }
+        
+        if ($newData == "Pre") {
+          if ($month == 1) {
+            $year -= 1;
+            $month = 12;
+          }else{
+            $month -= 1;
+          }
+        }
+      }
+    }else{
+    	$tmp = 0;
+		if ($_POST["moodOption"] == "option1") {
+			$tmp = 1;
+		}	
+		if ($_POST["moodOption"] == "option2") {
+			$tmp = 2;
+		}
+		if ($_POST["moodOption"] == "option3") {
+			$tmp = 3;
+		}
 
-	$tmp = 0;
-	if ($_POST["moodOption"] == "option1") {
-		$tmp = 1;
-	}	
-	if ($_POST["moodOption"] == "option2") {
-		$tmp = 2;
-	}
-	if ($_POST["moodOption"] == "option3") {
-		$tmp = 3;
-	}
-
-	//content input add slash
-	$item = new WriteItem($tmp,addslashes($_POST["content"]),$_POST["location"],$user->id);
-	#$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
-	$mysql->insertItem($item);
+		//content input add slash
+		$item = new WriteItem($tmp,addslashes($_POST["content"]),$_POST["location"],$user->id);
+		#$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
+		$mysql->insertItem($item);
+    }
 }
 
-showImaginations($mysql,$user);
+showImaginations($mysql,$user,$year,$month);
 ?>
 </body>
 </html>
