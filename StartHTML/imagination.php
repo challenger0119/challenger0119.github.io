@@ -112,9 +112,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		if ($_POST["moodOption"] == "option3") {
 			$tmp = 3;
 		}
+		$location = $_POST["location"];
+		if (!isset($location) || strlen($location) == 0) {
+			$location = "Nowhere is everywhere.";
+		}
 
 		//content input add slash
-		$item = new WriteItem($tmp,addslashes($_POST["content"]),$_POST["location"],$user->id);
+		$item = new WriteItem($tmp,addslashes($_POST["content"]),$location,$user->id);
 		#$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
 		$mysql->insertItem($item);
     }
