@@ -101,27 +101,42 @@
                     echo "<script>document.getElementById('dateLabel').value = '".$year."-".$month."';</script>";
                   }
 
-                  function calculater($calcuString){
-                  	echo $calcuString;
-                  	$elements = explode("[+-*/]", calcuString);
-                  	print_r($elements);
-                  	if (count($elements) == 1) {
-                  		return $calcuString;
-                  	}else {
-                  		$result = $elements[0];
-                  		for ($i=2; $i < count($elements); $i+=2) { 
-                  			if ($elements[i - 1] == "+") {
-            					$result += $elements[i];	
-                  			}elseif ($elements[i - 1] == "-") {
-                  				$result -= $elements[i];
-                  			}elseif ($elements[i - 1] == "*") {
-                  				$result *= $elements[i];
-                  			}elseif ($elements[i - 1] == "/") {
-                  				$result /= $elements[i];
-                  			}
-                  		}
-                  		return $result;
-                  	}
+                  function calculator($calcuString){
+                  	$calcuString .= '=';
+					$lastNum = (int)$calcuString[0];
+					$result = 0;
+					$operator;
+					for($i = 1;$i < strlen($calcuString);$i ++){
+						$str = $calcuString[$i];
+						if(is_float($str) || is_numeric($str)){
+							$lastNum = $lastNum * 10 + $str;
+						}else{
+							if(isset($operator)){
+								echo $result." ".$operator." ".$lastNum."\n";
+								if($operator == '+'){
+									$result += (int)$lastNum;
+								}elseif($operator == "-"){
+									$result -= $lastNum;
+								}elseif($operator == "*"){
+									$result *= $lastNum;
+								}elseif($operator == "/"){
+									$result /= $lastNum;
+								}
+							}else{
+								$result = (int)$lastNum;
+							}
+							$operator = $str;
+							
+							if($i < strlen($calcuString) - 1){	
+								$i++;
+								$lastNum = $calcuString[$i];
+								
+							}else{
+								break;
+							}
+						}
+					}
+					return $result;
                   }
 
 
@@ -160,26 +175,22 @@
                         }
                       }
                     }else{
-                      $tmp = 0;
-                      if ($_POST["moodOption"] == "option1") {
-                        $tmp = 1;
-                      } 
-                      if ($_POST["moodOption"] == "option2") {
-                        $tmp = 2;
-                      }
-                      if ($_POST["moodOption"] == "option3") {
-                        $tmp = 3;
-                      }
+                    	$tmp = 0;
+                      	if ($_POST["moodOption"] == "option1") {
+                        	$tmp = 1;
+                      	} 
+                      	if ($_POST["moodOption"] == "option2") {
+                        	$tmp = 2;
+                      	}
+                      	if ($_POST["moodOption"] == "option3") {
+                        	$tmp = 3;
+                      	}
 
-                      $yuan = calculater($_POST["content"]);
-                      if (is_float($yuan) || is_numeric($yuan)) {
-                        //content input add slash
-                        $item = new WriteFinance($tmp,$yuan,$_POST["location"],$user->id);
-                        #$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
-                        $mysql->insertFinance($item);
-                      }else{
-                        alert("Record must be number, store failed");
-                      }
+                      	$yuan = calculator($_POST["content"]);
+                      	//content input add slash
+					  	$item = new WriteFinance($tmp,$yuan,$_POST["location"],$user->id);
+					    #$item = new WriteItem(1,"test new mysql","hangzhou",$user->id);
+					    $mysql->insertFinance($item);
                     }  
                   }
                   showDataTable($mysql,$user,$year,$month);
