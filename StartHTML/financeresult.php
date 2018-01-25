@@ -97,7 +97,26 @@
                     echo "<script>document.getElementById('dateLabel').value = '".$year."-".$month."';</script>";
                   }
 
-
+                  function calculater($calstring){
+                    $element = explode('[+-*/]', $calstring);
+                    if (count($element) == 1) {
+                      return $element;
+                    }else{
+                      $total = $element[0];
+                      for ($i=2; $i < count($element); $i+=2) { 
+                        if ($element[i - 1] == "+") {
+                          $total += $element[i];
+                        }elseif ($element[i - 1] == "-") {
+                          $total -= $element[i];
+                        }elseif ($element[i - 1] == "*") {
+                          $total *= $element[i];
+                        }elseif ($element[i - 1] == "/") {
+                          $total /= $element[i];
+                        }
+                      }
+                      return $total;
+                    }
+                  }
 
                   $mysql = new Mysql();
                   $user = $mysql->getUserWithName($_COOKIE["username"]);
@@ -144,7 +163,9 @@
                         $tmp = 3;
                       }
 
-                      $yuan = $_POST["content"];
+                      $yuan = calculater($_POST["content"]);
+
+
                       if (is_float($yuan) || is_numeric($yuan)) {
                         //content input add slash
                         $item = new WriteFinance($tmp,$yuan,$_POST["location"],$user->id);
