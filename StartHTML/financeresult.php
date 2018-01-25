@@ -112,7 +112,6 @@
 							$lastNum = $lastNum * 10 + $str;
 						}else{
 							if(isset($operator)){
-								echo $result." ".$operator." ".$lastNum."\n";
 								if($operator == '+'){
 									$result += (int)$lastNum;
 								}elseif($operator == "-"){
