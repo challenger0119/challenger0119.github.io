@@ -22,13 +22,13 @@ function handleError(value) {
             alert("位置服务被拒绝");
             break;
         case 2:
-            alert("暂时获取不到位置信息");
+            //alert("暂时获取不到位置信息");
             break;
         case 3:
-            alert("获取信息超时");
+            //alert("获取信息超时");
             break;
         case 4:
-            alert("未知错误");
+            //alert("未知错误");
             break;
     }
 }
