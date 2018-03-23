@@ -38,6 +38,7 @@
     <hr />
     <form action="imagination.php" method="post">
         <div class="box-body">
+        	<!--
             <label>状态如何？</label>
             <div id="mood" class="radio">  
                 <label>
@@ -51,17 +52,19 @@
                     <input name="moodOption" type="radio" value="option3" />Not Good &nbsp;  
                 </label>
             </div>
+        -->
             <div class="form-group">
+            	<!--
                 <label>有什么想说的吗？</label>
-                <!--
-                <input id="content" name = "content" class="form-control" type="text" placeholder="记下来吧" />
             -->
                 <textarea name="content" class="form-control" rows="3" placeholder="记下来吧"></textarea>
             </div>
+            <!--
             <div class="form-group">
                 <label>你在哪里呢？</label>
                 <input id="location" name="location" class="form-control" type="text" />
             </div>
+        -->
         </div>
         
         <div class="box-footer">
@@ -72,7 +75,7 @@
     </div>
 
     <script>
-        getLocation();
+        //getLocation();
         setRTimeToID("onlinecountdown");
         setHitokotoToID("hitokoto");
     </script>

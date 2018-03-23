@@ -30,7 +30,7 @@ function showImaginations($mysql,$user,$year,$month){
 		$item = $itemArray[$i];
 		$startString = ""; 
 		if ($item->mood == 0) {
-			$startString = "<p style=\"font-family:yahei;color:gray;font-size:15px\">";
+			$startString = "<p style=\"font-family:yahei;font-size:15px\">";
 		}
 		if ($item->mood == 1) {
 			$startString = "<p style=\"font-family:yahei;color:green;font-size:15px\">";
