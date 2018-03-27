@@ -45,9 +45,9 @@ function showImaginations($mysql,$user,$year,$month){
 		echo $startString;
 		echo $item->date."<br/>";
 		echo nl2br($item->content)."<br/>";		//new line translate
-		echo "</p>";
+		//echo "</p>";
 		echo $startString;
-		echo $item->location."<br/>";
+		//echo $item->location."<br/>";
 		echo "</p>";
 
 		if ($item->mood == 0) {
