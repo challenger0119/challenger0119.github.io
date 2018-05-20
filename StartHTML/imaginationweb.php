@@ -57,7 +57,7 @@
             	<!--
                 <label>有什么想说的吗？</label>
             -->
-                <textarea name="content" class="form-control" rows="3" placeholder="记下来吧"></textarea>
+                <textarea name="content" class="form-control" rows="10" placeholder="记下来吧"></textarea>
             </div>
             <!--
             <div class="form-group">
