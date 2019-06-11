@@ -1,0 +1,27 @@
+<h2 id="sdwebimage">SDWebImage</h2>
+<ul>
+<li>架构清晰：分离模块功能，每一个模块都能单独工作</li>
+<li>NSMapTable：创建weak内存管理的“字典”，同时其可以装指针型 ——<code>SDImageCache</code></li>
+<li>属性访问线程安全问题</li>
+<li>图片数据 Data的第一个字节 存储了图片的格式信息 ——<code>NSData+ImageContentType</code></li>
+<li>图片的数据流加载：收到多少数据加载多少——<code>SDWebImageImageIOCoder</code></li>
+<li>Gif 图片数据 可以通过CG接口拿到其图片数量、动画时间等信息——<code>SDWebImageGIFCoder</code></li>
+<li>CoreGraphics 的使用</li>
+<li>使用nonnull nullable等新特性 加强接口安全</li>
+<li>EXIF orientation 信息和iOS orientation信息存在转换关系——<code>SDWebImageCoderHelper</code></li>
+</ul>
+<h2 id="afnetworking">AFNetworking</h2>
+<ul>
+<li>NS_DESIGNATED_INITIALIZER 用来保证所有的属性都能被初始化</li>
+<li>FOUDATION_EXPORT 创建字符串常量 </li>
+<li>使用bundleID 设计字符串常量</li>
+<li>使用Block封装上次代理</li>
+<li>使用信号量 将异步回掉写成return</li>
+<li>利用 _cmd 代替方法的名字</li>
+<li>NSURLSessionDataTask 并行初始化的时候可能存在相同的taskIdentifier（本应该是唯一的）， 所以AFN将其初始化放在自己的串行线程中进行。 </li>
+<li>SDK中暴漏的属性考虑readonly</li>
+<li>对象无关的操作可以使用静态方法</li>
+<li>Array 使用 KVO 手动通知</li>
+<li>使用串行和并行结合实现读写的同步问题（内存管理）</li>
+</ul>
+<h2 id="asyncdisplaykit">AsyncDisplayKit</h2>

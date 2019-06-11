@@ -1,0 +1,65 @@
+<h2 id="yykit">YYKit</h2>
+<ul>
+<li><p>使用宏定义方法中的代码段，并在使用完成后取消定义<code>#define xxx   #undef xxx</code></p>
+</li>
+<li><p>KVO 的使用</p>
+<p><code>`</code>objective-c</p>
+<ul>
+<li><p>(void)observeValueForKeyPath:(NSString <em>)keyPath ofObject:(id)object change:(NSDictionary </em>)change context:(void <em>)context {<br>  // change 里面的key 有五种<br>  /</em></p>
+<ol>
+<li>NSKeyValueChangeKindKey</li>
+<li>NSKeyValueChangeNewKey</li>
+<li>NSKeyValueChangeOldKey</li>
+<li>NSKeyValueChangeIndexesKey</li>
+<li><p>NSKeyValueChangeNotificationIsPriorKey</p>
+<p>NSKeyValueChangeKindKey是修改的类型：<br>NSKeyValueChangeSetting<br>NSKeyValueChangeInsertion<br>NSKeyValueChangeRemoval<br>NSKeyValueChangeReplacement；</p>
+<p>其中 NSKeyValueChangeSetting - set方法的修改 或者 -willChangeValueForKey:/-didChangeValueForKey: 的调用<br>NSKeyValueChangeInsertion NSKeyValueChangeRemoval NSKeyValueChangeReplacement 是数组的变化修改：mutableArrayValueForKey： 或者-willChange:valuesAtIndexes:forKey:/-didChange:valuesAtIndexes:forKey:</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code> NSKeyValueChangeIndexesKey 如果是有序数组的变化 那总是会有该key
+ NSKeyValueChangeNotificationIsPriorKey 在值改变前发送
+  */
+</code></pre><p>  }</p>
+<p>  // 参考举例</p>
+<ul>
+<li><p>(void)viewDidLoad {<br>  [super viewDidLoad];<br>  [self.view addObserver:self forKeyPath:@&quot;backgroundColor&quot; options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionPrior context:nil];<br>  self.view.backgroundColor = [UIColor blueColor];<br>}</p>
+</li>
+<li><p>(void)observeValueForKeyPath:(NSString <em>)keyPath ofObject:(id)object change:(NSDictionary&lt;NSKeyValueChangeKey,id&gt; </em>)change context:(void *)context{<br>  NSLog(@&quot;%@ %@&quot;,keyPath, change);<br>}</p>
+<p>// 打印如下<br>// init new<br>2019-03-13 16:32:28.751032+0800 kif[38475:13262668] backgroundColor {<br>  kind = 1;<br>  new = &quot;UIExtendedSRGBColorSpace 1 1 1 1&quot;;<br>}<br>// prior old<br>2019-03-13 16:32:28.751332+0800 kif[38475:13262668] backgroundColor {<br>  kind = 1;<br>  notificationIsPrior = 1;<br>  old = &quot;UIExtendedSRGBColorSpace 1 1 1 1&quot;;<br>}<br>// new old<br>2019-03-13 16:32:28.751541+0800 kif[38475:13262668] backgroundColor {<br>  kind = 1;<br>  new = &quot;UIExtendedSRGBColorSpace 0 0 1 1&quot;;<br>  old = &quot;UIExtendedSRGBColorSpace 1 1 1 1&quot;;<br>}</p>
+</li>
+</ul>
+<p>  <code>`</code></p>
+<ul>
+<li><p>系统自带加密：<code>md2,md4,md5,sha1,sha224,sha256,sha384,sha512，Hmac，aes256</code></p>
+</li>
+<li><p>base64编码 ，gzip压缩方法 </p>
+</li>
+<li><p><code>NSScanner</code> 查找字符串中的数字，搭配<code>NSNumberFormatter</code>转换数字</p>
+</li>
+<li><p><code>pthread_main_np()</code> 函数可以判定是否是主线程</p>
+</li>
+<li><p>不同颜色的转换 HSL到 RGB 等 <code>UIColor+YYAdd.h</code></p>
+</li>
+<li><p>GIF 和 EMOJI 照片翻转  <code>UIImage+YYAdd</code></p>
+</li>
+<li><p>CPU和内存占用 <code>UIDevice+YYAdd,UIApplication+YYAdd</code></p>
+</li>
+<li><p>本地字体加载 <code>UIFont+YYAdd</code></p>
+</li>
+<li><p>使用贝塞尔绘制文字：<code>UIBezierPath+YYAdd</code></p>
+</li>
+<li><p><code>YYCache</code> SQL的使用 </p>
+</li>
+<li><p><code>YYWeakProxy</code> 解决引用循环问题</p>
+</li>
+<li><p><code>YYTimer</code> 使用source做定时器</p>
+</li>
+<li><p><code>YYSentinel</code> 原子的计数</p>
+</li>
+</ul>
+<h2 id="yymodel-">YYModel 做了什么</h2>
+<p>YYModel的主要作用就是对象的序列化和反序列化，两个主要的方法：<code>modelWithDictionary:</code> （反序列化）<code>modelToJSONObject</code>（序列化）</p>
