@@ -1,0 +1,67 @@
+<html>
+    <head>
+	    <meta charset="utf-8">
+		<title>C&P happy house</title>
+		<link rel="stylesheet" href="default12.css" type="text/css">
+		<link rel="stylesheet" href="字体.css" type="text/css">
+	</head>
+<script>
+function changcolor1()
+{
+var color1=document.getElementById("color1").value;
+var div1=document.getElementById("div01");
+document.getElementById("colortext1").innerHTML=color1;
+div1.style.backgroundColor=color1;
+}
+
+
+</script>
+	<body>
+	    <div id="header">
+		    <div id="photo_box">
+                <div id="photo">
+                    <img src="m11.jpg" />
+                    <img src="m22.jpg" />
+		            <img src="m44.jpg" />
+		            <img src="m55.jpg" />
+                </div>
+            </div>
+			<div id="retu">
+			<img src="返回1.png" usemap="#logo1">
+			<map name="logo1">
+			    <area shape="rect" coords="0,0,508,508" title="return" href="网站首页.html">
+			</map>
+			</div>
+			<div id="welcome">
+			    <h3>the World full of love</h3>
+			    <h1>welcome to C&P happy house!</h1>
+				<h2>Cute Pet & Care Pet</h2>
+			</div>
+			<div id="xx">
+			    <a href="#nav"><img src="xx.png"></a>
+			</div>
+		</header>
+		<div id="content">
+            <ul id="nav">
+		        <li class="drop_down"><a href="You get it.html">Have a Good Time</a>
+		    	    <ul class="drop_down_content">
+		    		    <li><a href="Game 1.html">小猫咪换装</a><li>
+		    		    <li><a href="Game 2.html">打扮小狗狗</a><li>
+		    		    <li><a href="Game 3.html">给狗狗装修</a><li>
+		    	    </ul>
+	    	    </li>
+	        </ul>
+		    <div id="game">
+			   <img id="div01" form="form01" src="房子z.png"height=1000>
+		    </div>
+			<div id="xuan">
+                <form action="return.html" method="get" autocomplete="on" id="form01">
+                    <h3>粉刷狗狗的家</h3> <input type="color"  id="color1" onchange="changcolor1()"><span id="colortext1">主人的眼光最好啦~</span>&nbsp;&nbsp;
+                    <input class="i" type=submit value="保存">
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+		    版权所有侵权必究
+		</div>
+	</body>
