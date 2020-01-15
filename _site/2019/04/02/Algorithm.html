@@ -1,0 +1,102 @@
+<h2 id="算法">算法</h2>
+
+<h3 id="算法概论-sanjoy-dasgupta-王沛-译">算法概论 Sanjoy Dasgupta 王沛 译</h3>
+
+<h4 id="fibonacci">Fibonacci</h4>
+
+<ul>
+  <li>Fibonacci 数列的增长速度基本接近2的幂 一般来说是 Fn ~= 2^0.694n</li>
+  <li>直接使用Fibonacci定义进行计算是效率很低的，因为 <strong>递归算法导致中间很多计算都是重复的</strong> : 假设T(n) 是Fib的计算次数 那么根据fib的定义 ——  T(n) = T(n-1) + T(n - 2) + 3 （3 为三次基本的计算）。这个公式本身又是一个Fib序列，所以其计算出的计算结果 也是<strong>指数的</strong> （&gt;= 2^0.694n）</li>
+  <li>所以直接使用定义计算Fib几乎是无法计算的，考虑到中间的无用计算如果能存储起来直接使用，那么计算复杂度就是<strong>线性的</strong>，那么就有了 多项式计算方法 对比来看：</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">fibonacci_pro</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+	<span class="kt">int</span> <span class="o">*</span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+			<span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+			<span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+		<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+			<span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">];</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+	<span class="n">free</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+	<span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>上面的算法复杂度忽略了一个维度：数字的位数。对于二进制的计算，每一次计算其实是一个位上的计算。所以实际的计算复杂度对于fib 就是 nFn 而 fib_pro 就是 n^2</li>
+</ul>
+
+<h4 id="大o符号">大O符号</h4>
+
+<p>两个算法的运行时间分别为f(n) g(n)， f,g 都是从正整数到正实数的函数 如果存在一个常数c&gt;0 是的 f(n) &lt;= c · g(n) 那么 f = O(g)  即 f的增长速度慢于g 会被g超越</p>
+
+<p>反过来说 g = Ω(f)</p>
+
+<p>如果f = O(g)  的同时 g = O(f)  那么  f=θ(g)</p>
+
+<p>支配原则（算法复杂度的大小比较） ：</p>
+
+<ul>
+  <li>常系数可以忽略 14n^2 可变为 n^2</li>
+  <li>当a &gt; b 时候 n^a 支配 n^b 例如 n^2 支配 n</li>
+  <li>指数项 支配 多项式 3^n 支配 n^5</li>
+  <li>多项式支配 对数项 n 支配 log(n) ^ 3</li>
+</ul>
+
+<h4 id="logn复杂度的产生log复杂度一般来说是应用了分治思想">logn复杂度的产生：log复杂度一般来说是应用了分治思想</h4>
+
+<p>以二分为例：如果一个数组长度是N，那么二分就是N/2 再二分就是 N/4最坏的情况分到 1 分的次数为x 则 N * (1/2)^x = 1   x = logN 底数2</p>
+
+<p>因为通过矩阵计算Fib 时候 有 : FibAn = X^n FibA0  转为计算X^n 的问题</p>
+
+<p>而计算X^n 时候可以使用二分 的思想 通过计算 (X^n/2) ^2，(X^n/4) ^4 …  方法来进行矩阵乘法 所以进行矩阵乘法的次数是 O(logn)</p>
+
+<h3 id="算法第四版">算法（第四版）</h3>
+
+<h4 id="基础">基础</h4>
+
+<ul>
+  <li>
+    <p>Math.abs(-2147483648) 的结果还是 -2147483648 溢出的结果</p>
+  </li>
+  <li>
+    <p>Java 表达是 1/0 为有 <em>零异常</em>  而1.0/0.0 则是无穷大</p>
+  </li>
+  <li>
+    <p><strong>余数的定义</strong> ： (a/b)*b + a%b = a  所以负数的余数符号和负号位置有关系.</p>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span><span class="mi">14</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">14</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">14</span><span class="o">%</span><span class="mi">3</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+      
+<span class="mi">14</span><span class="o">/-</span><span class="mi">3</span><span class="o">*-</span><span class="mi">3</span> <span class="o">+</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">14</span><span class="o">%-</span><span class="mi">3</span> <span class="o">=</span> <span class="mi">2</span>
+
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>二项式分布：</p>
+
+    <p>一次是与否的实验为一次伯努利实验</p>
+
+    <p>N次伯努利实验中事件发生k次的概率 P = Cnk p^k(1-p)^(N-k)</p>
+  </li>
+  <li>
+    <p>约等于定义</p>
+
+    <p>~ : 约等于 符号；</p>
+
+    <p>定义：~f(N)表示随着N的增长除以f(N) 的结果趋近于1的函数；使用g(N)~f(N)表示g(N)/f(N)随着N增大趋近于1</p>
+  </li>
+</ul>
+

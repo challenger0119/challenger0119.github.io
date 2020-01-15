@@ -1,0 +1,261 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+
+	background-image:url(粉9.jpg);
+	background-repeat:repeat;
+	margin:0 auto;
+	overflow-x:hidden;
+}
+p{
+	font-family:雅圆体;
+	font-size:30px;
+}
+p>strong{
+	font-size:50px;
+	color:#EE6363;
+}
+p:before{
+	content:' ';
+	background-image:url(logo2.png);
+	background-size:100px 64px;
+	position:absolute;
+	top:px;
+	left:px;
+	width:100px;
+	height:64px;
+
+}
+@font-face{
+	font-family:myFont1;
+	src:url("C:/Users/35608/Downloads/font-ori/china/xidi.ttf");
+	font-weight:bold;
+}
+@font-face{
+	font-family:蒙娜;
+	src:url("C:/Users/35608/Downloads/font-ori/china/蒙纳漫画体.ttf");
+	
+}
+@font-face{
+	font-family:手写字;
+	src:url("C:/Users/35608/Downloads/font-ori/china/手写字.ttf");
+	
+}
+@font-face{
+		font-family:panda01;
+		src:url(C:/Users/35608/Downloads/pandafont/熊猫中文.ttf);
+}
+@font-face{
+		font-family:panda02;
+		src:url(C:/Users/35608/Downloads/pandafont/熊猫萌萌.ttf);
+}
+@font-face{
+		font-family:englishfont01;
+		src:url(C:/Users/35608/Downloads/font-ori/english/cs.ttf);
+}
+@font-face{
+		font-family:englishfont02;
+		src:url(C:/Users/35608/Downloads/font-ori/english/csa.ttf);
+}
+@font-face{
+		font-family:englishfont03;
+		src:url(C:/Users/35608/Downloads/font-ori/english/SingleMalta.ttf);
+}
+@font-face{
+		font-family:雅圆体;
+		src:url(C:/Users/35608/Downloads/font-ori/english/雅圆体.ttf);
+}
+.header{
+	width:1900px;
+	height:800px;
+	margin:0 auto;
+	background-image:url(猫大1p.jpg);
+	background-position:left top;
+	background-repeat:repeat;
+	position:relative;
+}
+.header .head{
+	position:relative;
+	left:150px;
+	top:150px;
+}
+.header .head h1{
+	font-family:雅圆体;
+	font-size:50px;
+	color:pink;
+}
+.header .head h1{
+	font-family:panda01;
+	font-size:50px;
+	color:pink;
+	font-weight:bold;
+	position:relative;
+	left:px;
+}
+.header .head h2{
+	font-family:englishfont02;
+	color:#9AC0CD;
+	position:relative;
+	left:240;
+	top:300;
+}
+.header .nag{
+	width:2000px;
+	height:39px;
+	position:absolute;
+	top:811px;
+	text-align:center;
+}
+.logo{
+	position:relative;
+    top:500px;
+}
+.header .nag ul{
+	width:1000px;
+	height:39px;
+	margin:0 auto;
+	position:relative;
+	left:-490px;
+	top:-80px;
+}
+.header .nag ul>li{
+	font-family:宋体;
+	font-size:30px;
+	text-align:center;
+	width:150px;
+	height:39px;
+	display:inline-block;
+	background-color:#EE6363;
+	border:2px double rgb(255,106,106);
+	border-radius:20px;
+}
+a:link,a:visited{
+	text-decoration:none;
+	color:white;
+}
+a:hover{
+	text-decoration:underline;
+	color:pink;
+}
+.find{
+	height:80px;
+	width:650px;
+	position:relative;
+		left:100px;
+	top:100px;
+}
+.parent{
+	position:relative;
+}
+.search{
+	width:600px;
+	height:40px;
+	border:1px solid rgba(0,0,0,0.5);
+	border-radius:20px;
+	background-color:rgba(0,0,0,0);
+	position:relative;
+	left:55px;
+}
+.btn{
+	height:35px;
+	width:35px;
+	position:relative;
+    left:10px;
+	top:20px;
+	background-color:rgb(0,0,0,0);
+	background-image:url("sousuo1.png");
+    background-repeat:no-repeat;
+    background-size:20px 20px;
+	outline:none;
+	border:none;
+	cursor:pointer;
+}
+.content{
+	width:1900px;
+	height:1300px;
+}
+
+.quanq1{
+	width:472px;
+	height:472px;
+	position:absolute;
+	top:25%;
+	left:10%;
+	z-index:2;
+	border-radius:50%;
+	border:10px solid #fff;
+	box-shadow:5px 5px 15px #000;
+	background-image:url("1.jpg");
+	background-size:;
+	background-repeat:no-repeat;
+	animation:hh_motion infinite linear 10s;	
+	position:relative;
+	left:1200px;
+	top:500px;
+}
+.quanq2{
+	width:422px;
+	height:422px;
+	border-radius:50%;
+	border:10px solid #fff;
+	box-shadow:5px 5px 15px #000;
+	background-image:url("猫6.jpg");
+	background-size:;
+	background-repeat:no-repeat;
+	animation:hh_motion infinite linear 10s;	
+	position:relative;
+	left:100px;
+	top:-350px;
+	
+}
+.quanq3{
+	width:322px;
+	height:322px;
+	border-radius:50%;
+	border:10px solid #fff;
+	box-shadow:5px 5px 15px #000;
+	background-image:url("狗1.jpg");
+	background-size:320px;
+	background-repeat:no-repeat;
+	animation:hh_motion infinite linear 10s;	
+	position:relative;
+	top:px;
+	left:px;
+}
+
+@keyframes hh_motion{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+}
+.p1{
+	width:1000px;
+	height:300px;
+	position:relative;
+	left:700px;
+	top:-1400px;
+}
+.p2{
+	width:1000px;
+	height:300px;
+	position:relative;
+	top:-600px;
+}
+.p3{
+	width:1000px;
+	height:200px;
+	position:relative;
+	left:600px;
+	top:-800px;
+}
+.foote{
+	font-family:宋体;
+	font-size:25px;
+	text-align:center;
+	background-color:#EE6363;
+	width:1900px;
+	height:50px;
+}
+
+	

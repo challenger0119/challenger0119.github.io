@@ -1,0 +1,188 @@
+@font-face{
+	font-family:myFont1;
+	src:url("C:/Users/35608/Downloads/font-ori/china/xidi.ttf");
+	font-weight:bold;
+}
+@font-face{
+	font-family:蒙娜;
+	src:url("C:/Users/35608/Downloads/font-ori/china/蒙纳漫画体.ttf");
+	
+}
+@font-face{
+	font-family:手写字;
+	src:url("C:/Users/35608/Downloads/font-ori/china/手写字.ttf");
+	
+}
+@font-face{
+		font-family:panda01;
+		src:url(C:/Users/35608/Downloads/pandafont/熊猫中文.ttf);
+}
+@font-face{
+		font-family:panda02;
+		src:url(C:/Users/35608/Downloads/pandafont/熊猫萌萌.ttf);
+}
+@font-face{
+		font-family:englishfont01;
+		src:url(C:/Users/35608/Downloads/font-ori/english/cs.ttf);
+}
+@font-face{
+		font-family:englishfont02;
+		src:url(C:/Users/35608/Downloads/font-ori/english/csa.ttf);
+}
+@font-face{
+		font-family:englishfont03;
+		src:url(C:/Users/35608/Downloads/font-ori/english/SingleMalta.ttf);
+}
+@font-face{
+		font-family:雅圆体;
+		src:url(C:/Users/35608/Downloads/font-ori/english/雅圆体.ttf);
+}
+#photo_box {
+	width: 1900px;
+	height: 874px;
+	overflow: hidden;
+}
+#photo {
+	width: 7600px;
+	animation: switch 8s ease-out infinite;
+}
+ #photo:hover{
+ animation-play-state:paused;
+ }
+#photo > img {
+	float: left;
+	width: 1900px;
+	height: 874px;
+}
+@keyframes switch {
+	0%, 25% {
+		margin-left: 0;
+	}
+	25%, 50% {
+		margin-left: -1900px;
+	}
+	50%, 75% {
+		margin-left: -3800px;
+	}
+	75%, 100% {
+		margin-left: -5700px;
+	}
+}
+#retu{
+	position:relative;
+	top:-850px;
+	left:px;
+	width:200px;
+	height:200px;
+}
+#retu img{
+	width:50px;
+	height:50px;
+}
+#welcome{
+	width:700px;
+	height:400px;
+	background-color:rgba(0,0,0,0.5);
+	position:relative;
+	left:650px;
+	top:-800px;
+	text-align:center;
+}
+#welcome h3{
+	font-family:雅圆体;
+	font-size:24px;
+	letter-spacing:8px;
+	color:rgb(255,87,34);
+	text-align:center;
+}
+#welcome h1{
+	font-family:englishfont03;
+	color:white;
+	font-size:50px;
+	position:relative;
+	top:30px;
+}
+#welcome h2{
+	font-family:雅圆体;
+	font-size:60px;
+	color:rgb(255,87,34);
+	position:relative;
+	top:50px;
+}
+#xx{
+	width:1900px;
+	height:55px;
+	background-color:rgba(0,0,0,0.5);
+	position:relative;
+	top:-580px;
+}
+#xx img{
+	position:absolute;
+	left:980px;
+	top:20px;
+}
+#content{
+	width:1900px;
+}
+#nav{
+	position:relative;
+	top:-480px;
+}
+ul{list-style:none;}
+#nav>li{float:left;}
+ul a{
+	display:block;
+	width:1800px;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	color:white;
+	background-color:rgba(0,0,0,0.5);
+	text-decoration:none;
+	letter-spacing:50px;
+	font-family:panda02;
+	font-size:40px;
+}
+#nav>li:first-child a {border-radius:20px;}
+#nav>li:last-child a{border-radius:20px;}
+.drop_down{
+height:50px;
+overflow:hidden;
+}
+.drop_down:hover{
+overflow:visible;}
+.drop_down_content{
+padding:10px}
+.drop_down_content li:hover a{
+background-color:rgba(225,87,34,0.8);}
+.drop_down_content li a{
+transition:2s;}
+#x{
+	width:1900px;
+	height:800px;
+	position:relative;
+	top:-300px;
+}
+.kuang{
+	width:500px;
+	height:500px;
+	margin:60px;
+}
+.d1{
+	float:left;
+	position:relative;
+	top:0px;
+}
+.d2{
+	float:left:
+}
+.d3{
+	float:left;
+}
+#footer{
+	font-family:宋体;
+	font-size:24px;
+	text-align:center;
+	background-color:rgba(0,0,0,0.5);
+}
+	

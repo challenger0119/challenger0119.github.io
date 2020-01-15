@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-15T22:41:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Somewhere</title><subtitle>过着，记录着</subtitle><entry><title type="html">Regex Regular expression</title><link href="http://localhost:4000/2019/08/27/Regex-Regular-Expression.html" rel="alternate" type="text/html" title="Regex Regular expression" /><published>2019-08-27T00:00:00+08:00</published><updated>2019-08-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/08/27/Regex-Regular%20Expression</id><content type="html" xml:base="http://localhost:4000/2019/08/27/Regex-Regular-Expression.html">&lt;h3 id=&quot;元字符&quot;&gt;元字符&lt;/h3&gt;
+
+&lt;h4 id=&quot;限定符&quot;&gt;限定符&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;* 匹配前面字表达式零次或多次 例如 zo* 可以匹配 z, zoo 等价{0,}&lt;/li&gt;
+  &lt;li&gt;+ 匹配前面字表达式一次或多次 zo+ 可以匹配 zo, zoo 但不能是 z 等价 {1,}&lt;/li&gt;
+  &lt;li&gt;? 匹配前面子表达式零次或一次 例如 do(es)? 可以匹配 do,does 等价 {0,1}&lt;/li&gt;
+  &lt;li&gt;{n} n是非负整数。确定匹配n次 例如o{2} 不能匹配 bob 中的 o 可以匹配 food 中的 oo&lt;/li&gt;
+  &lt;li&gt;{n,} 同上，但是至少n次，可以多次&lt;/li&gt;
+  &lt;li&gt;{n,m} 同上 最少n，最多m&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;特殊字符&quot;&gt;特殊字符&lt;/h4&gt;
+
+&lt;p&gt;（对于特殊字符，匹配其本身一般需要 “\” 转义）&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;？用来匹配 &lt;strong&gt;前面子表达式&lt;/strong&gt; 零次或一次，或指明一个非贪婪字符(有右边界的是非贪婪的 例如‘？’)&lt;/li&gt;
+  &lt;li&gt;* 用来匹配 &lt;strong&gt;前面子表达式&lt;/strong&gt; &lt;em&gt;零次&lt;/em&gt;或多次&lt;/li&gt;
+  &lt;li&gt;$ 匹配结尾，如果有多行则也会匹配\r,\n&lt;/li&gt;
+  &lt;li&gt;() 标记一个字表达式&lt;/li&gt;
+  &lt;li&gt;+ 匹配 &lt;strong&gt;前面子表达式&lt;/strong&gt; 的&lt;em&gt;一次&lt;/em&gt;或多次&lt;/li&gt;
+  &lt;li&gt;. 匹配换行符以外的任何单字符&lt;/li&gt;
+  &lt;li&gt;[ 匹配中括号表达式的开始&lt;/li&gt;
+  &lt;li&gt;{ 编辑限定符表达式的开始&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;指明两项之间的一个选择&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;定位符&quot;&gt;定位符&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;^ 匹配字符开始位置 如果有多行 则会匹配 \n \r。如果在方括号中表示 “非” “除去”&lt;/li&gt;
+  &lt;li&gt;$ 匹配结尾 同样多行匹配 \n \r&lt;/li&gt;
+  &lt;li&gt;\b 匹配字边界，即字与空格间的位置&lt;/li&gt;
+  &lt;li&gt;\B 非字边界匹配&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;非打印符号&quot;&gt;非打印符号&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\cx 用来匹配 control 系列控制命令，例如\cM表示control M，x的取值为A-Z 或者 a-z 否则将被看做是 c 的转义&lt;/li&gt;
+  &lt;li&gt;\f 匹配一个换页符 == \x0c, \cL&lt;/li&gt;
+  &lt;li&gt;\n 匹配换行符 == \x0a,\cJ&lt;/li&gt;
+  &lt;li&gt;\r 匹配回车符 == \x0d,\cM&lt;/li&gt;
+  &lt;li&gt;\v 垂直制表符 == \x0b,\cK&lt;/li&gt;
+  &lt;li&gt;\t 水平制表符 == \x09,\cI&lt;/li&gt;
+  &lt;li&gt;\s 匹配任何空白符 包括空格和以上非打印符号引起的空白 等价于{\f\n\r\t\v}&lt;/li&gt;
+  &lt;li&gt;\S 匹配任何非空白符 == {^\f\n\t\r\v}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;其他元字符&quot;&gt;其他元字符&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;(?:pattern) 匹配pattern&lt;strong&gt;但不获取结果，不进行存储供以后使用。&lt;/strong&gt;例如在 或 的时候 industr(?:y&lt;/td&gt;
+          &lt;td&gt;ies) 要比 industry&lt;/td&gt;
+          &lt;td&gt;industries 简洁。?: 一般用在有&lt;/td&gt;
+          &lt;td&gt;的子表达式，避免不必要的存储备用。&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;(?=pattern) 正向预查，在任何匹配 pattern 的字符串开始处匹配查找字符串。例如：Windows(?=95&lt;/td&gt;
+          &lt;td&gt;98&lt;/td&gt;
+          &lt;td&gt;NT&lt;/td&gt;
+          &lt;td&gt;2000) 能匹配 Windows 2000 中的windows，不能匹配 windows 3.1 中的windows。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;(?!pattern) 负向预查，在任何不匹配 pattern 的字符串开始处匹配查找字符串。例如’Windows (?!95&lt;/td&gt;
+          &lt;td&gt;98&lt;/td&gt;
+          &lt;td&gt;NT&lt;/td&gt;
+          &lt;td&gt;2000)’ 能匹配 “Windows 3.1” 中的 “Windows”，但不能匹配 “Windows 2000” 中的 “Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;(x&lt;/td&gt;
+          &lt;td&gt;y) 匹配x&lt;/td&gt;
+          &lt;td&gt;y 例如 (z&lt;/td&gt;
+          &lt;td&gt;f)ood 匹配zood或food&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[xyz] 字符集合，匹配所包含任一字符。例如[abc] 匹配 plain中的a&lt;/li&gt;
+  &lt;li&gt;[^xyz] 负值字符集合 与上面相反。例如[^abc]匹配plain中的p l i n&lt;/li&gt;
+  &lt;li&gt;[a-z] 字符范围&lt;/li&gt;
+  &lt;li&gt;[^a-z] 负值字符范围&lt;/li&gt;
+  &lt;li&gt;\d 匹配一个数字字符&lt;/li&gt;
+  &lt;li&gt;\D 匹配一个非数字&lt;/li&gt;
+  &lt;li&gt;\w 匹配包括&lt;em&gt;下划线&lt;/em&gt;的任何单词字符 == [A-Za-z0-9]&lt;/li&gt;
+  &lt;li&gt;\W 匹配任何非单词字符 == [^A-Za-z0-9]&lt;/li&gt;
+  &lt;li&gt;\xn n为十六进制转义值 \x41 为A == \x4 &amp;amp; 1&lt;/li&gt;
+  &lt;li&gt;\num num是一个正整数，对所获取的匹配的引用 例如(.)\1 匹配两个连续的相同字符&lt;/li&gt;
+  &lt;li&gt;\n 标识一个八进制转义值或向后引用。如果\n之前有n个子表达式，则为向后引用，否则为八进制转义。&lt;/li&gt;
+  &lt;li&gt;\nml 如果n为八进制 0-3 ml均为八进制0-7 则nml为转义&lt;/li&gt;
+  &lt;li&gt;\un 匹配n，其中n是一个用四个十六进制数字表示的Unicode字符，例如 \u00A9 匹配版权符号(?).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;优先级&quot;&gt;优先级&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;转义符号:\&lt;/li&gt;
+  &lt;li&gt;圆括号和方括号:(),(?:)(?=),[]&lt;/li&gt;
+  &lt;li&gt;限定符:*,+,?,{n},{n,},{n,m}&lt;/li&gt;
+  &lt;li&gt;定位符和序列（位置与顺序）:^,$,\任何元字符&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;替换，“或”操作：&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;技巧与注意事项&quot;&gt;技巧与注意事项&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;通过在 * + ? 等限定符后面加 ？ 可以将贪心表达式转换为非贪心表达式或者最小匹配&lt;/li&gt;
+  &lt;li&gt;不能将限定符与定位点一起使用，因为在紧靠换行或者字边界的前面或后面不能有一个以上位置，所以不允许 诸如 ^* 之类的表达式&lt;/li&gt;
+  &lt;li&gt;\b关心边界是在前还是后（\bASD 和 ASD\b是不一样的） 而\B 不关心&lt;/li&gt;
+  &lt;li&gt;() 生成的子表达式会有临时缓存区，用 \n 访问 而?: ?! ?= 可使其不被缓存。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;举例&quot;&gt;举例&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;http://www.runoob.com:80/html/html-tutorial.html&lt;br /&gt;
+其解析：/(\w+):\/\/([\^/:]+)(:\d&lt;em&gt;)?([\^# ]&lt;/em&gt;)/&lt;br /&gt;
+(\w+) 匹配一个或多个单词 http 到 : 符号为止&lt;br /&gt;
+\/\/ 匹配双斜杠&lt;br /&gt;
+([\^/:]+) 匹配一个或多个不是 / 和 : 的字符&lt;br /&gt;
+(:\d&lt;em&gt;)? 匹配零个或一个 : + 零个或多个数字的字符
+([\^# ]&lt;/em&gt;) 匹配零个或多个不是 # 和 空格的字符&lt;/li&gt;
+    &lt;li&gt;Is is the cost of of gasoline going up up?&lt;br /&gt;
+其解析：/\b([a-z]+) \1\b/gi  匹配 相同的相邻单词，is is ，up up
+以一个或多个小写字母开头的， 以一个或多个小写字母结尾的匹配。 最后的i表示不区分大小写， 全局标记g用于将表达式应用于输入字符串，能够查找到更多匹配。&lt;br /&gt;
+这里对于边界\b 的使用是必要的，否则无法识别 is issued 或者 this is 这种不合要求的内容&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">元字符</summary></entry><entry><title type="html">Git svn cmd</title><link href="http://localhost:4000/2019/07/09/git-svn-cmd.html" rel="alternate" type="text/html" title="Git svn cmd" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/2019/07/09/git%20svn%20cmd</id><content type="html" xml:base="http://localhost:4000/2019/07/09/git-svn-cmd.html">&lt;h2 id=&quot;svn&quot;&gt;SVN&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;查看状态：&lt;code class=&quot;highlighter-rouge&quot;&gt;svn status&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;更新: &lt;code class=&quot;highlighter-rouge&quot;&gt;svn update&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;删除: &lt;code class=&quot;highlighter-rouge&quot;&gt;svn delete&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;更换URL: &lt;code class=&quot;highlighter-rouge&quot;&gt;svn sw --relocate https://xxx/efamily https://xxx/efamily &lt;/code&gt;(前面是旧的 后面是新的)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;分支&quot;&gt;分支&lt;/h4&gt;
+
+&lt;p&gt;新建分支：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;svn copy http://xx http://xx -m &quot;xxx&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;合并分支：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;svn merge http://from&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;搜索&quot;&gt;搜索&lt;/h4&gt;
+
+&lt;p&gt;搜索 关键字 xxx 后3行显示&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;svn log | grep -A 3 &quot;xxx&quot; &lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;搜索 关键字 xxx 前3行显示&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;svn log | grep -B 3 &quot;xxx&quot; &lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;搜索 20 条 包含 xxx的&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;svn log -l20 --search xxx&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;移除版本控制&quot;&gt;移除版本控制&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;将已经在版本控制的文件移除，同时保留本地文件&lt;code class=&quot;highlighter-rouge&quot;&gt;svn rm --keep-local xxx&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;svn propset svn:ignore -F .cvsignore&lt;/code&gt;    导入CVS版本控制的忽略模式&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;推荐使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;propedit&lt;/code&gt; 类似 &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt;文件，方便：&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;svn propedit svn:ignore Directory&lt;/code&gt; 在 Directory 目录创建忽略模式，这时候会打开一个文件，在文件中输入模式就行 例如 &lt;code class=&quot;highlighter-rouge&quot;&gt;*.nib&lt;/code&gt; 忽略nib文件。&lt;/p&gt;
+
+    &lt;p&gt;如果提示&lt;code class=&quot;highlighter-rouge&quot;&gt;SVN_EDITOR&lt;/code&gt;  错误，说明没有默认的编辑器:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 打开用户配置&lt;/span&gt;
+vim ~/.bash_profile
+  
+&lt;span class=&quot;c&quot;&gt;# 添加&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;SVN_EDITOR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;vim
+  
+&lt;span class=&quot;c&quot;&gt;# 注册&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://svnbook.red-bean.com/en/1.7/svn-book.html&quot;&gt;Ref&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;SVN 命令支持简写&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;svn-server&quot;&gt;SVN Server&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;版本检查： &lt;code class=&quot;highlighter-rouge&quot;&gt;svnserve -version&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;创建目录：&lt;code class=&quot;highlighter-rouge&quot;&gt;svnadmin create repository&lt;/code&gt; ——在当前目录生成了一个 repository 版本库&lt;/li&gt;
+  &lt;li&gt;修改配置文件 repository 下的 conf 目录下的配置 &lt;a href=&quot;http://www.cnblogs.com/czq1989/p/4913692.html&quot;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;git&quot;&gt;Git&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;查看分支： git branch -a&lt;/li&gt;
+  &lt;li&gt;拉分支： git checkout &lt;em&gt;branch&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;撤销修改: git checkout – xxx&lt;/li&gt;
+  &lt;li&gt;查看日志：git log -n&lt;/li&gt;
+  &lt;li&gt;忘记加入 .gitignore 的文件：git rm —cache xxx&lt;/li&gt;
+  &lt;li&gt;格式日志：“git log –pretty=format:”%h - %an, %ar : %s”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;添加远程git-相关命令&quot;&gt;添加远程Git 相关命令&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;工程里git init&lt;/li&gt;
+  &lt;li&gt;git remote add main https://github.com/challengerxxx  （主要）&lt;/li&gt;
+  &lt;li&gt;git pull main master&lt;/li&gt;
+  &lt;li&gt;git push –set-upstream main master （主要）&lt;/li&gt;
+  &lt;li&gt;git push&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;移除版本控制-1&quot;&gt;移除版本控制&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git rm -r --cached Libs/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;主要命令以外的 配合使用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;git-server&quot;&gt;Git server&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;添加用户 adduser git&lt;/li&gt;
+  &lt;li&gt;设置密码 vim /etc/passwd  –&amp;gt; 添加 passwd git 12345&lt;/li&gt;
+  &lt;li&gt;可以关闭ssh 将 &lt;code class=&quot;highlighter-rouge&quot;&gt;git:x:1001:1001:,,,:/home/git:/bin/bash&lt;/code&gt; 修改为 &lt;code class=&quot;highlighter-rouge&quot;&gt;git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;在合适的地方创建git即可 例如 /home/git 下 可能没有这个目录 需要创建，git用户的默认目录&lt;/li&gt;
+  &lt;li&gt;git init –bare xxx.git&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;command-line&quot;&gt;Command Line&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;命令行快速回到头部 CTRL + A 尾部 CTRL + E&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;vim&quot;&gt;VIM&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;查找：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/xx\c&lt;/code&gt;  \c 标识大小写不敏感   n 继续查找下一个&lt;/li&gt;
+      &lt;li&gt;?xx 查找上一个   # 继续查找上一个&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;替换：&lt;code class=&quot;highlighter-rouge&quot;&gt;:{作用范围}s/{目标}/{替换}/{替换标志}&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;例如&lt;code class=&quot;highlighter-rouge&quot;&gt;:%s/foo/bar/g&lt;/code&gt;会在全局范围(&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;)查找&lt;code class=&quot;highlighter-rouge&quot;&gt;foo&lt;/code&gt;并替换为&lt;code class=&quot;highlighter-rouge&quot;&gt;bar&lt;/code&gt;，所有出现都会被替换（&lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt;）。&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:s/foo/bar/g&lt;/code&gt; 当前行&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:5,12s/foo/bar/g&lt;/code&gt; 5-12行&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:.,+2s/foo/bar/g&lt;/code&gt; 向后两行&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;vimdiff&quot;&gt;VIMDiff&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;跳到下一个diff：&lt;code class=&quot;highlighter-rouge&quot;&gt;]c&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;跳到上一个diff：&lt;code class=&quot;highlighter-rouge&quot;&gt;[c&lt;/code&gt;  前面加数字可以调多个&lt;/li&gt;
+  &lt;li&gt;把当前修改放到另一个文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;dp&lt;/code&gt; (put)&lt;/li&gt;
+  &lt;li&gt;把别的修改拿过来&lt;code class=&quot;highlighter-rouge&quot;&gt; do&lt;/code&gt; (obtain)&lt;/li&gt;
+  &lt;li&gt;切换文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+W&lt;/code&gt; 加方向&lt;/li&gt;
+  &lt;li&gt;刷新对比 &lt;code class=&quot;highlighter-rouge&quot;&gt;:diffupdate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">SVN</summary></entry><entry><title type="html">Ubuntu debian linux</title><link href="http://localhost:4000/2019/06/14/Ubuntu-Debian-Linux.html" rel="alternate" type="text/html" title="Ubuntu  debian linux" /><published>2019-06-14T00:00:00+08:00</published><updated>2019-06-14T00:00:00+08:00</updated><id>http://localhost:4000/2019/06/14/Ubuntu%20%20Debian%20Linux</id><content type="html" xml:base="http://localhost:4000/2019/06/14/Ubuntu-Debian-Linux.html">&lt;h1 id=&quot;ubuntu--linux--debian-使用笔记&quot;&gt;Ubuntu / Linux / Debian 使用笔记&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Ubuntu耳机声音设置&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;插入耳机或者麦克风没反应：终端打开 alsamixer 找到 headphone / mic 选中后向上调节到最大&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2017/11/08 23:59 添加环境变量&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;:/xxx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;2017/05/16 14:23 中文乱码问题&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 查看 locale&lt;/span&gt;
+vim ~/.bashrc
+&lt;span class=&quot;c&quot;&gt;# 添加：&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LC_ALL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;en_US.UTF-8   &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LANG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;span class=&quot;c&quot;&gt;# 生效&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;2017/05/10 13:00 获取时间戳&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;date +%s&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2017/05/10 09:00 root账户登陆&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 设置root密码 ： sudo passwd root&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 修改配置文件：/usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;SeatDefaults] &lt;span class=&quot;c&quot;&gt;# 16.04 这里是[Seat:*]&lt;/span&gt;
+user-session&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ubuntu
+greeter-show-manual-login&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#手工输入登陆系统的用户名和密码&lt;/span&gt;
+allow-guest&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#不允许guest登录&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;2017/05/02 20:38 C debug command&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gdb a.out
+list show &lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;code
+&lt;span class=&quot;nb&quot;&gt;break set &lt;/span&gt;breakpoint
+run  run the app
+print 
+&lt;span class=&quot;k&quot;&gt;continue
+&lt;/span&gt;step
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/feixiaoxing/article/details/7199643&quot;&gt;http://blog.csdn.net/feixiaoxing/article/details/7199643&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ubuntu 中文版双系统安装第一件事&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;1，安装上第一件事请 更新语言 否则输入法崩溃&lt;/p&gt;
+
+&lt;p&gt;2，锐捷登录 参数 d1 dhcp&lt;/p&gt;
+
+&lt;p&gt;3，grub /etc/default/grub windows在4  然后执行 update-grub命令&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2017/03/18 15:36 安装jre并添加path&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 安装jre  &lt;/span&gt;
+apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;default-jre
+
+&lt;span class=&quot;c&quot;&gt;# 添加PATH&lt;/span&gt;
+/etc/profile
+
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/miaoqi/jre1.8.0_121
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JRE_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/miaoqi/jre1.8.0_121
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CLASSPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;.:&lt;span class=&quot;nv&quot;&gt;$CLASSPATH&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;/lib:&lt;span class=&quot;nv&quot;&gt;$JRE_HOME&lt;/span&gt;/lib
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;/bin&lt;span class=&quot;nv&quot;&gt;$:$JRE_HOME&lt;/span&gt;/bin
+
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /etc/profile
+
+&lt;span class=&quot;c&quot;&gt;# 这样添加应该是所有用户生效，但是其他用户不一定能够访问这个路径，所以不如修改 ./home/miaoqi/.bashrc&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;查看进程&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ps -e|grep 查运行的程序 -ax 等&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;生成启动打开文件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Desktop Entry]
+&lt;span class=&quot;nv&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Application
+&lt;span class=&quot;nv&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Ruijie
+&lt;span class=&quot;nv&quot;&gt;Comment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Ruijie Launcher
+&lt;span class=&quot;nv&quot;&gt;Exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/miaoqi/rj.sh
+&lt;span class=&quot;nv&quot;&gt;Categories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Development&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/miaoqi/图片/Computer_icon.png
+&lt;span class=&quot;nv&quot;&gt;StartupNotify&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Terminal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;特别注意，不能有多余空格&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;更新 Adobe Flash&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 目录&lt;/span&gt;
+.mozilla/plugins &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;需要新建&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;installxxxxx
+&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; usr/ /
+&lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;libflashplayer /home/miaoqi/.mozilla/plugins
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;定时器 crontab&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;crontab -e&lt;/code&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;精度&lt;/th&gt;
+      &lt;th&gt;举例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;分钟&lt;/td&gt;
+      &lt;td&gt;0 - 59&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;小时&lt;/td&gt;
+      &lt;td&gt;0 - 23&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;天&lt;/td&gt;
+      &lt;td&gt;1 - 31&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;月&lt;/td&gt;
+      &lt;td&gt;1 - 12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;星期&lt;/td&gt;
+      &lt;td&gt;0 - 6       0表示星期天&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;举例：&lt;/p&gt;
+
+&lt;p&gt;* * * * *                  # 每隔一分钟执行一次任务&lt;/p&gt;
+
+&lt;p&gt;0 * * * *                  # 每小时的0点执行一次任务，比如6:00，10:00&lt;/p&gt;
+
+&lt;p&gt;6,10 * 2 * *            # 每个月2号，每小时的6分和10分执行一次任务&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;/3,&lt;/em&gt;/5 * * * *          # 每隔3分钟或5分钟执行一次任务，比如10:03，10:05，10:06&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/daxian2012/articles/2589894.html&quot;&gt;http://www.cnblogs.com/daxian2012/articles/2589894.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Debian sudo&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;su -  &lt;span class=&quot;c&quot;&gt;#切换到root下&lt;/span&gt;
+apt-get &lt;span class=&quot;nb&quot;&gt;install sudo&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#安装&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 把需要应用sudo的用户添加到里面&lt;/span&gt;
+visudo 
+＃ 这个命令会编辑/etc/sudoers文件，在root下面下面添加如下信息debian是用户名
+&lt;span class=&quot;c&quot;&gt;# User privilege specification&lt;/span&gt;
+root &lt;span class=&quot;nv&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;ALL:ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ALL
+debian  &lt;span class=&quot;nv&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;ALL:ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ALL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;下载工具&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 主下载器&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;uget
+&lt;span class=&quot;c&quot;&gt;# 多线程现在插件&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;aria2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Ubuntu / Linux / Debian 使用笔记</summary></entry><entry><title type="html">Unix like command line</title><link href="http://localhost:4000/2019/06/14/Unix-Like-Command-Line.html" rel="alternate" type="text/html" title="Unix like command line" /><published>2019-06-14T00:00:00+08:00</published><updated>2019-06-14T00:00:00+08:00</updated><id>http://localhost:4000/2019/06/14/Unix%20Like%20Command%20Line</id><content type="html" xml:base="http://localhost:4000/2019/06/14/Unix-Like-Command-Line.html">&lt;h1 id=&quot;类-unix-操作系统使用指南&quot;&gt;类 Unix 操作系统使用指南&lt;/h1&gt;
+
+&lt;p&gt;一般使用的命令行都是 Linux 和 MacOS 都能用的，这是因为他们的核心都是类Unix的操作系统。&lt;/p&gt;
+
+&lt;h2 id=&quot;类-unix-系统系统简介&quot;&gt;类 Unix 系统系统简介&lt;/h2&gt;
+
+&lt;h3 id=&quot;linux&quot;&gt;Linux&lt;/h3&gt;
+
+&lt;p&gt;Linux 是一套免费使用和自由传播的类 Unix 操作系统, 有很多版本，常用的有 Ubuntu 和 CentOS 等，如下图:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/unixlike.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
+
+&lt;p&gt;MacOS 核心是 Darwin， Darwin 也是  iOS 操作系统核心，Darwin 也是一种类 Unix 的操作系统&lt;/p&gt;
+
+&lt;h2 id=&quot;命令&quot;&gt;命令&lt;/h2&gt;
+
+&lt;h3 id=&quot;基本操作&quot;&gt;基本操作&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clear&lt;/code&gt; 清楚窗口&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; 跳转目录&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir&lt;/code&gt; 创建目录&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt; 显示目录内容&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;touch&lt;/code&gt; 创建文件&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mv&lt;/code&gt; 移动文件(重命名)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cp&lt;/code&gt; 复制文件(同时可重命名)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm&lt;/code&gt; 删除文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Demo：&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 创建一个 guide 目录&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;guide
+
+&lt;span class=&quot;c&quot;&gt;# 进入 guide&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;guide
+
+&lt;span class=&quot;c&quot;&gt;# ls 查看里面内容&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 创建一个 guide.md 文件&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;guide.md
+
+&lt;span class=&quot;c&quot;&gt;# ls 查看里面内容&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# ls -l 查看文件显示详细信息&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# ls -a 查看所有文件包括隐藏文件 &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 会有三个文件 . / .. / guide.md 其中 . 表示当前目录 .. 表示上层目录(cd .. 返回上层) &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# ls -al 组合上面两个命令&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 创建子目录 subguide&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;subguide
+
+&lt;span class=&quot;c&quot;&gt;# ls 查看&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 复制 guide.md 到子目录 并重命名为 guide.txt&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;guide.md subguide/guide.txt
+
+&lt;span class=&quot;c&quot;&gt;# ls 查看subguide目录 不用 cd 进去 还在当前目录&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;subguide
+
+&lt;span class=&quot;c&quot;&gt;# 把guide.md 移动到 subguide 不重命名&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mv &lt;/span&gt;guide.md subguide
+
+&lt;span class=&quot;c&quot;&gt;# ls 查看 subguide&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# cd 到 subguide&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;subguide
+
+&lt;span class=&quot;c&quot;&gt;# ls 查看&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 删除 guide.txt&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;guide.txt
+
+&lt;span class=&quot;c&quot;&gt;# 退到上层目录&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
+
+&lt;span class=&quot;c&quot;&gt;# ls 查看&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 删除 subguide 目录 包括里面的文件 -rf r表示递归删除 f表示强制删除 组合参数&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; subguide 
+
+&lt;span class=&quot;c&quot;&gt;# ls 查看&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 返回用户目录 &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;vim&quot;&gt;Vim&lt;/h3&gt;
+
+&lt;p&gt;Vim 是 广泛使用的 基于命令行的编辑器 是 Vi 的升级版 可能需要安装&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vim guide.md&lt;/code&gt; 开始编辑 guide.md 文件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; 移动光标到想输入的地方 点击键盘 &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; 进入插入模式 左下角会有 —Insert– 显示, 如图&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;images/viminsert.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ESC&lt;/code&gt; 编辑完成后 点击键盘 &lt;code class=&quot;highlighter-rouge&quot;&gt;ESC&lt;/code&gt; 退出编辑 Insert消失&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:&lt;/code&gt; 输入分号 开始输入编辑提交命令&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;w&lt;/code&gt; 写入&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;q&lt;/code&gt; 退出 一般编辑完成后使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;wq&lt;/code&gt; 组合命令 “写入并退出”&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;!&lt;/code&gt; 强制执行 如果中途放弃编辑 &lt;code class=&quot;highlighter-rouge&quot;&gt;q!&lt;/code&gt; 强制退出&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Demo:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 开始编辑 guide.md&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# vim 后面跟上一个名字 如果没有它就会创建这个文件 所以一般创建文件不用touch 直接 vim xxx 创建开始编辑&lt;/span&gt;
+vim guide.md 
+
+&lt;span class=&quot;c&quot;&gt;# i 进入插入模式&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 输入点啥&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ESC 退出&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 分号 进入命令模式&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 输入wq 回车 写入并推出&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# cat 命令查看文件内容 &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;guide.md
+&lt;span class=&quot;c&quot;&gt;# 或者 vim查看&lt;/span&gt;
+vim guide.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;git&quot;&gt;Git&lt;/h3&gt;
+
+&lt;h3 id=&quot;macos-特例&quot;&gt;MacOS 特例&lt;/h3&gt;
+
+&lt;h2 id=&quot;脚本&quot;&gt;脚本&lt;/h2&gt;
+
+&lt;h1 id=&quot;参考&quot;&gt;参考&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.runoob.com/linux/linux-intro.html&quot;&gt;Linux 简介&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/MacOS&quot;&gt;MacOS Wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[Darwin Wiki](&lt;a href=&quot;https://zh.wikipedia.org/wiki/Darwin_(操作系统)&quot;&gt;https://zh.wikipedia.org/wiki/Darwin_(%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F)&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">类 Unix 操作系统使用指南</summary></entry><entry><title type="html">Apple documentation</title><link href="http://localhost:4000/2019/04/10/Apple-Documentation.html" rel="alternate" type="text/html" title="Apple documentation" /><published>2019-04-10T00:00:00+08:00</published><updated>2019-04-10T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/10/Apple%20Documentation</id><content type="html" xml:base="http://localhost:4000/2019/04/10/Apple-Documentation.html">&lt;h2 id=&quot;appkit&quot;&gt;AppKit&lt;/h2&gt;
+
+&lt;p&gt;MacOS 相关&lt;/p&gt;
+
+&lt;h2 id=&quot;foundation&quot;&gt;Foundation&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;NSDecimal &amp;amp; NSDecimalNumber&lt;/p&gt;
+
+    &lt;p&gt;用于精确计算，多用来计算货币相关&lt;/p&gt;
+
+    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;99999999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//这个计算的结果精度是会出问题的&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//NSDecimalNumber的计算是通过字符串转数字，对于a，b的类型自动处理&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NSNumberFormatter 设置数字按照一定的格式输出&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSNumberFormatter *format = [NSNumberFormatter new];
+format.numberStyle = NSNumberFormatterPercentStyle;
+format.percentSymbol = @&quot;百分&quot;;
+format.minusSign = @&quot;负&quot;;
+  
+NSLog(@&quot;%@&quot;,[format stringFromNumber:[NSNumber numberWithFloat:-0.12]]);
+//负12百分
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NSData 避免在公共目录使用Data 的写入方法，它是不够安全的。 例如：writeToURL:atomically:写入文件，其他人可能对该文件进行破坏，或者将其伪装成硬、软连接导致你破坏其他系统资源。所以，在公共目录推荐使用包含了特定文件描述（file descriptor）的NSFileHandle;&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;fd = mkstemp(tmpfile); // check return for -1, which indicates an error
+NSFileHandle *myhandle = [[NSFileHandle alloc] initWithFileDescriptor:fd];
+//mkstemp()函数在系统中以唯一的文件名创建一个文件并打开，而且只有当前用户才能访问这个临时文件，并进行读、写操作。
+//writeToURL:atomically: 的atomically 实现原理是先产生一个临时文件传输完毕了再拷贝到指定路径
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;core-graphics&quot;&gt;Core Graphics&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Graphics Contexts&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;You can think of a graphics context as a drawing destination, as shown in Figure 1-2. When you draw with Quartz, all device-specific characteristics are contained within the specific type of graphics context you use. In other words, you can draw the same image to a different device simply by providing a different graphics context to the same sequence of Quartz drawing routines. You do not need to perform any device-specific calculations; Quartz does it for you.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;img src=&quot;images/draw_destinations.gif&quot; alt=&quot;Figure 1-2&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;对比：&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;相对于Bitmap PDF 存储的时命令序列&lt;/li&gt;
+      &lt;li&gt;相对于Bitmap PDF 里的图片会根据设备显示特点优化&lt;/li&gt;
+      &lt;li&gt;相对于Bitmap PDF 不会因为分辨率而不清晰 类似矢量图 其实对应了 1。&lt;/li&gt;
+      &lt;li&gt;离屏绘制的时候使用layer要好于bitmap&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Graphics States&lt;/p&gt;
+
+    &lt;p&gt;Quartz 根据 当前状态（current graphics state） 来修改绘制的结果。&lt;/p&gt;
+
+    &lt;p&gt;每一个Graphics Context 都有一个Graphics State 栈。创建一个Graphics Context 后 就有了一个空的栈。&lt;/p&gt;
+
+    &lt;p&gt;CGContextSaveGState 会将当前的状态copy 到这个栈，也就是push进去。&lt;/p&gt;
+
+    &lt;p&gt;CGConextRestoreGState 则会pop这个栈。&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;ps： save和restore应是成对出现 保存一个当前使用的状态，当前使用完就pop&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;坐标系&lt;/p&gt;
+
+    &lt;p&gt;CTM Current Transformation Matrix&lt;/p&gt;
+
+    &lt;p&gt;Affine Transform 是CTM的一种&lt;/p&gt;
+
+    &lt;p&gt;相对于Default Coordinate  UIKit 的坐标系是 Modified Coordinate&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;内存管理&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;If you create or copy an object, you own it, and therefore you must release it. That is, in general, if you obtain an object from a function with the words “Create” or “Copy” in its name, you must release the object when you’re done with it. Otherwise, a memory leak results.&lt;/p&gt;
+
+      &lt;p&gt;If you obtain an object from a function that does not contain the words “Create” or “Copy” in its name, you do not own a reference to the object, and you must not release it. The object will be released by its owner at some point in the future.&lt;/p&gt;
+
+      &lt;p&gt;If you do not own an object and you need to keep it around, you must retain it and release it when you’re done with it. You use the Quartz 2D functions specific to an object to retain and release that object. For example, if you receive a reference to a CGColorspace object, you use the functions &lt;code class=&quot;highlighter-rouge&quot;&gt;CGColorSpaceRetain&lt;/code&gt; and&lt;code class=&quot;highlighter-rouge&quot;&gt;CGColorSpaceRelease&lt;/code&gt; to retain and release the object as needed. You can also use the Core Foundation functions &lt;code class=&quot;highlighter-rouge&quot;&gt;CFRetain&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;CFRelease&lt;/code&gt;, but you must be careful not to pass &lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt; to these functions.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Paths&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;Quartz routines that add ellipses and rectangles add a new closed subpath to the path.&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;三种 join 两条线段结合的部分：miter 尖尖的，round 圆圆的, revel 平平的&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;三种 cap 一个线段的两端：butt 直接在端点停下来，平的；round 在端点 画圆半径是线宽一半；projecting square 在端点画方 延长线宽一半（和round长度一样）&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;两种填充策略&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;images/eosampleone.gif&quot; alt=&quot;填充策略&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;nonzero winding-number ：&lt;/p&gt;
+
+        &lt;blockquote&gt;
+          &lt;p&gt;To determine whether a specific point should be painted, start at the point and draw a line beyond the bounds of the drawing. Starting with a count of 0, add 1 to the count every time a path segment crosses the line from left to right, and subtract 1 every time a path segment crosses the line from right to left. If the result is 0, the point is not painted. &lt;/p&gt;
+        &lt;/blockquote&gt;
+
+        &lt;p&gt;Even-odd:&lt;/p&gt;
+
+        &lt;blockquote&gt;
+          &lt;p&gt;To determine whether a specific point should be painted, start at the point and draw a line beyond the bounds of the drawing. Count the number of path segments that the line crosses. If the result is odd, the point is painted. If the result is even, the point is not painted. The direction that the path segments are drawn doesn’t affect the outcome. &lt;/p&gt;
+        &lt;/blockquote&gt;
+
+        &lt;p&gt;&lt;img src=&quot;images/eosampleone_tag.gif&quot; alt=&quot;标注图&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Blend Modes 混合模式&lt;/p&gt;
+
+        &lt;p&gt;透明度的默认混合公式：&lt;/p&gt;
+
+        &lt;p&gt;​	Result = alpha * foregroudColor +  (1 - alpha) * backgroundColor&lt;/p&gt;
+
+        &lt;p&gt;详细Blend Mode 对比 &lt;a href=&quot;https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_paths/dq_paths.html&quot;&gt;举例参考&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Color And ColorSpaces&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;四种 Color Spaces ： Device-independent, Generic, Device-dependent, Indexed and Pattern&lt;/p&gt;
+
+        &lt;p&gt;其中前两个iOS不能使用，iOS一般使用Device-dependent&lt;/p&gt;
+
+        &lt;p&gt;对于 macOS  一般使用Generic&lt;/p&gt;
+
+        &lt;p&gt;对于 image 场景一般使用Device-dependent color space 的 CGColorSpaceCreateDeviceGray&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;设置颜色 指明color space  或者使用 CGColor （构造时候会说明color space）&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Transforms&lt;/p&gt;
+
+    &lt;p&gt;变化是一种Graphics State 可以通过save 和 restore state 来记录和恢复&lt;/p&gt;
+
+    &lt;p&gt;3x3 变幻矩阵：&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;主要是前面两个column起作用，第三个column是为了能实现矩阵乘法（变化矩阵拼接）&lt;/li&gt;
+      &lt;li&gt;前两个column 的最后一行是加法因子 tx ty 分别控制着代表了x、y的偏移量&lt;/li&gt;
+      &lt;li&gt;前两个column 的上面两行 是乘法因子 决定了放大缩小以及角度旋转（旋转变化考虑利用的向量夹角相关知识）&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pattern&lt;/p&gt;
+
+    &lt;p&gt;Pattern 是一种图案用起来像颜色一样&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Shadows&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;CGShading &amp;amp; CGGradient Object : CGGradient 继承 CGShading 封装了绘制方法（CGFunction），你只需要传入颜色 位置对应关系即可，而CGShading需要自己写颜色怎样过渡变化。简单效果CGGradient实现比较方便，复杂效果CGShading可能更方便。&lt;/li&gt;
+      &lt;li&gt;CGGradient可以同时绘制轴向效果和径向效果，而CGShading需要分开创建对象绘制。&lt;/li&gt;
+      &lt;li&gt;CGGradient 坐标是在绘制时候设置，而CGShading是在创建时候&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Transparency Layers&lt;/p&gt;
+
+    &lt;p&gt;在透明图层上绘制的多个组合图形会被当做一个整体对待&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;color-management&quot;&gt;Color Management&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;RGB &amp;amp; CMYK&lt;/p&gt;
+
+    &lt;p&gt;它们都是三原色，一个用于会发光的场景，例如显示器，又叫叠加色，因为它是通过三种颜色的叠加产生颜色。一个用于反光的场景，例如报纸，又叫削减色，因为它是通过吸收白光的其他成分显出颜色。&lt;/p&gt;
+
+    &lt;p&gt;CMYK： Cyan 青色-天蓝色 Magenta 品红色-洋红色 Yellow 黄色 Key Plate 黑色，三原色是CMY 黑色用来增加饱和度，CMY调出的黑色不够浓郁&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ios-data-storage-guidelines&quot;&gt;iOS Data Storage Guidelines&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;只有用户创建的文件 或者 应用不能再创建的文档存储在Documents, 该目录会被iCloud同步（需要长期保存，不可以重新生成）&lt;/li&gt;
+  &lt;li&gt;可以重新下载或者重新创建的文件放在Library/Cache， 例如下载的离线地图 或者 离线文章（需要较长期保存，但又可重新生成）。处理Cache，Library里的文件也会被备份到iCloud&lt;/li&gt;
+  &lt;li&gt;临时文件放在 tmp （不需要长期保存，可以重新生成），用完后主动删除&lt;/li&gt;
+  &lt;li&gt;可以给文件 “do not back up”属性，从而保证文件永远在本地，即使低内存的时候也不会删除，该属性不管在哪个目录都生效。这样的文件不会被清除，也不会被备份到iCloud。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;text-hanling-in-ios&quot;&gt;&lt;a href=&quot;https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/Introduction/Introduction.html&quot;&gt;Text Hanling in iOS&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/Users/miaoqi/code/note/images/textpg_intro_2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;整体字体高度为 Line Height = Ascent + Descent + Line gap（leading）&lt;/li&gt;
+  &lt;li&gt;Ascent = Cap height + xxx（没有名称，字母出头部分）&lt;/li&gt;
+  &lt;li&gt;BaseLine 以上为 Ascent&lt;/li&gt;
+  &lt;li&gt;BaseLine 以下为 Descent&lt;/li&gt;
+  &lt;li&gt;Line Gap 为两行字的间距&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/Users/miaoqi/code/note/images/glyphterms_2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">AppKit</summary></entry><entry><title type="html">Investment</title><link href="http://localhost:4000/2019/04/02/Investment.html" rel="alternate" type="text/html" title="Investment" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/Investment</id><content type="html" xml:base="http://localhost:4000/2019/04/02/Investment.html">&lt;h2 id=&quot;投资&quot;&gt;投资&lt;/h2&gt;
+
+&lt;h3 id=&quot;基金&quot;&gt;基金&lt;/h3&gt;
+
+&lt;h4 id=&quot;什么是基金&quot;&gt;什么是基金&lt;/h4&gt;
+
+&lt;p&gt;假设您有一笔钱想投资债券、股票等这类证券进行增值，但自己又一无精力二无专业知识，而且你钱也不算多，就想到与其他10个人合伙出资，雇一个投资高手，操作大家合出的资产进行投资增值。但这里面，如果10多个投资人都与投资高手随时交涉，那时还不乱套，于是就推举其中一个最懂行的牵头办这事。定期从大伙合出的资产中按一定比例提成给他，由他代为付给投资高手劳务费报酬，当然，他自己牵头出力张罗大大小小的事，包括挨家跑腿，有关风险的事向高手随时提醒着点，定期向大伙公布投资盈亏情况等等，不可白忙，提成中的钱也有他的劳务费。上面这些事就叫作合伙投资。将这种合伙投资的模式放大100倍、1000倍，就是基金。&lt;/p&gt;
+
+&lt;h4 id=&quot;什么是私募基金&quot;&gt;什么是私募基金&lt;/h4&gt;
+
+&lt;p&gt;这种民间私下合伙投资的活动如果在出资人间建立了完备的契约合同，就是私募基金（在我国还未得到国家金融行业监管有关法规的认可）&lt;/p&gt;
+
+&lt;h4 id=&quot;什么是公募基金&quot;&gt;什么是公募基金&lt;/h4&gt;
+
+&lt;p&gt;如果这种合伙投资的活动经过国家证券行业管理部门（中国证券监督管理委员会）的审批，允许这项活动的牵头操作人向社会公开募集吸收投资者加入合伙出资，这就是发行公募基金，也就是大家现在常见的基金。&lt;/p&gt;
+
+&lt;p&gt;基金是一种间接的证券投资方式。基金管理公司通过发行基金单位，集中投资者的资金，由基金托管人（即具有资格的银行）托管，由基金管理人管理和运用资金，从事股票、债券等金融工具投资，然后共担投资风险、分享收益。&lt;/p&gt;
+
+&lt;h3 id=&quot;一入股市深似海&quot;&gt;一入股市深似海？&lt;/h3&gt;</content><author><name></name></author><summary type="html">投资</summary></entry><entry><title type="html">Kif ui automated testing</title><link href="http://localhost:4000/2019/04/02/KIF-UI-Automated-testing.html" rel="alternate" type="text/html" title="Kif ui automated testing " /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/KIF%20UI%20Automated%20testing</id><content type="html" xml:base="http://localhost:4000/2019/04/02/KIF-UI-Automated-testing.html">&lt;h1 id=&quot;appium-kif-ui自动化测试&quot;&gt;Appium KIF UI自动化测试&lt;/h1&gt;
+
+&lt;h2 id=&quot;accessibility&quot;&gt;accessibility&lt;/h2&gt;
+
+&lt;h4 id=&quot;accessibilitylabelvoiceover-辅助标识&quot;&gt;accessibilityLabel——VoiceOver 辅助标识&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;系统元素一般都会设定&lt;/li&gt;
+  &lt;li&gt;需要具有意义： VoiceOver 会将其读给用户听&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reusableIdentifier forIndexPath:indexPath];
+    cell.textLabel.text = self.dataSouce[indexPath.row].name;
+    cell.backgroundColor = self.dataSouce[indexPath.row].isDirectory ? [UIColor cyanColor] : [UIColor whiteColor];
+    
+    cell.accessibilityLabel = [NSString stringWithFormat:@&quot;第%ld项 %@&quot;, indexPath.row, self.dataSouce[indexPath.row].name];	// 点击提示读出当前行号和文件名
+    cell.accessibilityHint = self.dataSouce[indexPath.row].isDirectory ? @&quot;这是一个文件夹 可打开&quot; : @&quot;这是一个文件&quot;;	// 提示该内容是什么类型的文件 可以做什么操作
+    return cell;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;accessiblityidentifierui元素标识&quot;&gt;accessiblityIdentifier——UI元素标识&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;UIAccessibilityIdentification  协议属性&lt;/li&gt;
+  &lt;li&gt;UIKit 实现了该协议的类：UIView UIBarItem UIImage&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;appium&quot;&gt;Appium&lt;/h2&gt;
+
+&lt;h4 id=&quot;原理&quot;&gt;原理：&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;目前是基于XCUITest，Client/Server 模式&lt;/li&gt;
+  &lt;li&gt;在设备上安装一个APP，也是服务端 WebDriverAgent（Facebook的一个项目），接收Appium Client发来的测试命令。WebDriverAgent 通过XCUITest的API 来完成测试。&lt;/li&gt;
+  &lt;li&gt;通过元素的 accessibilityLabel、accessiblityIdentifier、className、xpath等查找元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;使用体验ios开发者&quot;&gt;使用体验（iOS开发者）：&lt;/h4&gt;
+
+&lt;h5 id=&quot;优点&quot;&gt;优点：&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;测试用例不需要写在APP内部，可直接测试已有APP&lt;/li&gt;
+  &lt;li&gt;可以使用Python Java Javascript 等多种语言编写用例&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;缺点&quot;&gt;缺点：&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;只能运行在iOS 9.3 以上的设备&lt;/li&gt;
+  &lt;li&gt;C/S模式 查找元素耗时，尤其是table cells 较多时候查找一组元素很慢（原因在于按照cellClass查找会尝试拿到所有的cells）&lt;/li&gt;
+  &lt;li&gt;不能使用OC 和 swift 编写用例&lt;/li&gt;
+  &lt;li&gt;Client通过Server返回的 UI的 xml布局 解析UI元素，不能像原生一样直接使用控件的类操作&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;结论&quot;&gt;结论&lt;/h4&gt;
+
+&lt;p&gt;适合非iOS开发的专业测试人员&lt;/p&gt;
+
+&lt;h2 id=&quot;kif&quot;&gt;KIF&lt;/h2&gt;
+
+&lt;h4 id=&quot;原理-1&quot;&gt;原理：&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基于XCTest 和 UI操作的私有API：利用XCTest的优点来进行UI测试&lt;/li&gt;
+  &lt;li&gt;推荐使用accessibilityLabel标识来查找元素，也可以使用accessiblityIdentifier、className等&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;使用体验ios开发者-1&quot;&gt;使用体验（iOS开发者）：&lt;/h4&gt;
+
+&lt;h5 id=&quot;优点-1&quot;&gt;优点：&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;OC swift 编码&lt;/li&gt;
+  &lt;li&gt;原生界面元素类支持&lt;/li&gt;
+  &lt;li&gt;元素查找更友好，也更快 （table 会自动滚动到要点击的位置，table元素每次只拿当前显示个数）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;缺点-1&quot;&gt;缺点：&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;测试用例需要写在项目中&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;结论-1&quot;&gt;结论：&lt;/h4&gt;
+
+&lt;p&gt;适合iOS开发人员&lt;/p&gt;
+
+&lt;h4 id=&quot;jenkins集成&quot;&gt;Jenkins集成：&lt;/h4&gt;
+
+&lt;h5 id=&quot;安装测试结果统计支持&quot;&gt;安装测试结果统计支持&lt;/h5&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Jenkins 统计结果使用Junit 插件 这个库用来转换格式&lt;/span&gt;
+gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ocunit2junit
+
+&lt;span class=&quot;c&quot;&gt;# 统计代码覆盖率&lt;/span&gt;
+gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;slather
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 测试&lt;/span&gt;
+xcodebuild &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-workspace&lt;/span&gt; xxx.xcworkspace &lt;span class=&quot;nt&quot;&gt;-scheme&lt;/span&gt; xxxTests &lt;span class=&quot;nt&quot;&gt;-destination&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'platform=iOS,name=xxx'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-configuration&lt;/span&gt; Debug &lt;span class=&quot;nt&quot;&gt;-enableCodeCoverage&lt;/span&gt; YES 2&amp;gt;&amp;amp;1 | ocunit2junit
+
+&lt;span class=&quot;c&quot;&gt;# 统计代码覆盖率 和 测试结果&lt;/span&gt;
+slather coverage &lt;span class=&quot;nt&quot;&gt;--html&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--input-format&lt;/span&gt; profdata &lt;span class=&quot;nt&quot;&gt;--binary-basename&lt;/span&gt; xxx.app &lt;span class=&quot;nt&quot;&gt;--scheme&lt;/span&gt; xxxTests &lt;span class=&quot;nt&quot;&gt;--workspace&lt;/span&gt; xxx.xcworkspace &lt;span class=&quot;nt&quot;&gt;--configuration&lt;/span&gt; Debug &lt;span class=&quot;nt&quot;&gt;--ignore&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;View&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--ignore&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;AppText&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--output-directory&lt;/span&gt; reports
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;详细看参考链接 3&lt;/p&gt;
+
+&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://appium.io/docs/en/drivers/ios-xcuitest/&quot;&gt;Appium The XCUITest Driver for iOS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tech.meituan.com/iOS_UITest_KIF.html&quot;&gt;为什么使用KIF——美团方案&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/dea69545bf4e&quot;&gt;jenkins 自动化集成&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://juejin.im/post/5b011de951882542672654d&quot;&gt;测试方案调研&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">Appium KIF UI自动化测试</summary></entry><entry><title type="html">Macos apache</title><link href="http://localhost:4000/2019/04/02/MacOS-Apache.html" rel="alternate" type="text/html" title="Macos apache" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/MacOS%20Apache</id><content type="html" xml:base="http://localhost:4000/2019/04/02/MacOS-Apache.html">&lt;h1 id=&quot;macos-自带-apache-使用说明&quot;&gt;MacOS 自带 Apache 使用说明&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTTP&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/p/d006a34a343f&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTTPS&lt;/p&gt;
+
+    &lt;p&gt;生成key：&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;openssl genrsa -des3 1024 &amp;gt; server.key&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/lllkey/article/details/78435861&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">MacOS 自带 Apache 使用说明</summary></entry><entry><title type="html">Machine learning</title><link href="http://localhost:4000/2019/04/02/Machine-Learning.html" rel="alternate" type="text/html" title="Machine learning" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/Machine%20Learning</id><content type="html" xml:base="http://localhost:4000/2019/04/02/Machine-Learning.html">&lt;h1 id=&quot;斯坦福大学公开课机器学习&quot;&gt;斯坦福大学公开课：机器学习&lt;/h1&gt;
+
+&lt;h2 id=&quot;第一课&quot;&gt;第一课&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;机器学习的概念&lt;/li&gt;
+  &lt;li&gt;监督学习
+    &lt;ul&gt;
+      &lt;li&gt;结果是连续的——回归问题（某地区的房价 和 面积的关系）&lt;/li&gt;
+      &lt;li&gt;结果是离散的——分类问题（肿瘤是否是恶性的 和 肿瘤的大小的关系）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">斯坦福大学公开课：机器学习</summary></entry><entry><title type="html">Message forwarding</title><link href="http://localhost:4000/2019/04/02/Message-Forwarding.html" rel="alternate" type="text/html" title="Message forwarding" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/Message%20Forwarding</id><content type="html" xml:base="http://localhost:4000/2019/04/02/Message-Forwarding.html">&lt;h2 id=&quot;消息转发&quot;&gt;消息转发&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;resolveInstanceMethod:&lt;/code&gt; 动态添加方法实现的地方&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;forwardingTargetForMethod:&lt;/code&gt; 消息转发&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;methodSignatureForSelector:&lt;/code&gt;  获取方法签名&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;forwardingInvocation:&lt;/code&gt; 转发NSInvocation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;三个方法的调用顺序：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 例子： SandboxFiles 类下有 test 方法没有实现  重写一下三个方法
+
++ (BOOL)resolveInstanceMethod:(SEL)sel{
+    NSLog(@&quot;resolveInstanceMethod %@&quot;, NSStringFromSelector(sel));
+    return [super resolveInstanceMethod:sel];
+}
+
+- (id)forwardingTargetForSelector:(SEL)aSelector{
+    NSLog(@&quot;forwardingTargetForSelector %@&quot;, NSStringFromSelector(aSelector));
+    return [super forwardingTargetForSelector:aSelector];
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector{
+    NSLog(@&quot;methodSignatureForSelector %@&quot;,NSStringFromSelector(aSelector));
+    return [super methodSignatureForSelector:aSelector];
+}
+
+// 执行 test 后
+
+/*
+2018-10-27 23:18:52.845763+0800 FilePre[2210:59678] resolveInstanceMethod test
+2018-10-27 23:18:52.845930+0800 FilePre[2210:59678] forwardingTargetForSelector test
+2018-10-27 23:18:52.846041+0800 FilePre[2210:59678] methodSignatureForSelector test
+2018-10-27 23:18:52.846179+0800 FilePre[2210:59678] resolveInstanceMethod test
+2018-10-27 23:18:52.846299+0800 FilePre[2210:59678] -[SandboxFiles test]: unrecognized selector sent to instance 0x600001d22910
+*/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;resolveinstancemethod&quot;&gt;resolveInstanceMethod&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This method and &lt;a href=&quot;https://developer.apple.com/documentation/objectivec/nsobject/1418889-resolveclassmethod&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;resolveClassMethod(_:)&lt;/code&gt;&lt;/a&gt; allow you to dynamically provide an implementation for a given selector.&lt;/p&gt;
+
+  &lt;p&gt;An Objective-C method is simply a C function that take at least two arguments—&lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;_cmd&lt;/code&gt;. Using the &lt;a href=&quot;https://developer.apple.com/documentation/objectivec/1418901-class_addmethod&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class_addMethod(_:_:_:_:)&lt;/code&gt;&lt;/a&gt; function, you can add a function to a class as a method.&lt;/p&gt;
+
+  &lt;p&gt;This method is called before the Objective-C forwarding mechanism is invoked. If &lt;a href=&quot;https://developer.apple.com/documentation/objectivec/nsobjectprotocol/1418583-responds&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;responds(to:)&lt;/code&gt;&lt;/a&gt; or &lt;a href=&quot;https://developer.apple.com/documentation/objectivec/nsobject/1418555-instancesrespond&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;instancesRespond(to:)&lt;/code&gt;&lt;/a&gt; is invoked, the dynamic method resolver is given the opportunity to provide an &lt;code class=&quot;highlighter-rouge&quot;&gt;IMP&lt;/code&gt; for the given selector first.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 动态添加方法
+
+void dynamicTestMethod(id self,SEL _cmd){
+    NSLog(@&quot;dynamicTestMethod %p selector:%@&quot;,self, NSStringFromSelector(_cmd));
+}
+
++ (BOOL)resolveInstanceMethod:(SEL)sel{
+    NSLog(@&quot;resolveInstanceMethod %@&quot;, NSStringFromSelector(sel));
+    if (sel == @selector(test)) {
+        NSLog(@&quot;resolveInstanceMethod add method %@&quot;,NSStringFromSelector(sel));
+        class_addMethod([self class], sel, (IMP)dynamicTestMethod, &quot;@v@:&quot;);
+        return YES;
+    }
+    return [super resolveInstanceMethod:sel];
+}
+
+// 运行结果
+
+/*
+2018-10-27 23:20:28.905674+0800 FilePre[2241:60668] resolveInstanceMethod test
+2018-10-27 23:20:28.905843+0800 FilePre[2241:60668] resolveInstanceMethod add method test
+2018-10-27 23:20:28.905971+0800 FilePre[2241:60668] dynamicTestMethod 0x600002638b60 selector:test
+*/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;forwardingtargetforselector&quot;&gt;forwardingTargetForSelector&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Returns the object to which unrecognized messages should first be directed.&lt;/p&gt;
+
+  &lt;p&gt;This method gives an object a chance to redirect an unknown message sent to it before the much more expensive &lt;a href=&quot;https://developer.apple.com/documentation/objectivec/nsobject/1571955-forwardinvocation?language=objc&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;forwardInvocation:&lt;/code&gt;&lt;/a&gt; machinery takes over.&lt;/p&gt;
+
+  &lt;p&gt;Obviously if you return &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; from this method, the code would just fall into an infinite loop.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// AnotherTarget 实现了 test
+
+- (id)forwardingTargetForSelector:(SEL)aSelector{
+    NSLog(@&quot;forwardingTargetForSelector %@&quot;, NSStringFromSelector(aSelector));
+    AnotherTarget *obj = [AnotherTarget new];
+    if ([obj respondsToSelector:aSelector]) {
+        return obj;
+    }else{
+        return [super forwardingTargetForSelector:aSelector];
+    }
+}
+
+// 打印：
+/*
+2018-10-28 12:36:31.644226+0800 FilePre[2573:77914] resolveInstanceMethod test
+2018-10-28 12:36:31.644405+0800 FilePre[2573:77914] forwardingTargetForSelector test
+2018-10-28 12:36:31.644501+0800 FilePre[2573:77914] AnotherTarget test
+*/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;methodsignatureforselector&quot;&gt;methodSignatureForSelector:&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Raises &lt;code class=&quot;highlighter-rouge&quot;&gt;NSInvalidArgumentException&lt;/code&gt;. Override this method in your concrete subclass to return a proper &lt;code class=&quot;highlighter-rouge&quot;&gt;NSMethodSignature&lt;/code&gt; object for the given selector and the class your proxy objects stand in for.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;forwardinginvocation&quot;&gt;forwardingInvocation:&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When an object is sent a message for which it has no corresponding method, the runtime system gives the receiver an opportunity to delegate the message to another receiver. It delegates the message by creating an &lt;code class=&quot;highlighter-rouge&quot;&gt;NSInvocation&lt;/code&gt; object representing the message and sending the receiver a &lt;code class=&quot;highlighter-rouge&quot;&gt;forwardInvocation:&lt;/code&gt; message containing this &lt;code class=&quot;highlighter-rouge&quot;&gt;NSInvocation&lt;/code&gt;object as the argument. The receiver’s &lt;code class=&quot;highlighter-rouge&quot;&gt;forwardInvocation:&lt;/code&gt; method can then choose to forward the message to another object. (If that object can’t respond to the message either, it too will be given a chance to forward it.)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;
+// 获取AnotherTarget 的 test 方法的签名 触发转发
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector{
+    return [[AnotherTarget new] methodSignatureForSelector:aSelector];
+}
+
+// 在AnotherTarget上invoke
+- (void)forwardInvocation:(NSInvocation *)anInvocation{
+    SEL selector = [anInvocation selector];
+    
+    NSLog(@&quot;forwardInvocation %@&quot;, NSStringFromSelector(selector));
+
+    AnotherTarget *obj = [AnotherTarget new];
+    if ([obj respondsToSelector:selector]) {
+        [anInvocation invokeWithTarget:obj];
+    }else{
+        [super forwardInvocation:anInvocation];
+    }
+}
+
+/*
+2018-10-28 13:31:38.556762+0800 FilePre[3088:100888] resolveInstanceMethod test
+2018-10-28 13:31:38.556976+0800 FilePre[3088:100888] forwardingTargetForSelector test
+2018-10-28 13:31:38.557142+0800 FilePre[3088:100888] resolveInstanceMethod _forwardStackInvocation:
+2018-10-28 13:31:38.557264+0800 FilePre[3088:100888] forwardInvocation test
+2018-10-28 13:31:38.557354+0800 FilePre[3088:100888] AnotherTarget test
+*/
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">消息转发</summary></entry></feed>
