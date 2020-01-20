@@ -1,0 +1,158 @@
+<h1 id="类-unix-操作系统使用指南">类 Unix 操作系统使用指南</h1>
+
+<p>一般使用的命令行都是 Linux 和 MacOS 都能用的，这是因为他们的核心都是类Unix的操作系统。</p>
+
+<h2 id="类-unix-系统系统简介">类 Unix 系统系统简介</h2>
+
+<h3 id="linux">Linux</h3>
+
+<p>Linux 是一套免费使用和自由传播的类 Unix 操作系统, 有很多版本，常用的有 Ubuntu 和 CentOS 等，如下图:</p>
+
+<p><img src="../../../images/unixlike.jpg" alt="" /></p>
+
+<h3 id="macos">MacOS</h3>
+
+<p>MacOS 核心是 Darwin， Darwin 也是  iOS 操作系统核心，Darwin 也是一种类 Unix 的操作系统</p>
+
+<h2 id="命令">命令</h2>
+
+<h3 id="基本操作">基本操作</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">clear</code> 清楚窗口</li>
+  <li><code class="highlighter-rouge">cd</code> 跳转目录</li>
+  <li>
+    <p><code class="highlighter-rouge">mkdir</code> 创建目录</p>
+  </li>
+  <li><code class="highlighter-rouge">ls</code> 显示目录内容</li>
+  <li><code class="highlighter-rouge">touch</code> 创建文件</li>
+  <li><code class="highlighter-rouge">mv</code> 移动文件(重命名)</li>
+  <li><code class="highlighter-rouge">cp</code> 复制文件(同时可重命名)</li>
+  <li><code class="highlighter-rouge">rm</code> 删除文件</li>
+</ul>
+
+<p>Demo：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 创建一个 guide 目录</span>
+<span class="nb">mkdir </span>guide
+
+<span class="c"># 进入 guide</span>
+<span class="nb">cd </span>guide
+
+<span class="c"># ls 查看里面内容</span>
+<span class="nb">ls</span>
+
+<span class="c"># 创建一个 guide.md 文件</span>
+<span class="nb">touch </span>guide.md
+
+<span class="c"># ls 查看里面内容</span>
+<span class="nb">ls</span>
+
+<span class="c"># ls -l 查看文件显示详细信息</span>
+<span class="nb">ls</span> <span class="nt">-l</span>
+
+<span class="c"># ls -a 查看所有文件包括隐藏文件 </span>
+<span class="c"># 会有三个文件 . / .. / guide.md 其中 . 表示当前目录 .. 表示上层目录(cd .. 返回上层) </span>
+<span class="nb">ls</span> <span class="nt">-a</span>
+
+<span class="c"># ls -al 组合上面两个命令</span>
+
+<span class="c"># 创建子目录 subguide</span>
+<span class="nb">mkdir </span>subguide
+
+<span class="c"># ls 查看</span>
+<span class="nb">ls</span>
+
+<span class="c"># 复制 guide.md 到子目录 并重命名为 guide.txt</span>
+<span class="nb">cp </span>guide.md subguide/guide.txt
+
+<span class="c"># ls 查看subguide目录 不用 cd 进去 还在当前目录</span>
+<span class="nb">ls </span>subguide
+
+<span class="c"># 把guide.md 移动到 subguide 不重命名</span>
+<span class="nb">mv </span>guide.md subguide
+
+<span class="c"># ls 查看 subguide</span>
+
+<span class="c"># cd 到 subguide</span>
+<span class="nb">cd </span>subguide
+
+<span class="c"># ls 查看</span>
+<span class="nb">ls</span>
+
+<span class="c"># 删除 guide.txt</span>
+<span class="nb">rm </span>guide.txt
+
+<span class="c"># 退到上层目录</span>
+<span class="nb">cd</span> ..
+
+<span class="c"># ls 查看</span>
+<span class="nb">ls</span>
+
+<span class="c"># 删除 subguide 目录 包括里面的文件 -rf r表示递归删除 f表示强制删除 组合参数</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> subguide 
+
+<span class="c"># ls 查看</span>
+
+<span class="c"># 返回用户目录 </span>
+<span class="nb">cd</span>
+
+</code></pre></div></div>
+
+<h3 id="vim">Vim</h3>
+
+<p>Vim 是 广泛使用的 基于命令行的编辑器 是 Vi 的升级版 可能需要安装</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">vim guide.md</code> 开始编辑 guide.md 文件</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">i</code> 移动光标到想输入的地方 点击键盘 <code class="highlighter-rouge">i</code> 进入插入模式 左下角会有 —Insert– 显示, 如图</p>
+
+    <p><img src="../../../images/viminsert.png" alt="" /></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">ESC</code> 编辑完成后 点击键盘 <code class="highlighter-rouge">ESC</code> 退出编辑 Insert消失</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">:</code> 输入分号 开始输入编辑提交命令</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">w</code> 写入</li>
+      <li><code class="highlighter-rouge">q</code> 退出 一般编辑完成后使用 <code class="highlighter-rouge">wq</code> 组合命令 “写入并退出”</li>
+      <li><code class="highlighter-rouge">!</code> 强制执行 如果中途放弃编辑 <code class="highlighter-rouge">q!</code> 强制退出</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Demo:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 开始编辑 guide.md</span>
+<span class="c"># vim 后面跟上一个名字 如果没有它就会创建这个文件 所以一般创建文件不用touch 直接 vim xxx 创建开始编辑</span>
+vim guide.md 
+
+<span class="c"># i 进入插入模式</span>
+<span class="c"># 输入点啥</span>
+<span class="c"># ESC 退出</span>
+<span class="c"># 分号 进入命令模式</span>
+<span class="c"># 输入wq 回车 写入并推出</span>
+<span class="c"># cat 命令查看文件内容 </span>
+<span class="nb">cat </span>guide.md
+<span class="c"># 或者 vim查看</span>
+vim guide.md
+</code></pre></div></div>
+
+<h3 id="git">Git</h3>
+
+<h3 id="macos-特例">MacOS 特例</h3>
+
+<h2 id="脚本">脚本</h2>
+
+<h1 id="参考">参考</h1>
+
+<p><a href="https://www.runoob.com/linux/linux-intro.html">Linux 简介</a></p>
+
+<p><a href="https://zh.wikipedia.org/wiki/MacOS">MacOS Wiki</a></p>
+
+<p>[Darwin Wiki](<a href="https://zh.wikipedia.org/wiki/Darwin_(操作系统)">https://zh.wikipedia.org/wiki/Darwin_(%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F)</a></p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-15T22:41:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Somewhere</title><subtitle>过着，记录着</subtitle><entry><title type="html">Regex Regular expression</title><link href="http://localhost:4000/2019/08/27/Regex-Regular-Expression.html" rel="alternate" type="text/html" title="Regex Regular expression" /><published>2019-08-27T00:00:00+08:00</published><updated>2019-08-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/08/27/Regex-Regular%20Expression</id><content type="html" xml:base="http://localhost:4000/2019/08/27/Regex-Regular-Expression.html">&lt;h3 id=&quot;元字符&quot;&gt;元字符&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-20T10:44:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Somewhere</title><subtitle>过着，记录着</subtitle><entry><title type="html">正则表达学习</title><link href="http://localhost:4000/2019/08/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0.html" rel="alternate" type="text/html" title="正则表达学习" /><published>2019-08-27T00:00:00+08:00</published><updated>2019-08-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/08/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0</id><content type="html" xml:base="http://localhost:4000/2019/08/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0.html">&lt;h3 id=&quot;元字符&quot;&gt;元字符&lt;/h3&gt;
 
 &lt;h4 id=&quot;限定符&quot;&gt;限定符&lt;/h4&gt;
 
@@ -163,7 +163,7 @@
 以一个或多个小写字母开头的， 以一个或多个小写字母结尾的匹配。 最后的i表示不区分大小写， 全局标记g用于将表达式应用于输入字符串，能够查找到更多匹配。&lt;br /&gt;
 这里对于边界\b 的使用是必要的，否则无法识别 is issued 或者 this is 这种不合要求的内容&lt;/li&gt;
   &lt;/ol&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">元字符</summary></entry><entry><title type="html">Git svn cmd</title><link href="http://localhost:4000/2019/07/09/git-svn-cmd.html" rel="alternate" type="text/html" title="Git svn cmd" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/2019/07/09/git%20svn%20cmd</id><content type="html" xml:base="http://localhost:4000/2019/07/09/git-svn-cmd.html">&lt;h2 id=&quot;svn&quot;&gt;SVN&lt;/h2&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">元字符</summary></entry><entry><title type="html">Git svn cmd 备忘</title><link href="http://localhost:4000/2019/07/09/git-svn-cmd-%E5%A4%87%E5%BF%98.html" rel="alternate" type="text/html" title="Git svn cmd 备忘" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/2019/07/09/git%20svn%20cmd%20%E5%A4%87%E5%BF%98</id><content type="html" xml:base="http://localhost:4000/2019/07/09/git-svn-cmd-%E5%A4%87%E5%BF%98.html">&lt;h2 id=&quot;svn&quot;&gt;SVN&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;查看状态：&lt;code class=&quot;highlighter-rouge&quot;&gt;svn status&lt;/code&gt;&lt;/li&gt;
@@ -312,7 +312,7 @@ vim ~/.bash_profile
   &lt;li&gt;把别的修改拿过来&lt;code class=&quot;highlighter-rouge&quot;&gt; do&lt;/code&gt; (obtain)&lt;/li&gt;
   &lt;li&gt;切换文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+W&lt;/code&gt; 加方向&lt;/li&gt;
   &lt;li&gt;刷新对比 &lt;code class=&quot;highlighter-rouge&quot;&gt;:diffupdate&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">SVN</summary></entry><entry><title type="html">Ubuntu debian linux</title><link href="http://localhost:4000/2019/06/14/Ubuntu-Debian-Linux.html" rel="alternate" type="text/html" title="Ubuntu  debian linux" /><published>2019-06-14T00:00:00+08:00</published><updated>2019-06-14T00:00:00+08:00</updated><id>http://localhost:4000/2019/06/14/Ubuntu%20%20Debian%20Linux</id><content type="html" xml:base="http://localhost:4000/2019/06/14/Ubuntu-Debian-Linux.html">&lt;h1 id=&quot;ubuntu--linux--debian-使用笔记&quot;&gt;Ubuntu / Linux / Debian 使用笔记&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">SVN</summary></entry><entry><title type="html">Ubuntu debian linux 使用笔记</title><link href="http://localhost:4000/2019/06/14/Ubuntu-Debian-Linux-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html" rel="alternate" type="text/html" title="Ubuntu  debian linux 使用笔记" /><published>2019-06-14T00:00:00+08:00</published><updated>2019-06-14T00:00:00+08:00</updated><id>http://localhost:4000/2019/06/14/Ubuntu%20%20Debian%20Linux%20%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/2019/06/14/Ubuntu-Debian-Linux-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html">&lt;h1 id=&quot;ubuntu--linux--debian-使用笔记&quot;&gt;Ubuntu / Linux / Debian 使用笔记&lt;/h1&gt;
 
 &lt;p&gt;&lt;strong&gt;Ubuntu耳机声音设置&lt;/strong&gt;&lt;/p&gt;
 
@@ -482,7 +482,7 @@ debian  &lt;span class=&quot;nv&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;uget
 &lt;span class=&quot;c&quot;&gt;# 多线程现在插件&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;aria2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Ubuntu / Linux / Debian 使用笔记</summary></entry><entry><title type="html">Unix like command line</title><link href="http://localhost:4000/2019/06/14/Unix-Like-Command-Line.html" rel="alternate" type="text/html" title="Unix like command line" /><published>2019-06-14T00:00:00+08:00</published><updated>2019-06-14T00:00:00+08:00</updated><id>http://localhost:4000/2019/06/14/Unix%20Like%20Command%20Line</id><content type="html" xml:base="http://localhost:4000/2019/06/14/Unix-Like-Command-Line.html">&lt;h1 id=&quot;类-unix-操作系统使用指南&quot;&gt;类 Unix 操作系统使用指南&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Ubuntu / Linux / Debian 使用笔记</summary></entry><entry><title type="html">Unix like command line 备忘</title><link href="http://localhost:4000/2019/06/14/Unix-Like-Command-Line-%E5%A4%87%E5%BF%98.html" rel="alternate" type="text/html" title="Unix like command line 备忘" /><published>2019-06-14T00:00:00+08:00</published><updated>2019-06-14T00:00:00+08:00</updated><id>http://localhost:4000/2019/06/14/Unix%20Like%20Command%20Line%20%E5%A4%87%E5%BF%98</id><content type="html" xml:base="http://localhost:4000/2019/06/14/Unix-Like-Command-Line-%E5%A4%87%E5%BF%98.html">&lt;h1 id=&quot;类-unix-操作系统使用指南&quot;&gt;类 Unix 操作系统使用指南&lt;/h1&gt;
 
 &lt;p&gt;一般使用的命令行都是 Linux 和 MacOS 都能用的，这是因为他们的核心都是类Unix的操作系统。&lt;/p&gt;
 
@@ -492,7 +492,7 @@ debian  &lt;span class=&quot;nv&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&
 
 &lt;p&gt;Linux 是一套免费使用和自由传播的类 Unix 操作系统, 有很多版本，常用的有 Ubuntu 和 CentOS 等，如下图:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;images/unixlike.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../../images/unixlike.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
 
@@ -594,7 +594,7 @@ debian  &lt;span class=&quot;nv&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&
   &lt;li&gt;
     &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; 移动光标到想输入的地方 点击键盘 &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; 进入插入模式 左下角会有 —Insert– 显示, 如图&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;images/viminsert.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;../../../images/viminsert.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ESC&lt;/code&gt; 编辑完成后 点击键盘 &lt;code class=&quot;highlighter-rouge&quot;&gt;ESC&lt;/code&gt; 退出编辑 Insert消失&lt;/p&gt;
@@ -639,7 +639,7 @@ vim guide.md
 
 &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/MacOS&quot;&gt;MacOS Wiki&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;[Darwin Wiki](&lt;a href=&quot;https://zh.wikipedia.org/wiki/Darwin_(操作系统)&quot;&gt;https://zh.wikipedia.org/wiki/Darwin_(%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F)&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">类 Unix 操作系统使用指南</summary></entry><entry><title type="html">Apple documentation</title><link href="http://localhost:4000/2019/04/10/Apple-Documentation.html" rel="alternate" type="text/html" title="Apple documentation" /><published>2019-04-10T00:00:00+08:00</published><updated>2019-04-10T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/10/Apple%20Documentation</id><content type="html" xml:base="http://localhost:4000/2019/04/10/Apple-Documentation.html">&lt;h2 id=&quot;appkit&quot;&gt;AppKit&lt;/h2&gt;
+&lt;p&gt;[Darwin Wiki](&lt;a href=&quot;https://zh.wikipedia.org/wiki/Darwin_(操作系统)&quot;&gt;https://zh.wikipedia.org/wiki/Darwin_(%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F)&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">类 Unix 操作系统使用指南</summary></entry><entry><title type="html">苹果文档阅读笔记</title><link href="http://localhost:4000/2019/04/10/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html" rel="alternate" type="text/html" title="苹果文档阅读笔记" /><published>2019-04-10T00:00:00+08:00</published><updated>2019-04-10T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/10/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/2019/04/10/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">&lt;h2 id=&quot;appkit&quot;&gt;AppKit&lt;/h2&gt;
 
 &lt;p&gt;MacOS 相关&lt;/p&gt;
 
@@ -691,7 +691,7 @@ NSFileHandle *myhandle = [[NSFileHandle alloc] initWithFileDescriptor:fd];
       &lt;p&gt;You can think of a graphics context as a drawing destination, as shown in Figure 1-2. When you draw with Quartz, all device-specific characteristics are contained within the specific type of graphics context you use. In other words, you can draw the same image to a different device simply by providing a different graphics context to the same sequence of Quartz drawing routines. You do not need to perform any device-specific calculations; Quartz does it for you.&lt;/p&gt;
     &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;img src=&quot;images/draw_destinations.gif&quot; alt=&quot;Figure 1-2&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;../../../images/draw_destinations.gif&quot; alt=&quot;Figure 1-2&quot; /&gt;&lt;/p&gt;
 
     &lt;p&gt;对比：&lt;/p&gt;
 
@@ -753,7 +753,7 @@ NSFileHandle *myhandle = [[NSFileHandle alloc] initWithFileDescriptor:fd];
       &lt;li&gt;
         &lt;p&gt;两种填充策略&lt;/p&gt;
 
-        &lt;p&gt;&lt;img src=&quot;images/eosampleone.gif&quot; alt=&quot;填充策略&quot; /&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&quot;../../../images/eosampleone.gif&quot; alt=&quot;填充策略&quot; /&gt;&lt;/p&gt;
 
         &lt;p&gt;nonzero winding-number ：&lt;/p&gt;
 
@@ -767,7 +767,7 @@ NSFileHandle *myhandle = [[NSFileHandle alloc] initWithFileDescriptor:fd];
           &lt;p&gt;To determine whether a specific point should be painted, start at the point and draw a line beyond the bounds of the drawing. Count the number of path segments that the line crosses. If the result is odd, the point is painted. If the result is even, the point is not painted. The direction that the path segments are drawn doesn’t affect the outcome. &lt;/p&gt;
         &lt;/blockquote&gt;
 
-        &lt;p&gt;&lt;img src=&quot;images/eosampleone_tag.gif&quot; alt=&quot;标注图&quot; /&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&quot;../../../images/eosampleone_tag.gif&quot; alt=&quot;标注图&quot; /&gt;&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;Blend Modes 混合模式&lt;/p&gt;
@@ -855,7 +855,7 @@ NSFileHandle *myhandle = [[NSFileHandle alloc] initWithFileDescriptor:fd];
 
 &lt;h2 id=&quot;text-hanling-in-ios&quot;&gt;&lt;a href=&quot;https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/Introduction/Introduction.html&quot;&gt;Text Hanling in iOS&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/Users/miaoqi/code/note/images/textpg_intro_2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../../images/textpg_intro_2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;整体字体高度为 Line Height = Ascent + Descent + Line gap（leading）&lt;/li&gt;
@@ -865,171 +865,228 @@ NSFileHandle *myhandle = [[NSFileHandle alloc] initWithFileDescriptor:fd];
   &lt;li&gt;Line Gap 为两行字的间距&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/Users/miaoqi/code/note/images/glyphterms_2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">AppKit</summary></entry><entry><title type="html">Investment</title><link href="http://localhost:4000/2019/04/02/Investment.html" rel="alternate" type="text/html" title="Investment" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/Investment</id><content type="html" xml:base="http://localhost:4000/2019/04/02/Investment.html">&lt;h2 id=&quot;投资&quot;&gt;投资&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../../../images/glyphterms_2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">AppKit</summary></entry><entry><title type="html">Ios 一些最佳实践</title><link href="http://localhost:4000/2019/04/02/iOS-%E4%B8%80%E4%BA%9B%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html" rel="alternate" type="text/html" title="Ios 一些最佳实践" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/iOS%20%E4%B8%80%E4%BA%9B%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5</id><content type="html" xml:base="http://localhost:4000/2019/04/02/iOS-%E4%B8%80%E4%BA%9B%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html">&lt;h2 id=&quot;推荐的使用方法&quot;&gt;推荐的使用方法&lt;/h2&gt;
 
-&lt;h3 id=&quot;基金&quot;&gt;基金&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;图片缩放&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;h4 id=&quot;什么是基金&quot;&gt;什么是基金&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 常规做法
 
-&lt;p&gt;假设您有一笔钱想投资债券、股票等这类证券进行增值，但自己又一无精力二无专业知识，而且你钱也不算多，就想到与其他10个人合伙出资，雇一个投资高手，操作大家合出的资产进行投资增值。但这里面，如果10多个投资人都与投资高手随时交涉，那时还不乱套，于是就推举其中一个最懂行的牵头办这事。定期从大伙合出的资产中按一定比例提成给他，由他代为付给投资高手劳务费报酬，当然，他自己牵头出力张罗大大小小的事，包括挨家跑腿，有关风险的事向高手随时提醒着点，定期向大伙公布投资盈亏情况等等，不可白忙，提成中的钱也有他的劳务费。上面这些事就叫作合伙投资。将这种合伙投资的模式放大100倍、1000倍，就是基金。&lt;/p&gt;
-
-&lt;h4 id=&quot;什么是私募基金&quot;&gt;什么是私募基金&lt;/h4&gt;
-
-&lt;p&gt;这种民间私下合伙投资的活动如果在出资人间建立了完备的契约合同，就是私募基金（在我国还未得到国家金融行业监管有关法规的认可）&lt;/p&gt;
-
-&lt;h4 id=&quot;什么是公募基金&quot;&gt;什么是公募基金&lt;/h4&gt;
-
-&lt;p&gt;如果这种合伙投资的活动经过国家证券行业管理部门（中国证券监督管理委员会）的审批，允许这项活动的牵头操作人向社会公开募集吸收投资者加入合伙出资，这就是发行公募基金，也就是大家现在常见的基金。&lt;/p&gt;
-
-&lt;p&gt;基金是一种间接的证券投资方式。基金管理公司通过发行基金单位，集中投资者的资金，由基金托管人（即具有资格的银行）托管，由基金管理人管理和运用资金，从事股票、债券等金融工具投资，然后共担投资风险、分享收益。&lt;/p&gt;
-
-&lt;h3 id=&quot;一入股市深似海&quot;&gt;一入股市深似海？&lt;/h3&gt;</content><author><name></name></author><summary type="html">投资</summary></entry><entry><title type="html">Kif ui automated testing</title><link href="http://localhost:4000/2019/04/02/KIF-UI-Automated-testing.html" rel="alternate" type="text/html" title="Kif ui automated testing " /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/KIF%20UI%20Automated%20testing</id><content type="html" xml:base="http://localhost:4000/2019/04/02/KIF-UI-Automated-testing.html">&lt;h1 id=&quot;appium-kif-ui自动化测试&quot;&gt;Appium KIF UI自动化测试&lt;/h1&gt;
-
-&lt;h2 id=&quot;accessibility&quot;&gt;accessibility&lt;/h2&gt;
-
-&lt;h4 id=&quot;accessibilitylabelvoiceover-辅助标识&quot;&gt;accessibilityLabel——VoiceOver 辅助标识&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;系统元素一般都会设定&lt;/li&gt;
-  &lt;li&gt;需要具有意义： VoiceOver 会将其读给用户听&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reusableIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = self.dataSouce[indexPath.row].name;
-    cell.backgroundColor = self.dataSouce[indexPath.row].isDirectory ? [UIColor cyanColor] : [UIColor whiteColor];
++ (UIImage*)OriginImage:(UIImage *)image scaleToSize:(CGSize)size
+{
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的context
+    UIGraphicsBeginImageContext(size);
     
-    cell.accessibilityLabel = [NSString stringWithFormat:@&quot;第%ld项 %@&quot;, indexPath.row, self.dataSouce[indexPath.row].name];	// 点击提示读出当前行号和文件名
-    cell.accessibilityHint = self.dataSouce[indexPath.row].isDirectory ? @&quot;这是一个文件夹 可打开&quot; : @&quot;这是一个文件&quot;;	// 提示该内容是什么类型的文件 可以做什么操作
-    return cell;
+    // 绘制改变大小的图片
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    // 从当前context中创建一个改变大小后的图片
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 使当前的context出堆栈
+    UIGraphicsEndImageContext();
+    
+    // 返回新的改变大小后的图片
+    return scaledImage;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&quot;accessiblityidentifierui元素标识&quot;&gt;accessiblityIdentifier——UI元素标识&lt;/h4&gt;
+&lt;p&gt;上面这种方法绘制的图片占用的内存并不是其尺寸计算出来的内存大小（width x height x P)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swif&quot;&gt;//WWDC2018 推荐做法
+
+func downsample(imageAt imageURL: URL, to pointSize: CGSize, scale: CGFloat) -&amp;gt; UIImage{
+    let sourceOpt = [kCGImageSourceShouldCache : false] as CFDictionary
+    // 其他场景可以用createwithdata (data并未decode,所占内存没那么大),
+    let source = CGImageSourceCreateWithURL(imageURL as CFURL, sourceOpt)!
+    
+    let maxDimension = max(pointSize.width, pointSize.height) * scale
+    let downsampleOpt = [kCGImageSourceCreateThumbnailFromImageAlways : true,
+                         kCGImageSourceShouldCacheImmediately : true ,
+                         kCGImageSourceCreateThumbnailWithTransform : true,
+                         kCGImageSourceThumbnailMaxPixelSize : maxDimension] as CFDictionary
+    let downsampleImage = CGImageSourceCreateThumbnailAtIndex(source, 0, downsampleOpt)!
+    return UIImage(cgImage: downsampleImage)
+}
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">推荐的使用方法</summary></entry><entry><title type="html">Ios 三方库阅读</title><link href="http://localhost:4000/2019/04/02/iOS-%E4%B8%89%E6%96%B9%E5%BA%93%E9%98%85%E8%AF%BB.html" rel="alternate" type="text/html" title="Ios 三方库阅读" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/iOS%20%E4%B8%89%E6%96%B9%E5%BA%93%E9%98%85%E8%AF%BB</id><content type="html" xml:base="http://localhost:4000/2019/04/02/iOS-%E4%B8%89%E6%96%B9%E5%BA%93%E9%98%85%E8%AF%BB.html">&lt;h2 id=&quot;sdwebimage&quot;&gt;SDWebImage&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;UIAccessibilityIdentification  协议属性&lt;/li&gt;
-  &lt;li&gt;UIKit 实现了该协议的类：UIView UIBarItem UIImage&lt;/li&gt;
+  &lt;li&gt;架构清晰：分离模块功能，每一个模块都能单独工作&lt;/li&gt;
+  &lt;li&gt;NSMapTable：创建weak内存管理的“字典”，同时其可以装指针型 ——&lt;code class=&quot;highlighter-rouge&quot;&gt;SDImageCache&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;属性访问线程安全问题&lt;/li&gt;
+  &lt;li&gt;图片数据 Data的第一个字节 存储了图片的格式信息 ——&lt;code class=&quot;highlighter-rouge&quot;&gt;NSData+ImageContentType &lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;图片的数据流加载：收到多少数据加载多少——&lt;code class=&quot;highlighter-rouge&quot;&gt;SDWebImageImageIOCoder&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Gif 图片数据 可以通过CG接口拿到其图片数量、动画时间等信息——&lt;code class=&quot;highlighter-rouge&quot;&gt;SDWebImageGIFCoder&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;CoreGraphics 的使用&lt;/li&gt;
+  &lt;li&gt;使用nonnull nullable等新特性 加强接口安全&lt;/li&gt;
+  &lt;li&gt;EXIF orientation 信息和iOS orientation信息存在转换关系——&lt;code class=&quot;highlighter-rouge&quot;&gt;SDWebImageCoderHelper&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;appium&quot;&gt;Appium&lt;/h2&gt;
-
-&lt;h4 id=&quot;原理&quot;&gt;原理：&lt;/h4&gt;
+&lt;h2 id=&quot;afnetworking&quot;&gt;AFNetworking&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;目前是基于XCUITest，Client/Server 模式&lt;/li&gt;
-  &lt;li&gt;在设备上安装一个APP，也是服务端 WebDriverAgent（Facebook的一个项目），接收Appium Client发来的测试命令。WebDriverAgent 通过XCUITest的API 来完成测试。&lt;/li&gt;
-  &lt;li&gt;通过元素的 accessibilityLabel、accessiblityIdentifier、className、xpath等查找元素&lt;/li&gt;
+  &lt;li&gt;NS_DESIGNATED_INITIALIZER 用来保证所有的属性都能被初始化&lt;/li&gt;
+  &lt;li&gt;FOUDATION_EXPORT 创建字符串常量&lt;/li&gt;
+  &lt;li&gt;使用bundleID 设计字符串常量&lt;/li&gt;
+  &lt;li&gt;使用Block封装上次代理&lt;/li&gt;
+  &lt;li&gt;使用信号量 将异步回掉写成return&lt;/li&gt;
+  &lt;li&gt;利用 _cmd 代替方法的名字&lt;/li&gt;
+  &lt;li&gt;NSURLSessionDataTask 并行初始化的时候可能存在相同的taskIdentifier（本应该是唯一的）， 所以AFN将其初始化放在自己的串行线程中进行。&lt;/li&gt;
+  &lt;li&gt;SDK中暴漏的属性考虑readonly&lt;/li&gt;
+  &lt;li&gt;对象无关的操作可以使用静态方法&lt;/li&gt;
+  &lt;li&gt;Array 使用 KVO 手动通知&lt;/li&gt;
+  &lt;li&gt;使用串行和并行结合实现读写的同步问题（内存管理）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;使用体验ios开发者&quot;&gt;使用体验（iOS开发者）：&lt;/h4&gt;
+&lt;h2 id=&quot;asyncdisplaykit&quot;&gt;AsyncDisplayKit&lt;/h2&gt;
 
-&lt;h5 id=&quot;优点&quot;&gt;优点：&lt;/h5&gt;
+&lt;h2 id=&quot;yykit&quot;&gt;YYKit&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;测试用例不需要写在APP内部，可直接测试已有APP&lt;/li&gt;
-  &lt;li&gt;可以使用Python Java Javascript 等多种语言编写用例&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;缺点&quot;&gt;缺点：&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;只能运行在iOS 9.3 以上的设备&lt;/li&gt;
-  &lt;li&gt;C/S模式 查找元素耗时，尤其是table cells 较多时候查找一组元素很慢（原因在于按照cellClass查找会尝试拿到所有的cells）&lt;/li&gt;
-  &lt;li&gt;不能使用OC 和 swift 编写用例&lt;/li&gt;
-  &lt;li&gt;Client通过Server返回的 UI的 xml布局 解析UI元素，不能像原生一样直接使用控件的类操作&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;结论&quot;&gt;结论&lt;/h4&gt;
-
-&lt;p&gt;适合非iOS开发的专业测试人员&lt;/p&gt;
-
-&lt;h2 id=&quot;kif&quot;&gt;KIF&lt;/h2&gt;
-
-&lt;h4 id=&quot;原理-1&quot;&gt;原理：&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;基于XCTest 和 UI操作的私有API：利用XCTest的优点来进行UI测试&lt;/li&gt;
-  &lt;li&gt;推荐使用accessibilityLabel标识来查找元素，也可以使用accessiblityIdentifier、className等&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;使用体验ios开发者-1&quot;&gt;使用体验（iOS开发者）：&lt;/h4&gt;
-
-&lt;h5 id=&quot;优点-1&quot;&gt;优点：&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;OC swift 编码&lt;/li&gt;
-  &lt;li&gt;原生界面元素类支持&lt;/li&gt;
-  &lt;li&gt;元素查找更友好，也更快 （table 会自动滚动到要点击的位置，table元素每次只拿当前显示个数）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;缺点-1&quot;&gt;缺点：&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;测试用例需要写在项目中&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;结论-1&quot;&gt;结论：&lt;/h4&gt;
-
-&lt;p&gt;适合iOS开发人员&lt;/p&gt;
-
-&lt;h4 id=&quot;jenkins集成&quot;&gt;Jenkins集成：&lt;/h4&gt;
-
-&lt;h5 id=&quot;安装测试结果统计支持&quot;&gt;安装测试结果统计支持&lt;/h5&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Jenkins 统计结果使用Junit 插件 这个库用来转换格式&lt;/span&gt;
-gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ocunit2junit
-
-&lt;span class=&quot;c&quot;&gt;# 统计代码覆盖率&lt;/span&gt;
-gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;slather
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 测试&lt;/span&gt;
-xcodebuild &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-workspace&lt;/span&gt; xxx.xcworkspace &lt;span class=&quot;nt&quot;&gt;-scheme&lt;/span&gt; xxxTests &lt;span class=&quot;nt&quot;&gt;-destination&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'platform=iOS,name=xxx'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-configuration&lt;/span&gt; Debug &lt;span class=&quot;nt&quot;&gt;-enableCodeCoverage&lt;/span&gt; YES 2&amp;gt;&amp;amp;1 | ocunit2junit
-
-&lt;span class=&quot;c&quot;&gt;# 统计代码覆盖率 和 测试结果&lt;/span&gt;
-slather coverage &lt;span class=&quot;nt&quot;&gt;--html&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--input-format&lt;/span&gt; profdata &lt;span class=&quot;nt&quot;&gt;--binary-basename&lt;/span&gt; xxx.app &lt;span class=&quot;nt&quot;&gt;--scheme&lt;/span&gt; xxxTests &lt;span class=&quot;nt&quot;&gt;--workspace&lt;/span&gt; xxx.xcworkspace &lt;span class=&quot;nt&quot;&gt;--configuration&lt;/span&gt; Debug &lt;span class=&quot;nt&quot;&gt;--ignore&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;View&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--ignore&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;AppText&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--output-directory&lt;/span&gt; reports
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;详细看参考链接 3&lt;/p&gt;
-
-&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://appium.io/docs/en/drivers/ios-xcuitest/&quot;&gt;Appium The XCUITest Driver for iOS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://tech.meituan.com/iOS_UITest_KIF.html&quot;&gt;为什么使用KIF——美团方案&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/dea69545bf4e&quot;&gt;jenkins 自动化集成&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://juejin.im/post/5b011de951882542672654d&quot;&gt;测试方案调研&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">Appium KIF UI自动化测试</summary></entry><entry><title type="html">Macos apache</title><link href="http://localhost:4000/2019/04/02/MacOS-Apache.html" rel="alternate" type="text/html" title="Macos apache" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/MacOS%20Apache</id><content type="html" xml:base="http://localhost:4000/2019/04/02/MacOS-Apache.html">&lt;h1 id=&quot;macos-自带-apache-使用说明&quot;&gt;MacOS 自带 Apache 使用说明&lt;/h1&gt;
-
-&lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;HTTP&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/p/d006a34a343f&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;使用宏定义方法中的代码段，并在使用完成后取消定义&lt;code class=&quot;highlighter-rouge&quot;&gt;#define xxx   #undef xxx&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;HTTPS&lt;/p&gt;
+    &lt;p&gt;KVO 的使用&lt;/p&gt;
 
-    &lt;p&gt;生成key：&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;openssl genrsa -des3 1024 &amp;gt; server.key&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/lllkey/article/details/78435861&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    // change 里面的key 有五种
+    /*
+    1. NSKeyValueChangeKindKey
+    2. NSKeyValueChangeNewKey
+    3. NSKeyValueChangeOldKey
+    4. NSKeyValueChangeIndexesKey
+    5. NSKeyValueChangeNotificationIsPriorKey
+      
+    NSKeyValueChangeKindKey是修改的类型：
+    NSKeyValueChangeSetting 
+    NSKeyValueChangeInsertion  
+    NSKeyValueChangeRemoval
+    NSKeyValueChangeReplacement；
+      
+    其中 NSKeyValueChangeSetting - set方法的修改 或者 -willChangeValueForKey:/-didChangeValueForKey: 的调用
+    NSKeyValueChangeInsertion NSKeyValueChangeRemoval NSKeyValueChangeReplacement 是数组的变化修改：mutableArrayValueForKey： 或者-willChange:valuesAtIndexes:forKey:/-didChange:valuesAtIndexes:forKey:
+      
+      
+   NSKeyValueChangeIndexesKey 如果是有序数组的变化 那总是会有该key
+   NSKeyValueChangeNotificationIsPriorKey 在值改变前发送
+    */
+}
+  
+// 参考举例
+  
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addObserver:self forKeyPath:@&quot;backgroundColor&quot; options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionPrior context:nil];
+    self.view.backgroundColor = [UIColor blueColor];
+}
+  
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&amp;lt;NSKeyValueChangeKey,id&amp;gt; *)change context:(void *)context{
+    NSLog(@&quot;%@ %@&quot;,keyPath, change);
+}
+  
+// 打印如下
+// init new
+2019-03-13 16:32:28.751032+0800 kif[38475:13262668] backgroundColor {
+    kind = 1;
+    new = &quot;UIExtendedSRGBColorSpace 1 1 1 1&quot;;
+}
+// prior old
+2019-03-13 16:32:28.751332+0800 kif[38475:13262668] backgroundColor {
+    kind = 1;
+    notificationIsPrior = 1;
+    old = &quot;UIExtendedSRGBColorSpace 1 1 1 1&quot;;
+}
+// new old
+2019-03-13 16:32:28.751541+0800 kif[38475:13262668] backgroundColor {
+    kind = 1;
+    new = &quot;UIExtendedSRGBColorSpace 0 0 1 1&quot;;
+    old = &quot;UIExtendedSRGBColorSpace 1 1 1 1&quot;;
+}
+  
+  
+&lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">MacOS 自带 Apache 使用说明</summary></entry><entry><title type="html">Machine learning</title><link href="http://localhost:4000/2019/04/02/Machine-Learning.html" rel="alternate" type="text/html" title="Machine learning" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/Machine%20Learning</id><content type="html" xml:base="http://localhost:4000/2019/04/02/Machine-Learning.html">&lt;h1 id=&quot;斯坦福大学公开课机器学习&quot;&gt;斯坦福大学公开课：机器学习&lt;/h1&gt;
+  &lt;li&gt;
+    &lt;p&gt;系统自带加密：&lt;code class=&quot;highlighter-rouge&quot;&gt; md2,md4,md5,sha1,sha224,sha256,sha384,sha512，Hmac，aes256&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;base64编码 ，gzip压缩方法&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NSScanner&lt;/code&gt; 查找字符串中的数字，搭配&lt;code class=&quot;highlighter-rouge&quot;&gt;NSNumberFormatter&lt;/code&gt;转换数字&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pthread_main_np()&lt;/code&gt; 函数可以判定是否是主线程&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不同颜色的转换 HSL到 RGB 等 &lt;code class=&quot;highlighter-rouge&quot;&gt;UIColor+YYAdd.h&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GIF 和 EMOJI 照片翻转  &lt;code class=&quot;highlighter-rouge&quot;&gt;UIImage+YYAdd&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CPU和内存占用 &lt;code class=&quot;highlighter-rouge&quot;&gt;UIDevice+YYAdd,UIApplication+YYAdd&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;本地字体加载 &lt;code class=&quot;highlighter-rouge&quot;&gt;UIFont+YYAdd&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用贝塞尔绘制文字：&lt;code class=&quot;highlighter-rouge&quot;&gt;UIBezierPath+YYAdd&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;双向链表做缓存，使用CFDictionary、pthread_mutex_lock 提高性能&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YYCache&lt;/code&gt; SQL的使用&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YYWeakProxy&lt;/code&gt; 解决引用循环问题&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YYTimer&lt;/code&gt; 使用source做定时器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YYSentinel&lt;/code&gt; 原子的计数&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h2 id=&quot;第一课&quot;&gt;第一课&lt;/h2&gt;
+&lt;h2 id=&quot;yymodel--做了什么&quot;&gt;YYModel  做了什么&lt;/h2&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;机器学习的概念&lt;/li&gt;
-  &lt;li&gt;监督学习
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;modelWithDictionary&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;获取当前对象的类元数据  &lt;code class=&quot;highlighter-rouge&quot;&gt;_YYModelMeta&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;YYClassInfo&lt;/code&gt;
     &lt;ul&gt;
-      &lt;li&gt;结果是连续的——回归问题（某地区的房价 和 面积的关系）&lt;/li&gt;
-      &lt;li&gt;结果是离散的——分类问题（肿瘤是否是恶性的 和 肿瘤的大小的关系）&lt;/li&gt;
+      &lt;li&gt;是否是支持序列化的类&lt;/li&gt;
+      &lt;li&gt;属性是否指明了类，例如&lt;code class=&quot;highlighter-rouge&quot;&gt;@property (nonatomic) NSArray&amp;lt;NSString *&amp;gt; *array&lt;/code&gt; 中 ` array&lt;code class=&quot;highlighter-rouge&quot;&gt;属性指明了是&lt;/code&gt;NSString` 类，实践中是实现YYModel的提供的委托方法说明&lt;/li&gt;
+      &lt;li&gt;获取所有属性的元数据：该属性的类型、getter、setter，结构体的话是否支持序列化，以及是否支持KVC等&lt;/li&gt;
+      &lt;li&gt;按照属性名，制作属性的元数据表。期间 如果类通过委托方法实现了自定义的数据表策略，就执行自定义的策略。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">斯坦福大学公开课：机器学习</summary></entry><entry><title type="html">Message forwarding</title><link href="http://localhost:4000/2019/04/02/Message-Forwarding.html" rel="alternate" type="text/html" title="Message forwarding" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/Message%20Forwarding</id><content type="html" xml:base="http://localhost:4000/2019/04/02/Message-Forwarding.html">&lt;h2 id=&quot;消息转发&quot;&gt;消息转发&lt;/h2&gt;
+  &lt;li&gt;是否对象自己实现了反序列化&lt;/li&gt;
+  &lt;li&gt;反序列化
+    &lt;ul&gt;
+      &lt;li&gt;获取第1步生成的类信息，有缓存，直接拿到&lt;/li&gt;
+      &lt;li&gt;对象是否实现准备委托&lt;/li&gt;
+      &lt;li&gt;字典和数组两种中间处理：&lt;code class=&quot;highlighter-rouge&quot;&gt;ModelSetWithDictionaryFunction&lt;/code&gt; （拆分KeyValue 逐个进行）&lt;code class=&quot;highlighter-rouge&quot;&gt;ModelSetWithPropertyMetaArrayFunction&lt;/code&gt;（进行一对多的补充操作）&lt;/li&gt;
+      &lt;li&gt;最终都调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;ModelSetValueForProperty&lt;/code&gt; 进行反序列&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;yyimage&quot;&gt;YYImage&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;照片数据的头部携带了照片的编码信息：头四个字节，头两个字节等&lt;code class=&quot;highlighter-rouge&quot;&gt;YYImageDecoder&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;图像的模糊处理使用的 vImage 框架的卷积处理&lt;code class=&quot;highlighter-rouge&quot;&gt;vImageBoxConvolve_ARGB8888&lt;/code&gt;，粗略的说原理就是使用一个固定大小的Box 滤波器，对图片像素进行滤波处理，使图像看起来平滑（模糊）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">SDWebImage</summary></entry><entry><title type="html">Ios 消息转发</title><link href="http://localhost:4000/2019/04/02/iOS-%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91.html" rel="alternate" type="text/html" title="Ios 消息转发" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/iOS%20%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91</id><content type="html" xml:base="http://localhost:4000/2019/04/02/iOS-%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91.html">&lt;h2 id=&quot;消息转发&quot;&gt;消息转发&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;resolveInstanceMethod:&lt;/code&gt; 动态添加方法实现的地方&lt;/li&gt;
@@ -1172,4 +1229,227 @@ void dynamicTestMethod(id self,SEL _cmd){
 2018-10-28 13:31:38.557264+0800 FilePre[3088:100888] forwardInvocation test
 2018-10-28 13:31:38.557354+0800 FilePre[3088:100888] AnotherTarget test
 */
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">消息转发</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">消息转发</summary></entry><entry><title type="html">Ios 编程实战笔记</title><link href="http://localhost:4000/2019/04/02/iOS-%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0.html" rel="alternate" type="text/html" title="Ios 编程实战笔记" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/iOS%20%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/2019/04/02/iOS-%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0.html">&lt;h1 id=&quot;ios-编程实战&quot;&gt;iOS 编程实战&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;关联引用用来观察对象何时被释放&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;弱引用容器：&lt;code class=&quot;highlighter-rouge&quot;&gt;NSPointerArray&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;NSHashTable&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;NSMapTable&lt;/code&gt; 官方文档统称为指针容器类（pointer collection class）&lt;/p&gt;
+
+    &lt;p&gt;NSPointerArray –&amp;gt; NSArray, NSHashTable –&amp;gt; NSSet,  NSMapTable –&amp;gt; NSDictionary&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CFStringTransform 转换字符串：将汉字转为拉丁(拼音）.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;初始化方法使用instancetype 表示“当前类”，在继承的时候不会警告&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用perform自定义切换动画&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CALayer 触发绘制的时机&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;setNeedsDisplay 标记为需要显示&lt;/li&gt;
+      &lt;li&gt;displayIfNeeded 调用display&lt;/li&gt;
+      &lt;li&gt;display&lt;/li&gt;
+      &lt;li&gt;delegate displayLayer:  display 调用委托方法，如果实现了的话&lt;/li&gt;
+      &lt;li&gt;drawInContext: display 创建一个contenxt 传给该方法&lt;/li&gt;
+      &lt;li&gt;delegate drayLayer:inContext:  drawInContext: 调用该委托方法&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CollectionView 封面视图——3D变换与自定义layout的结合&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;#define ZOOM_FACTOR 0.35
+  
+- (void)prepareLayout{
+    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    CGSize size = self.collectionView.frame.size;
+    self.itemSize = CGSizeMake(size.width/4.0f, size.height*0.7);
+    self.sectionInset = UIEdgeInsetsMake(size.height * 0.15, size.height * 0.1, size.height * 0.15, size.height * 0.1);
+}
+  
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)oldBounds{
+    return YES;
+}
+  
+- (NSArray&amp;lt;UICollectionViewLayoutAttributes *&amp;gt; *)layoutAttributesForElementsInRect:(CGRect)rect{    
+    CGFloat halfWidth = self.collectionView.bounds.size.width / 2;
+    CGRect visibleRect = (CGRect){self.collectionView.contentOffset,self.collectionView.bounds.size};
+    NSArray&amp;lt;UICollectionViewLayoutAttributes *&amp;gt; *attrs = [super layoutAttributesForElementsInRect:rect];
+      
+    for (UICollectionViewLayoutAttributes *attr in attrs) {
+        CGFloat collectionCenterx = CGRectGetMidX(visibleRect);
+        CGFloat distance = collectionCenterx - attr.center.x;
+        CGFloat nomalizedDistance = distance / halfWidth;
+        if (CGRectIntersectsRect(attr.frame, rect)) {
+            if (ABS(distance) &amp;lt; halfWidth) {
+                CGFloat zoom = 1 + ZOOM_FACTOR * (1 - ABS(nomalizedDistance));
+                CATransform3D rotationAndPerspective = CATransform3DIdentity;
+                rotationAndPerspective.m34 = 1.0 / -500;	
+                rotationAndPerspective = CATransform3DRotate(rotationAndPerspective, nomalizedDistance * M_PI_4, 0, 1, 0);
+                CATransform3D zoomTransform = CATransform3DMakeScale(zoom, zoom, 1.0);
+                attr.transform3D = CATransform3DConcat(zoomTransform, rotationAndPerspective);
+                attr.zIndex = ABS(nomalizedDistance) * 10.0f;
+                CGFloat alpha = 1 - ABS(nomalizedDistance) + 0.1;
+                attr.alpha = alpha &amp;gt; 1 ? 1 : alpha;
+    
+            }else{
+                attr.alpha = 0;
+            }
+        }
+    }
+    return attrs;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;其中3D变换矩阵如下：&lt;a href=&quot;https://zsisme.gitbooks.io/ios-/content/chapter5/3d-transform.html&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;m11 m21 m31 m41
+m12 m22 m32 m42
+m13 m23 m33 m43
+m14 m24 m34 m44
+      
+m34 控制透视效果 取值形式：m34 = -1/d  d 代表透视程度 一般取值500-1000 数字越大透视约明显
+      
+为了使透视图都对准同一个中心点(灭点)，应当先在屏幕中间进行透视变换(灭点在中间) 然后再移动位置
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;重新绘制与布局更新&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setNeedsLayout&lt;/code&gt; 只会触发重新布局，而不会重新绘制；&lt;code class=&quot;highlighter-rouge&quot;&gt;setNeedsDisplay&lt;/code&gt; 则会触发重新绘制。重新绘制的成本要比重新布局高很多&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;视网膜屏与非视网膜屏绘制线条&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;非视网膜屏，当线条宽度是在3时候在Point(0,100) 画的先是模糊的，而在 Point(0,100.5)画的就不模糊。这是因为线条从y=100 上下各扩展1.5个像素，对应 98.5  101.5 而0.5个像素不能完美呈现（取得平均值），所以会模糊。而在y=100.5 上下扩展1.5 分别是 99 和 102 都是完整的像素，不会模糊&lt;/li&gt;
+      &lt;li&gt;在2x视网膜屏上，每个点是2像素宽，这时候0.5个点对应的就是1个完整像素，所以总是清晰的。但是如果不是整数个点，或者半数的倍数点，例如0.2个点 也会模糊。&lt;/li&gt;
+      &lt;li&gt;只有垂直和竖直的线条才需要考虑这个问题，因为斜线本身会做防锯齿处理，就是会模糊。&lt;/li&gt;
+      &lt;li&gt;1x 一个点就是一个像素 2x 一个点是2x2的像素 3x一个点是3x3个像素&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;drawRect 中使用UIGraphicsGetCurrentContext() 获取的context坐标是经过调整的&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Layer conents 的更新方式：(layer 不会自动更新contents)&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;直接 &lt;code class=&quot;highlighter-rouge&quot;&gt;setContents:&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;委托实现 &lt;code class=&quot;highlighter-rouge&quot;&gt;displayLayer:&lt;/code&gt; 或 ` drawLayer:inContext:` 协议&lt;/li&gt;
+      &lt;li&gt;子类实现 &lt;code class=&quot;highlighter-rouge&quot;&gt;drawInContext:&lt;/code&gt; 或 &lt;code class=&quot;highlighter-rouge&quot;&gt;display &lt;/code&gt;方法&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;display&lt;/code&gt; 先看委托&lt;code class=&quot;highlighter-rouge&quot;&gt;displayLayer&lt;/code&gt;是否实现，没有就调用&lt;code class=&quot;highlighter-rouge&quot;&gt;drawInContext:&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;默认的&lt;code class=&quot;highlighter-rouge&quot;&gt;drawInContext:&lt;/code&gt;会调用&lt;code class=&quot;highlighter-rouge&quot;&gt;drawLayer:inContext:&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;display&lt;/code&gt; 只会在&lt;code class=&quot;highlighter-rouge&quot;&gt;setNeedsDisplay&lt;/code&gt;后调用，其优点是会自动创建适用于图层的context 给其调用的方法&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drawInContext&lt;/code&gt;只在当前图层绘制(其他方法类似？)，子图层不绘制；需要子视图绘制则使用&lt;code class=&quot;highlighter-rouge&quot;&gt;renderInContext&lt;/code&gt;而这种使用的是当前渲染的状态由Core Animation管理，不会调用&lt;code class=&quot;highlighter-rouge&quot;&gt;drawInContext:&lt;/code&gt; ??&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CAAnimation动画填充模式 kCAFillModeRmoved、kCAFillModeBackwards、kCAFileModeForwards、kCAFillModeBoth 不同的模式决定的了模型值与动画值得变化或过度&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 举例：有动画
+      
+[CATransaction begin];
+anim = [CABasicAnimation animationWithKeypath:@&quot;opacity&quot;];
+anim.fromValue = @1.0;
+anim.toValue = @0.5;
+anim.duration = 5.0;
+anim.beginTime = CACurrentMediaTime() + 3.0;	//动画3s后开始
+[layer addAnimation:anim forKey:@&quot;fade&quot;];
+layer.opacity = 0.5; 	// 设定为动画最终的结果 避免CA动画的结束后又回到初始状态引起的闪烁问题
+[CATransaction commit];
+  
+// 已知前提：1.layer的存在隐式动画大约0.25s，所以动画创建时候的layer.opacity=0.5 会有动画；2.CAAniation的默认填充模式是 kCAFillModeRemoved
+// 这个动画的最终表现是：前3秒不动，这段时间内默认图层opacity从1.0渐变为0.5，然后动画开始，透明度从起始值变为目标值。也就是说，图层会在0.25秒时间内从1.0变为0.5，3秒后，跳回1.0 用5s时间变回0.5，如下图被移除模式所示
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;对于该动画不同的填充模式的时序图：&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;../../../images/fillmode.png&quot; alt=&quot;fileMode&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">iOS 编程实战</summary></entry><entry><title type="html">Tmp</title><link href="http://localhost:4000/2019/04/02/tmp.html" rel="alternate" type="text/html" title="Tmp" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/tmp</id><content type="html" xml:base="http://localhost:4000/2019/04/02/tmp.html">&lt;h3 id=&quot;meta-class&quot;&gt;Meta class&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Class 也是一个对象，Class的Classe就是元类，NSObject的子类的元类都是NSObject的元类，也就是他自己&lt;/li&gt;
+  &lt;li&gt;对象的定义如下，所以满足这个条件的就是对象的一种&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;typedef struct objc_object { 
+    Class isa; 
+} *id; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Class的定义如下，所以Class也是对象&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;typedef struct objc_class *Class; 
+struct objc_class { 
+    Class isa; 
+    Class super_class; 
+    /* 以下依赖于 runtime 的具体实现 …… */ 
+}; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;isa 指定对象的类：对象的isa指向其类，而类的isa指向其元类（isa : xx is a xx?）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;impl.isa = &amp;amp;_NSConcreteStackBlock; // Block的初始化比较只管的体现这一点，三种Block分别对isa有三种赋值
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Runtime 方法名&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;object_getClass() 		// object 开头 输入的是一个对象，返回其isa指向的类
+class_getName() 		// class 开头 输入的时一个Class 那就直接返回class 的name字段
+object_getClassName() 	// object 开头 输入的是一个对象 返回其isa指向的类的名称
+    
+// 举例
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    Chinese *chi = [Chinese new];
+    Class chiClass = chi.class;
+    NSInteger count = 5;
+    while (count -- ) {
+        printClass(chiClass);
+        printClasss(chiClass);
+        chiClass = object_getClass(chiClass);	//返回isa指向
+    }
+}
+
+void printClass(Class cls){
+    const char *className = object_getClassName(cls);	// 返回isa指向的类的名称
+    printf(&quot;object_getClassName name %s %p\n&quot;,className,cls);
+}
+
+void printClasss(Class cls){
+    const char *className = class_getName(cls);			// 返回该类的名称
+    printf(&quot;class_getName name %s %p\n\n&quot;,className,cls);
+}
+
+/*
+object_getClassName name Chinese 0x10006e910 // chiease 对象 的isa指向Chinese类
+class_getName name Chinese 0x10006e910		 // chiease 对象 的类的名称
+
+object_getClassName name NSObject 0x10006e8e8 // Chinese 类对象 的isa指向NSObject类
+class_getName name Chinese 0x10006e8e8		  // Chinese 类 的名称
+
+object_getClassName name NSObject 0x1b45e1ec8 // NSObject 类对象 的isa指向自己
+class_getName name NSObject 0x1b45e1ec8		  // NSOjbect 类 的名称
+
+object_getClassName name NSObject 0x1b45e1ec8 //..
+class_getName name NSObject 0x1b45e1ec8
+
+object_getClassName name NSObject 0x1b45e1ec8
+class_getName name NSObject 0x1b45e1ec8
+*/
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Meta class</summary></entry></feed>
