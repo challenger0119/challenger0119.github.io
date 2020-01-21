@@ -1,4 +1,184 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-20T10:44:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Somewhere</title><subtitle>过着，记录着</subtitle><entry><title type="html">正则表达学习</title><link href="http://localhost:4000/2019/08/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0.html" rel="alternate" type="text/html" title="正则表达学习" /><published>2019-08-27T00:00:00+08:00</published><updated>2019-08-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/08/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0</id><content type="html" xml:base="http://localhost:4000/2019/08/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0.html">&lt;h3 id=&quot;元字符&quot;&gt;元字符&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-21T16:04:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Somewhere</title><subtitle>过着，记录着</subtitle><entry><title type="html">Webdav 协议简介</title><link href="http://localhost:4000/2020/01/21/WebDAV-%E5%8D%8F%E8%AE%AE%E7%AE%80%E4%BB%8B.html" rel="alternate" type="text/html" title="Webdav 协议简介" /><published>2020-01-21T00:00:00+08:00</published><updated>2020-01-21T00:00:00+08:00</updated><id>http://localhost:4000/2020/01/21/WebDAV%20%E5%8D%8F%E8%AE%AE%E7%AE%80%E4%BB%8B</id><content type="html" xml:base="http://localhost:4000/2020/01/21/WebDAV-%E5%8D%8F%E8%AE%AE%E7%AE%80%E4%BB%8B.html">&lt;h1 id=&quot;webdav-协议简介&quot;&gt;WebDAV 协议简介&lt;/h1&gt;
+
+&lt;p&gt;Web-based Distributed Authoring and Versioning 一种基于 HTTP 1.1协议的通信协议。它扩展了HTTP 1.1，在GET、POST、HEAD等几个HTTP标准方法以外添加了一些新的方法，使应用程序可对Web Server直接读写，并支持写文件锁定(Locking)及解锁(Unlock)，还可以支持文件的版本控制。&lt;/p&gt;
+
+&lt;p&gt;坚果云，Dropbox 都支持这个协议&lt;/p&gt;
+
+&lt;h2 id=&quot;协议方法&quot;&gt;协议方法&lt;/h2&gt;
+
+&lt;h3 id=&quot;http&quot;&gt;HTTP&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;GET&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;POST&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;PUT：类似POST 只是使用PUT 是 idempotent 的，使用的地方需要保证每次发出产生的效果一样&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;“Methods can also have the property of “idempotence” in that (aside from error or expiration issues) the side-effects of N &amp;gt; 0 identical requests is the same as for a single request.”&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;上面的话就是说，如果一个方法重复执行多次，产生的效果是一样的，那就是idempotent的&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;扩展&quot;&gt;扩展&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;PROPFIND：从Web资源中检索以XML格式存储的属性，检索远程系统的集合结构（也叫目录层次结构）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;COPY：将资源从一个URI（Uniform Resource Identifier）复制到另一个URI&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MOVE：将资源从一个URI移动到另一个URI&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MKCOL：创建集合（即目录）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DELETE：删除一个资源&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;LOCK：锁定一个资源。WebDAV支持共享锁和互斥锁。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;UNLOCK：解除资源的锁定&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;PROPPATCH：在单个原子性动作中更改和删除资源的多个属性&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;以坚果云为例， &lt;code class=&quot;highlighter-rouge&quot;&gt;Swift&lt;/code&gt; 语言&lt;/p&gt;
+
+&lt;h3 id=&quot;生成应用授权&quot;&gt;生成应用授权&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;获得服务器地址&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用户名&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;密码&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;获取资源列表举例&quot;&gt;获取资源列表举例&lt;/h3&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;httpMethod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;PROPFIND&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dataTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;
+   &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;??&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;No response&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;结果列表&quot;&gt;结果列表&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;列表&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/webdav/l2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;单个文件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/webdav/l3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;抓包数据&quot;&gt;抓包数据&lt;/h4&gt;
+
+&lt;p&gt;P1 对应 列表视图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/webdav/d1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;P2 对应单个文件页&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/webdav/d2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;属性&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;href&lt;/code&gt;  URI 路径&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getlastmodified&lt;/code&gt;  修改时间&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getcontentlength&lt;/code&gt; 文件大小&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getetag&lt;/code&gt; GET Entity Tag （ETag） 用来标识文件缓存&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;owner&lt;/code&gt;  所有者&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;current-user-privilege-set&lt;/code&gt; 用户有哪些权限（读写等）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getcontenttype&lt;/code&gt; 文件类型  对应 HTTP Header 的 content-type&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;displayname&lt;/code&gt; 显示名称&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;resourcetype&lt;/code&gt; 资源类型 如果是文件夹（P1）就是 collection 文件（P2）没有值&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###上传文件举例&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;httpMethod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;PUT&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;uploadTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;fromFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileURLWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;??&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;No response&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;###删除文件举例&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;httpMethod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;DELETE&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dataTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;??&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;No response&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;怎么读-rfc-文档&quot;&gt;怎么读 RFC 文档&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mnot.net/blog/2018/07/31/read_rfc&quot;&gt;How to Read an RFC&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/基于Web的分布式编写和版本控制&quot;&gt;WebDAV 维基百科&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://baike.baidu.com/item/WebDAV/4610909?fr=aladdin&quot;&gt;WebDAV 百度百科&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/mad1989/article/details/7918267&quot;&gt;PUT 与 POST 的区别&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tools.ietf.org/html/rfc4918&quot;&gt;WebDAV RTF4918&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://whatis.techtarget.com/definition/entity-tag-Etag&quot;&gt;关于 ETag&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">正则表达学习</title><link href="http://localhost:4000/2019/08/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0.html" rel="alternate" type="text/html" title="正则表达学习" /><published>2019-08-27T00:00:00+08:00</published><updated>2019-08-27T00:00:00+08:00</updated><id>http://localhost:4000/2019/08/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0</id><content type="html" xml:base="http://localhost:4000/2019/08/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0.html">&lt;h3 id=&quot;元字符&quot;&gt;元字符&lt;/h3&gt;
 
 &lt;h4 id=&quot;限定符&quot;&gt;限定符&lt;/h4&gt;
 
@@ -865,52 +1045,7 @@ NSFileHandle *myhandle = [[NSFileHandle alloc] initWithFileDescriptor:fd];
   &lt;li&gt;Line Gap 为两行字的间距&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../../images/glyphterms_2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">AppKit</summary></entry><entry><title type="html">Ios 一些最佳实践</title><link href="http://localhost:4000/2019/04/02/iOS-%E4%B8%80%E4%BA%9B%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html" rel="alternate" type="text/html" title="Ios 一些最佳实践" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/iOS%20%E4%B8%80%E4%BA%9B%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5</id><content type="html" xml:base="http://localhost:4000/2019/04/02/iOS-%E4%B8%80%E4%BA%9B%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html">&lt;h2 id=&quot;推荐的使用方法&quot;&gt;推荐的使用方法&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;图片缩放&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 常规做法
-
-+ (UIImage*)OriginImage:(UIImage *)image scaleToSize:(CGSize)size
-{
-    // 创建一个bitmap的context
-    // 并把它设置成为当前正在使用的context
-    UIGraphicsBeginImageContext(size);
-    
-    // 绘制改变大小的图片
-    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    
-    // 从当前context中创建一个改变大小后的图片
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    // 使当前的context出堆栈
-    UIGraphicsEndImageContext();
-    
-    // 返回新的改变大小后的图片
-    return scaledImage;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面这种方法绘制的图片占用的内存并不是其尺寸计算出来的内存大小（width x height x P)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-swif&quot;&gt;//WWDC2018 推荐做法
-
-func downsample(imageAt imageURL: URL, to pointSize: CGSize, scale: CGFloat) -&amp;gt; UIImage{
-    let sourceOpt = [kCGImageSourceShouldCache : false] as CFDictionary
-    // 其他场景可以用createwithdata (data并未decode,所占内存没那么大),
-    let source = CGImageSourceCreateWithURL(imageURL as CFURL, sourceOpt)!
-    
-    let maxDimension = max(pointSize.width, pointSize.height) * scale
-    let downsampleOpt = [kCGImageSourceCreateThumbnailFromImageAlways : true,
-                         kCGImageSourceShouldCacheImmediately : true ,
-                         kCGImageSourceCreateThumbnailWithTransform : true,
-                         kCGImageSourceThumbnailMaxPixelSize : maxDimension] as CFDictionary
-    let downsampleImage = CGImageSourceCreateThumbnailAtIndex(source, 0, downsampleOpt)!
-    return UIImage(cgImage: downsampleImage)
-}
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">推荐的使用方法</summary></entry><entry><title type="html">Ios 三方库阅读</title><link href="http://localhost:4000/2019/04/02/iOS-%E4%B8%89%E6%96%B9%E5%BA%93%E9%98%85%E8%AF%BB.html" rel="alternate" type="text/html" title="Ios 三方库阅读" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/iOS%20%E4%B8%89%E6%96%B9%E5%BA%93%E9%98%85%E8%AF%BB</id><content type="html" xml:base="http://localhost:4000/2019/04/02/iOS-%E4%B8%89%E6%96%B9%E5%BA%93%E9%98%85%E8%AF%BB.html">&lt;h2 id=&quot;sdwebimage&quot;&gt;SDWebImage&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../../../images/glyphterms_2x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">AppKit</summary></entry><entry><title type="html">Ios 三方库阅读</title><link href="http://localhost:4000/2019/04/02/iOS-%E4%B8%89%E6%96%B9%E5%BA%93%E9%98%85%E8%AF%BB.html" rel="alternate" type="text/html" title="Ios 三方库阅读" /><published>2019-04-02T00:00:00+08:00</published><updated>2019-04-02T00:00:00+08:00</updated><id>http://localhost:4000/2019/04/02/iOS%20%E4%B8%89%E6%96%B9%E5%BA%93%E9%98%85%E8%AF%BB</id><content type="html" xml:base="http://localhost:4000/2019/04/02/iOS-%E4%B8%89%E6%96%B9%E5%BA%93%E9%98%85%E8%AF%BB.html">&lt;h2 id=&quot;sdwebimage&quot;&gt;SDWebImage&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;架构清晰：分离模块功能，每一个模块都能单独工作&lt;/li&gt;
