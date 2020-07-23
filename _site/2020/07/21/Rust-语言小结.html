@@ -1,4 +1,3 @@
-<h1 id="rust-语言小结">Rust 语言小结</h1>
 <h2 id="result--option-的处理">Result &amp; Option 的处理</h2>
 <h3 id="result">Result</h3>
 <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">enum</span> <span class="n">Result</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">E</span><span class="o">&gt;</span> <span class="p">{</span>
@@ -21,11 +20,13 @@
 </code></pre></div></div>
 
 <ol>
-  <li>只需要处理 Ok 或 not Ok 情况: 例如结果是 Result&lt;()&gt; 的类型
-存在方法：</li>
-</ol>
+  <li>
+    <p>只需要处理 Ok 或 not Ok 情况: 例如结果是 Result&lt;()&gt; 的类型
+存在方法：</p>
 
-<p><code class="highlighter-rouge">fn generate_result() -&gt; Result&lt;()&gt; {}</code></p>
+    <p><code class="highlighter-rouge">fn generate_result() -&gt; Result&lt;()&gt; {}</code></p>
+  </li>
+</ol>
 
 <ul>
   <li>使用 if 判定是否是 Ok 即可
@@ -77,32 +78,35 @@ None
     </ol>
 
     <ul>
-      <li>unwrap: 解包-失败就抛异常</li>
-    </ul>
+      <li>
+        <p>unwrap: 解包-失败就抛异常</p>
 
-    <p><code class="highlighter-rouge">let rs: T = result.unwrap()</code></p>
+        <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">rs</span><span class="p">:</span> <span class="n">T</span> <span class="o">=</span> <span class="n">result</span><span class="nf">.unwrap</span><span class="p">()</span><span class="err">`</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>unwrap_or: 解包-就用指定值</p>
 
-    <ul>
-      <li>unwrap_or: 解包-就用指定值</li>
-    </ul>
+        <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">rs</span><span class="p">:</span> <span class="n">T</span> <span class="o">=</span> <span class="n">result</span><span class="nf">.unwrap_or</span><span class="p">(</span><span class="nn">T</span><span class="p">::</span><span class="nf">new</span><span class="p">())</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>unwrap_or_else：解包-失败就走 else 逻辑</p>
 
-    <p><code class="highlighter-rouge">let rs: T = result.unwrap_or(T::new())</code></p>
+        <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">rs</span><span class="p">:</span> <span class="n">T</span> <span class="o">=</span> <span class="n">result</span><span class="nf">.unwrap_or_else</span><span class="p">({</span>
+    <span class="o">...</span>
+<span class="p">})</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>unwrap_or_default: 解包-失败就是用默认值（例如 i32 的默认值是 0）</p>
 
-    <ul>
-      <li>unwrap_or_else：解包-失败就走 else 逻辑</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">let rs: T = result.unwrap_or_else({
-     ...
- })</code></p>
-
-    <ul>
-      <li>unwrap_or_default: 解包-失败就是用默认值（例如 i32 的默认值是 0）</li>
+        <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">rs</span><span class="p">:</span> <span class="n">T</span> <span class="o">=</span> <span class="n">result</span><span class="nf">.unwrap_or_default</span><span class="p">();</span>
+</code></pre></div>        </div>
+      </li>
     </ul>
   </li>
 </ul>
-
-<p>​		<code class="highlighter-rouge">let rs: T = result.unwrap_or_default();</code></p>
 
 <ol>
   <li>expect 解包 - 失败就报错内容自定义
@@ -112,12 +116,17 @@ None
   </li>
 </ol>
 
-<p><code class="highlighter-rouge">let rs: T = result.expect("surprise: no value");</code></p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">let</span> <span class="n">rs</span><span class="p">:</span> <span class="n">T</span> <span class="o">=</span> <span class="n">result</span><span class="nf">.expect</span><span class="p">(</span><span class="s">"surprise: no value"</span><span class="p">);</span>
+</code></pre></div></div>
 
 <ul>
-  <li>Result:  expect_err   Option: expect_none
-<code class="highlighter-rouge">expect_err("surprise: no error");</code>
-<code class="highlighter-rouge">expect_none("surprise: has value");</code></li>
+  <li>
+    <p>Result:  expect_err   Option: expect_none</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">expect_err</span><span class="p">(</span><span class="s">"surprise: no error"</span><span class="p">);</span>
+<span class="nf">expect_none</span><span class="p">(</span><span class="s">"surprise: has value"</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
 </ul>
 
 <h2 id="clone--toowned">Clone &amp; ToOwned</h2>
