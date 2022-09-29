@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <title>Wayward One</title>
+    <body>
+        <div>
+            <h2>费曼的故事</h2>
+            <p>
+                他对我说："看那只鸟？ 那是什么鸟？"<br/>
+                我说："我一点也不知道它是一只什么样的鸟。"<br/>
+                他说："这是一只棕色喉咙画眉。 你父亲没教你吗？"<br/>
+                事实恰恰相反。 <br/>
+                他[费曼的父亲]已经教过我：<br/> 
+                "看那只鸟？"，他说，"这是斯宾塞的鸣鸟。"（我知道他不知道真名。）<br />
+                "好吧，在意大利语中，这是一个Chutto Lapittida。在葡萄牙语中，它是一个Bom da Peida ...你可以在世界上所有语言中知道那只鸟的名字。但是当你说完后，你对这只鸟一无所知！你只会知道不同地方的人类怎么叫这只鸟。所以，让我们看一下这只鸟，看看它在做什么 - 这就是最重要的。"<br/>
+                所以，我很早就知道了，知道某事物的名字和知道它是什么之间的区别。
+            </p>
+        </div>
+    </body>
+    <footer>
+        <hr style="margin-top: 16px;"/>
+        <script type="text/javascript">
+            var xmlHTTP = new XMLHttpRequest();
+            var url = "https://v1.hitokoto.cn/?encode=text";
+            xmlHTTP.open("GET",url,true);
+            xmlHTTP.onreadystatechange = doResult;
+            xmlHTTP.send();
+            function doResult(){
+                if (xmlHTTP.readyState == 4) {
+                    if (xmlHTTP.status == 200) {
+                        document.getElementById("hitokoto").innerHTML = "一言：<span>" + xmlHTTP.response + "</span>";
+                    }
+                }
+            }
+        </script>
+        <div style="margin-top: 16px;">
+            <p id="hitokoto"></p>
+        </div>
+    </footer>
+</html>
