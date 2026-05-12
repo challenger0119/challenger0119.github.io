@@ -158,23 +158,89 @@
                 const file = input.files[0];
 
                 if (file) {
-                    const reader = new FileReader();
+                    // 检测文件大小，超过1MB则压缩
+                    if (file.size > 1024 * 1024) {
+                        compressImage(file, preview);
+                    } else {
+                        const reader = new FileReader();
 
-                    reader.onload = function (e) {
-                        currentImageBase64 = e.target.result;
+                        reader.onload = function (e) {
+                            currentImageBase64 = e.target.result;
 
-                        preview.style.display = "block";
-                        preview.innerHTML = `
-                            <img src="${e.target.result}" alt="图片预览">
-                        `;
-                    };
+                            preview.style.display = "block";
+                            preview.innerHTML = `
+                                <img src="${e.target.result}" alt="图片预览">
+                            `;
+                        };
 
-                    reader.readAsDataURL(file);
+                        reader.readAsDataURL(file);
+                    }
                 } else {
                     preview.style.display = "none";
                     preview.innerHTML = "";
                     currentImageBase64 = "";
                 }
+            }
+
+            function compressImage(file, preview) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const img = new Image();
+
+                    img.onload = function () {
+                        const canvas = document.createElement("canvas");
+                        const ctx = canvas.getContext("2d");
+
+                        // 计算压缩后的尺寸
+                        let width = img.width;
+                        let height = img.height;
+                        const maxSize = 800;
+
+                        if (width > height && width > maxSize) {
+                            height = (height * maxSize) / width;
+                            width = maxSize;
+                        } else if (height > maxSize) {
+                            width = (width * maxSize) / height;
+                            height = maxSize;
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        // 尝试不同质量级别
+                        let quality = 0.8;
+                        let compressedData = canvas.toDataURL(
+                            "image/jpeg",
+                            quality,
+                        );
+
+                        // 如果还是太大，继续压缩
+                        while (
+                            compressedData.length > 500000 &&
+                            quality > 0.1
+                        ) {
+                            quality -= 0.1;
+                            compressedData = canvas.toDataURL(
+                                "image/jpeg",
+                                quality,
+                            );
+                        }
+
+                        currentImageBase64 = compressedData;
+
+                        preview.style.display = "block";
+                        preview.innerHTML = `
+                            <img src="${compressedData}" alt="图片预览">
+                        `;
+                    };
+
+                    img.src = e.target.result;
+                };
+
+                reader.readAsDataURL(file);
             }
 
             function generateLink() {
