@@ -37,6 +37,9 @@
                 margin-bottom: 20px;
                 min-height: 100px;
                 position: relative;
+                box-sizing: border-box;
+                max-width: 100%;
+                overflow-x: hidden;
             }
 
             .message-content {
@@ -50,6 +53,18 @@
             .image-container {
                 margin-top: 10px;
                 text-align: center;
+                box-sizing: border-box;
+                max-width: 100%;
+                overflow: hidden;
+            }
+
+            .image-container img {
+                max-width: 100%;
+                max-height: min(70vh, 1200px);
+                width: auto;
+                height: auto;
+                display: block;
+                margin: 0 auto;
             }
 
             .controls {
@@ -124,6 +139,28 @@
         </div>
 
         <script>
+            /** 仅允许内联 data: 图片，避免 javascript: 等通过 img src 执行脚本。 */
+            function isSafeDataImageForDisplay(url) {
+                if (typeof url !== "string") {
+                    return false;
+                }
+                if (url.length > 512 * 1024) {
+                    return false;
+                }
+                return /^data:image\/(?:jpeg|jpg|png|gif|webp);(?:charset=[\w.-]+;)?base64,/i.test(
+                    url,
+                );
+            }
+
+            function renderMessageImage(container, dataUrl) {
+                container.style.display = "block";
+                container.replaceChildren();
+                const img = document.createElement("img");
+                img.src = dataUrl;
+                img.alt = "分享的图片";
+                container.appendChild(img);
+            }
+
             document.addEventListener("DOMContentLoaded", function () {
                 const hash = window.location.hash;
                 const messageContent =
@@ -162,14 +199,15 @@
                         messageContent.style.display = "none";
                     }
 
-                    // 显示图片（如果有）
-                    if (data.image) {
-                        imageContainer.style.display = "block";
-                        imageContainer.innerHTML = `
-                            <img src="${data.image}" alt="分享的图片">
-                        `;
+                    // 显示图片（如果有且为允许的 data: 图片）
+                    if (data.image && isSafeDataImageForDisplay(data.image)) {
+                        renderMessageImage(imageContainer, data.image);
                     } else {
+                        if (data.image) {
+                            console.warn("已忽略不安全的图片数据（非允许的 data: 图片）。");
+                        }
                         imageContainer.style.display = "none";
+                        imageContainer.replaceChildren();
                     }
 
                     // 隐藏消息容器的最小高度
