@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 · MHRSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            padding: 2rem 1rem;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            border-bottom: 2px solid #eef2f6;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        h1 small {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #64748b;
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            color: #334155;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #f1f5f9;
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .highlight-box strong {
+            color: #0f172a;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .key-point {
+            background: #ecfdf5;
+            border-radius: 12px;
+            padding: 0.8rem 1.4rem;
+            margin: 0.8rem 0 1.2rem 0;
+            border-left: 4px solid #10b981;
+            font-size: 0.95rem;
+        }
+
+        .key-point strong {
+            color: #065f46;
+        }
+
+        .harmony-badge {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #1a5bb5;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            margin-left: 0.3rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        ul {
+            margin: 0.3rem 0 0.8rem 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        p {
+            margin-bottom: 0.8rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 1.8rem 0;
+        }
+
+        .footer-meta {
+            margin-top: 1.8rem;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            border-top: 1px solid #eef2f6;
+            padding-top: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            h1 small {
+                font-size: 0.85rem;
+                display: block;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            📄 隐私政策
+            <small>MHRSS · 更新于 2026年6月18日 <span class="harmony-badge">鸿蒙版</span></small>
+        </h1>
+
+        <p class="intro">
+            MHRSS 是一款运行于 <strong>鸿蒙（HarmonyOS）</strong> 系统的 RSS 阅读器客户端，通过 <strong>Google Reader API（GReader API）</strong> 协议与您自行选择的 RSS 服务提供方通信。
+        </p>
+
+        <div class="highlight-box">
+            <strong>⚡ MHRSS 不运营任何 RSS 服务</strong>
+            <p style="margin-top: 0.3rem;">
+                我们仅作为客户端工具，为您连接兼容 GReader API 的第三方服务（如 The Old Reader、BazQux、Feedbin 等）。您的 RSS 数据完全存储在您所选的服务提供方，受其自身隐私政策约束。
+            </p>
+        </div>
+
+        <h2>我们收集的信息</h2>
+        <ul>
+            <li><strong>登录凭证：</strong> 您输入的服务器地址、用户名、密码或 API 令牌，仅存储在您的设备本地（使用鸿蒙系统安全存储能力），用于向您指定的 RSS 服务发起请求。MHRSS <strong>没有服务器</strong>，不会上传或备份您的凭证。</li>
+            <li><strong>本地缓存：</strong> 订阅源列表、文章内容及阅读偏好，仅保存在您的设备上，用于离线阅读和提升体验。</li>
+            <li><strong>崩溃报告（可选）：</strong> 设备型号、鸿蒙系统版本、应用版本及错误堆栈，用于改进应用稳定性，不含任何个人身份信息或 RSS 内容。</li>
+        </ul>
+
+        <div class="key-point">
+            ✅ <strong>登出即清除：</strong> 当您在应用内执行“登出”操作时，所有登录凭证及本地缓存数据将被立即清除。
+        </div>
+
+        <h2>我们如何保护您的数据</h2>
+        <ul>
+            <li><strong>本地优先：</strong> MHRSS 没有后端服务器，所有数据仅存于您的设备。</li>
+            <li><strong>加密传输：</strong> 所有 API 通信均使用 HTTPS/TLS 加密。</li>
+            <li><strong>安全存储：</strong> 凭证使用鸿蒙系统级安全存储能力（如 KeyStore）加密保存。</li>
+            <li><strong>权限最小化：</strong> 应用仅申请运行所必需的系统权限，不会获取与 RSS 阅读无关的权限。</li>
+            <li><strong>不与第三方共享：</strong> 我们不会出售、出租或向任何第三方透露您的个人信息。</li>
+        </ul>
+
+        <h2>您的权利</h2>
+        <ul>
+            <li>您可随时在应用内“登出”，所有凭证和缓存数据将立即被清除。</li>
+            <li>您也可直接卸载应用，删除所有本地数据。</li>
+            <li>您可在所连接的 RSS 服务网站上管理或撤销 MHRSS 的访问权限。</li>
+            <li>您可在鸿蒙系统设置中管理应用权限或关闭崩溃报告功能。</li>
+        </ul>
+
+        <hr>
+
+        <p style="font-size: 0.9rem; color: #64748b;">
+            📌 您选择的第三方 RSS 服务（如 The Old Reader、BazQux、Feedbin 等）均有独立的隐私政策，请自行查阅以了解其数据处理方式。
+        </p>
+
+        <div class="footer-meta">
+            <span>📱 MHRSS for HarmonyOS · 尊重隐私</span>
+        </div>
+    </div>
+</body>
+</html>
